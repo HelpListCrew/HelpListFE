@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "welcome#show"
 
-  post "/register", to: "users#new"
+  get "/register", to: "users#new"
 end

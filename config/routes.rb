@@ -7,5 +7,5 @@ Rails.application.routes.draw do
 
   get "/register", to: "users#new"
   post "/register", to: "users#create"
-  get "/dashboard", to: "user#show"
+  get "/dashboard", to: "users#show"
 end

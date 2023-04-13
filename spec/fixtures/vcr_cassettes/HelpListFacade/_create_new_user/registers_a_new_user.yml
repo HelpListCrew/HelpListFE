@@ -7,14 +7,14 @@ http_interactions:
       encoding: UTF-8
       string: user%5Bemail%5D=octodog86%40gmail.com&user%5Bpassword%5D=iloveclimbing1234
     headers:
-      User-Agent:
-      - Faraday v2.7.4
       Content-Type:
       - application/x-www-form-urlencoded
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 201
@@ -37,19 +37,20 @@ http_interactions:
       Vary:
       - Accept
       Etag:
-      - W/"2e52e0297f28ce35825b674271b07b02"
+      - W/"85eb950fb17ac4a7d5c0962782c2caa8"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - ede2184a-60c0-40a4-93f4-c9c398f1462b
+      - 54221cba-569c-4d36-8510-20f27413c3f1
       X-Runtime:
-      - '0.302458'
+      - '0.438710'
       Server-Timing:
-      - start_processing.action_controller;dur=0.23, sql.active_record;dur=8.66, process_action.action_controller;dur=294.77
+      - sql.active_record;dur=42.75, start_processing.action_controller;dur=0.10,
+        process_action.action_controller;dur=338.83
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"6","type":"user","attributes":{"email":"octodog86@gmail.com","user_type":"donor"}}}'
-  recorded_at: Wed, 12 Apr 2023 23:53:41 GMT
+      string: '{"data":{"id":"10","type":"user","attributes":{"email":"octodog86@gmail.com","user_type":"donor"}}}'
+  recorded_at: Thu, 13 Apr 2023 16:29:51 GMT
 recorded_with: VCR 6.1.0

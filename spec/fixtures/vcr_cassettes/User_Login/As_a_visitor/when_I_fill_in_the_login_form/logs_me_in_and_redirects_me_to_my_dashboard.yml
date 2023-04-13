@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: http://localhost:5000/api/v1/users
+    uri: http://localhost:5000/api/v1/login
     body:
       encoding: UTF-8
-      string: user%5Bemail%5D=plant_zaddy45%40gmail.com&user%5Bpassword%5D=leafy_greens34&user%5Buser_type%5D=donor
+      string: user%5Bemail%5D=plant_zaddy45%40gmail.com&user%5Bpassword%5D=leafy_greens34
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -41,18 +41,18 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - a1c81917-ddc4-4637-916d-191c6cd3dde2
+      - 7beaa4d9-71db-4ca1-a248-d28a866dff9d
       X-Runtime:
-      - '4.642345'
+      - '0.329945'
       Server-Timing:
-      - start_processing.action_controller;dur=0.14, sql.active_record;dur=17.55,
-        process_action.action_controller;dur=4478.49
+      - start_processing.action_controller;dur=0.18, sql.active_record;dur=1.88, instantiation.active_record;dur=0.24,
+        process_action.action_controller;dur=322.50
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: '{"data":{"id":"6","type":"user","attributes":{"email":"plant_zaddy45@gmail.com","user_type":"donor"}}}'
-  recorded_at: Thu, 13 Apr 2023 20:57:10 GMT
+  recorded_at: Thu, 13 Apr 2023 20:57:28 GMT
 - request:
     method: get
     uri: http://localhost:5000/api/v1/users/6
@@ -92,16 +92,16 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - '048f8d28-656f-4101-a0e7-04eaa5d363f0'
+      - 7b838b10-3c4f-45bd-b54b-020942dd6a46
       X-Runtime:
-      - '0.009715'
+      - '0.006067'
       Server-Timing:
-      - start_processing.action_controller;dur=0.12, sql.active_record;dur=0.62, instantiation.active_record;dur=0.07,
-        process_action.action_controller;dur=2.35
+      - start_processing.action_controller;dur=0.11, sql.active_record;dur=0.74, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=1.72
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: '{"data":{"id":"6","type":"user","attributes":{"email":"plant_zaddy45@gmail.com","user_type":"donor"}}}'
-  recorded_at: Thu, 13 Apr 2023 20:57:10 GMT
+  recorded_at: Thu, 13 Apr 2023 20:57:28 GMT
 recorded_with: VCR 6.1.0

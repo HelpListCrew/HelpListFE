@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:5000/api/v1/login
+    body:
+      encoding: UTF-8
+      string: user%5Bemail%5D=plant_zaddy45%40gmail.com&user%5Bpassword%5D=wrong+password
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"b0028d20e620dd24648510f1de8f7385"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e83132c1-de89-499f-acfb-0bddc0f04c79
+      X-Runtime:
+      - '0.304617'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.10, sql.active_record;dur=0.68, instantiation.active_record;dur=0.04,
+        process_action.action_controller;dur=300.30
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"message":"your query could not be completed","errors":{"status":404,"title":"Not
+        authenticated"}}'
+  recorded_at: Thu, 13 Apr 2023 20:57:28 GMT
+recorded_with: VCR 6.1.0

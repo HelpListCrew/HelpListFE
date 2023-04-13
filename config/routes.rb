@@ -13,8 +13,7 @@ Rails.application.routes.draw do
   #   resources :wishlists, only: [:new, :create, :show, :edit, :update]
   # end
 
-  get '/login', to: "users#login_form"
-  post '/login', to: "users#login_user"
+  post '/login', to: "sessions#login"
 
   get "/register", to: "users#new"
   post "/register", to: "users#create"

@@ -1,4 +1,4 @@
-class User 
+class User
   attr_reader :id,
               :email,
               :user_type

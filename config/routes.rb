@@ -5,6 +5,16 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "welcome#show"
 
+  get "/register", controller: "users", to: "users#new"
+  get "/register", controller: "users", to: "users#create"
+  get "/dashboard", controller: "users", to: "users#show"
+  get "/wishlist", controller: "users", to: "users#wishlist"
+  # resources :users, only: [:new, :create, :show] do
+  #   resources :wishlists, only: [:new, :create, :show, :edit, :update]
+  # end
+
+  post '/login', to: "sessions#login"
+
   get "/register", to: "users#new"
   post "/register", to: "users#create"
   get "/dashboard", to: "users#show"

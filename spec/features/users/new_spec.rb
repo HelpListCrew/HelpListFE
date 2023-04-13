@@ -3,8 +3,9 @@ require "rails_helper"
 RSpec.describe "Register User" do
   describe "As a visitor", :vcr do
     before :each do 
-    visit register_path
+    	visit register_path
     end
+
     describe "when I click on the link to register as a new user" do
       it "takes me to a form to register as a new user" do 
         expect(page).to have_field(:email)
@@ -23,6 +24,7 @@ RSpec.describe "Register User" do
 
         choose(option: "donor")
         click_button "Register"
+
         expect(current_path).to eq(dashboard_path)
       end
     end

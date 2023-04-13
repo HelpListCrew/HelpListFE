@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:5000/api/v1/users
+    body:
+      encoding: UTF-8
+      string: user%5Bemail%5D=octodog86%40gmail.com&user%5Bpassword%5D=iloveclimbing1234
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"85eb950fb17ac4a7d5c0962782c2caa8"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 54221cba-569c-4d36-8510-20f27413c3f1
+      X-Runtime:
+      - '0.438710'
+      Server-Timing:
+      - sql.active_record;dur=42.75, start_processing.action_controller;dur=0.10,
+        process_action.action_controller;dur=338.83
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"10","type":"user","attributes":{"email":"octodog86@gmail.com","user_type":"donor"}}}'
+  recorded_at: Thu, 13 Apr 2023 16:29:51 GMT
+recorded_with: VCR 6.1.0

@@ -4,6 +4,7 @@ class User
               :user_type
 
   def initialize(info)
+    require 'pry'; binding.pry
     @id = info[:data][:id]
     @email = info[:data][:attributes][:email]
     @user_type = info[:data][:attributes][:user_type]

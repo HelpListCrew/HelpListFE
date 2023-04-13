@@ -1,6 +1,7 @@
 class HelpListFacade
 
   def initialize(params = {})
+# require 'pry'; binding.pry
     @params = params
     @service = HelpListService.new
   end

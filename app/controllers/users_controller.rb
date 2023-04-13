@@ -7,15 +7,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    require 'pry'; binding.pry
-    new_user = HelpListFacade.new(params).create_new_user
+    new_user = HelpListFacade.new(user_params).create_new_user
     session[:user_id] = new_user.id
     redirect_to dashboard_path
   end
 
-  # private
-  # def user_params
-  #   # require 'pry'; binding.pry
-  #   params.permit(:email, :password, :user_type)
-  # end
+  private
+  def user_params
+    params.permit(:email, :password, :user_type)
+  end
 end

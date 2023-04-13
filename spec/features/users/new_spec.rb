@@ -21,7 +21,7 @@ RSpec.describe "Register User" do
         fill_in :password, with: "leafy_greens34"
         fill_in :password_confirmation, with: "leafy_greens34"
 
-        choose(option: "Donor")
+        choose(option: "donor")
         click_button "Register"
         expect(current_path).to eq(dashboard_path)
       end

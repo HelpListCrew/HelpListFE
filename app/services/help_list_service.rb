@@ -5,8 +5,10 @@ class HelpListService
   end
 
   def create_user(params)
-    require 'pry'; binding.pry
-    response = connection.post("/api/v1/users", user: params, "Content-Type" => "application/json")
+    response = connection.post("/api/v1/users") do |con|
+			con.headers = { "CONTENT_TYPE" => "application/json" }
+			con.body = { user: params.to_hash }
+    end
     JSON.parse(response.body, symbolize_names: true)
   end
 end

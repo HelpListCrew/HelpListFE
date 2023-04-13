@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-  # before_action :set_current_user
 
 	def login
 		new_user = HelpListFacade.new(user_params).authenticate_user
@@ -19,11 +18,15 @@ class SessionsController < ApplicationController
     redirect_to root_path
   end
 
-  # private
+	def omniauth
+		user = HelpListFacade.new({	
+																uid: request.env['omniauth.auth'][:uid], 
+																email: request.env['omniauth.auth'][:info][:email]
+															}).find_or_create
+		session[:user_id] = user.id
+		redirect_to dashboard_path
+	end
 
-  # def set_current_user
-  #   @current_user = User.find_by(id: session[:user_id])
-  # end
 	private
   def user_params
     params.permit(:email, :password, :user_type)

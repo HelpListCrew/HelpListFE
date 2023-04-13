@@ -13,8 +13,6 @@ class UsersController < ApplicationController
     redirect_to dashboard_path
   end
 
-
-
   private
   def user_params
     params.permit(:email, :password, :user_type)

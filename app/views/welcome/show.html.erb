@@ -8,7 +8,7 @@
   <%= form.submit "Login" %> 
 <% end %>
 
-<%= button_to "Login with Google", "/auth/google_oauth2"  %>
+<%= button_to "Login with Google", "/auth/google_oauth2", method: :get, data: { turbo: false }%>
 
 <p>Don't have an account? <%= link_to "Register Here", "/register" %> </p>
 

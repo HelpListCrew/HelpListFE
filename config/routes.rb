@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   post '/login', to: "sessions#login"
 
+	get "/auth/:provider/callback", to: "sessions#omniauth"
+
   get "/register", to: "users#new"
   post "/register", to: "users#create"
   get "/dashboard", to: "users#show"

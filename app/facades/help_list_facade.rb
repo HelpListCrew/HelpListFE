@@ -7,7 +7,11 @@ class HelpListFacade
 
   def create_new_user
     new_user = @service.create_user(@params)
-    User.new(new_user)
+    if new_user[:errors]
+      return new_user[:errors]
+    else
+      User.new(new_user)
+    end
   end
 
 	def authenticate_user

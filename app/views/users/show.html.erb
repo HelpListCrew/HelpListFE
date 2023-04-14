@@ -1,10 +1,11 @@
 <h1>Dashboard</h1>
 
-<% if current_user.recipient? %>
-  <%= render partial: '_recipient_dashboard' %>
-<% elsif current_user.donor? %>
-  <%= render partial: '_donor_dashboard' %>
+<p>Welcome back, <%= @user.email %>!</p>
+
+<% if @user.user_type == "donor" %>
+  <%= render partial: 'donor_dashboard' %>
+<% else %>
+  <%= render partial: 'recipient_dashboard' %>
 <% end %>
 
-<p>Welcome back, <%= @user.email %>!</p>
 

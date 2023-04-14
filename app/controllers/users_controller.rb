@@ -4,13 +4,7 @@ class UsersController < ApplicationController
   end
 
   def show
-		# @user = current_user
-    @user = HelpListFacade.new({id: current_user.id}).find_user
-    if current_user.donor?
-      render '_donor_dashboard'
-    elsif current_user.recipient?
-      render '_recipient_dashboard'
-    end
+		@user = current_user
   end
 
   def create

@@ -1,0 +1,158 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:5000/api/v1/users
+    body:
+      encoding: UTF-8
+      string: user%5Bemail%5D=snickerz_lover85%40gmail.com&user%5Bpassword%5D=caramelizyumz&user%5Buser_type%5D=donor
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"daa1b235fc4c1a175e77241de3e7eed5"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - '013481ef-ce88-4b3a-a8cc-f2c0efebb693'
+      X-Runtime:
+      - '0.285155'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.16, sql.active_record;dur=13.97,
+        process_action.action_controller;dur=275.86
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"4","type":"user","attributes":{"email":"snickerz_lover85@gmail.com","user_type":"donor"}}}'
+  recorded_at: Fri, 14 Apr 2023 17:43:09 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/users/4
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"daa1b235fc4c1a175e77241de3e7eed5"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 9eafe280-baf0-49c4-a032-1d2f67bb2ba9
+      X-Runtime:
+      - '0.006493'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.06, sql.active_record;dur=0.98, instantiation.active_record;dur=0.06,
+        process_action.action_controller;dur=2.06
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"4","type":"user","attributes":{"email":"snickerz_lover85@gmail.com","user_type":"donor"}}}'
+  recorded_at: Fri, 14 Apr 2023 17:43:09 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/users/4
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"daa1b235fc4c1a175e77241de3e7eed5"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ea890e3a-2419-4737-877a-3d09b145ad56
+      X-Runtime:
+      - '0.005456'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.05, sql.active_record;dur=0.78, instantiation.active_record;dur=0.02,
+        process_action.action_controller;dur=1.29
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"4","type":"user","attributes":{"email":"snickerz_lover85@gmail.com","user_type":"donor"}}}'
+  recorded_at: Fri, 14 Apr 2023 17:43:09 GMT
+recorded_with: VCR 6.1.0

@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def show
 		# @user = current_user
+    @user = HelpListFacade.new({id: current_user.id}).find_user
     if current_user.donor?
       render '_donor_dashboard'
     elsif current_user.recipient?

@@ -41,18 +41,18 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 2b8a2d2f-84c8-439a-b43b-418f34c2c50a
+      - e31109b9-c73e-4e29-be9f-f52d9f369060
       X-Runtime:
-      - '0.399746'
+      - '0.304200'
       Server-Timing:
-      - start_processing.action_controller;dur=0.37, sql.active_record;dur=26.88,
-        instantiation.active_record;dur=1.34, process_action.action_controller;dur=336.37
+      - start_processing.action_controller;dur=0.26, sql.active_record;dur=15.86,
+        instantiation.active_record;dur=0.24, process_action.action_controller;dur=294.14
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: '{"data":{"id":"3","type":"user","attributes":{"email":"plant_zaddy45@gmail.com","user_type":"donor"}}}'
-  recorded_at: Fri, 14 Apr 2023 16:55:50 GMT
+  recorded_at: Fri, 14 Apr 2023 18:49:00 GMT
 - request:
     method: get
     uri: http://localhost:5000/api/v1/users/3
@@ -92,16 +92,16 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - e60a2f3d-72e7-453f-9090-c3ce58bf6779
+      - '015483e3-9802-4349-8d2a-7f06dd1dfbea'
       X-Runtime:
-      - '0.009805'
+      - '0.007927'
       Server-Timing:
-      - start_processing.action_controller;dur=0.10, sql.active_record;dur=1.38, instantiation.active_record;dur=0.04,
-        process_action.action_controller;dur=3.13
+      - start_processing.action_controller;dur=0.15, sql.active_record;dur=0.99, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=1.92
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: '{"data":{"id":"3","type":"user","attributes":{"email":"plant_zaddy45@gmail.com","user_type":"donor"}}}'
-  recorded_at: Fri, 14 Apr 2023 16:55:50 GMT
+  recorded_at: Fri, 14 Apr 2023 18:49:00 GMT
 recorded_with: VCR 6.1.0

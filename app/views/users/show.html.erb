@@ -1,1 +1,10 @@
-<p>Weclome back, <%= @user.email %></p>
+<h1>Dashboard</h1>
+
+<% if current_user.recipient? %>
+  <%= render partial: '_recipient_dashboard' %>
+<% elsif current_user.donor? %>
+  <%= render partial: '_donor_dashboard' %>
+<% end %>
+
+<p>Welcome back, <%= @user.email %>!</p>
+

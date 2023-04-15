@@ -9,8 +9,16 @@ class UsersController < ApplicationController
 
   def create
 		new_user = HelpListFacade.new(user_params).create_new_user
-    session[:user_id] = new_user.id
-    redirect_to dashboard_path
+    unless new_user.is_a?(User)
+      errors =  new_user.map do |error|
+        error[:title]
+      end
+      flash[:error] = errors.join(". ")+ "."
+      redirect_to register_path
+    else
+      session[:user_id] = new_user.id
+      redirect_to dashboard_path
+    end
   end
 
   private

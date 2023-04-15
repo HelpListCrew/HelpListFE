@@ -12,6 +12,15 @@ describe "Donor Dashboard", :vcr do
         expect(current_path).to eq(dashboard_path)
         expect(page).to have_content("Explore Organizations Near Me")
       end
+
+      it "shows a section the donor's donated items" do
+        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+        visit dashboard_path
+        save_and_open_page
+        expect(current_path).to eq(dashboard_path)
+        expect(page).to have_content("Donated Items")
+      end
     end
   end    
 end      

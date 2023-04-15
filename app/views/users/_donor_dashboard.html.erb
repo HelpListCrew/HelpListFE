@@ -1,7 +1,33 @@
 #to identify donor dashboard for testing
 <h1><%= @user.email %>'s Dashboard</h1>
 
-<div class="explore-organizations text-left">
-  <h2>Explore Organizations Near Me</h2>
-  #include search by zipcode and mile radius
-  
+#include search by zipcode and mile radius
+<section>
+  <div class="left-section">
+  #add CSS rule float: left
+    <div class="explore-organizations">
+      <h2>Explore Organizations Near Me</h2>
+      <ul>
+        <%# <li><%= link_to "Organization 1", organization_path(organization)</li> %> 
+        <%# <li><%= link_to "Organization 2", organization_path(organization) %></li> 
+        <%# <li><%= link_to "Organization 3", organization_path(organization) %></li>
+      </ul>
+    </div>
+  </div>
+</section>
+#need to iterate through wishlist donated items
+<section>
+ <div class="right-section">
+ #add CSS rule float: right
+  <div class= "donated-items">
+    <h2>Donated Items</h2>
+    <ul>
+      <%# <li><%= link_to "Item 1", item_path(item) %></li> 
+      <%# <li><%= link_to "Item 2", item_path(item) %></li> 
+      <%# <li><%= link_to "Item 3", item_path(item) %></li>
+    </ul>
+  </div>
+</section>
+
+
+    

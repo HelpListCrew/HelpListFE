@@ -1,5 +1,5 @@
 #to identify recipient dashboard for testing
-<h1><%= @user.email %>'s Dashboard</h1>
+<h1><%= @user.email %>'s Recipient Dashboard</h1>
 
 <%= form_with url: wishlist_path, method: :get, class: "form-inline my-2 my-lg-0" do |f| %>
   <%= f.search_field :query, class: "form-control mr-sm-2", placeholder: "Search for an item", aria_label: "Search" %>

@@ -1,0 +1,27 @@
+#wishlish recipient's about me
+<div class="about-me text-left">
+  <h2>About Me</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tristique velit ut nunc facilisis, sed fringilla velit eleifend. Nullam sed quam vel dolor semper elementum. Sed interdum, libero in posuere consequat, metus lacus venenatis quam, et iaculis enim arcu eu justo. Duis scelerisque eleifend enim, sit amet rhoncus nisl consectetur ac. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer a erat malesuada, ullamcorper enim vel, convallis turpis. Suspendisse sed arcu vel eros gravida tristique. Duis eu malesuada augue.</p>
+</div>
+
+#iterate through poros to display wishlist items
+<div class="wishlist">
+  <h2>My Wishlist</h2>
+  <div class="wishlist-items">
+    <div class="wishlist-item">
+      <div class="wishlist-item-image">
+        <img src="https://images.unsplash.com/photo-1542731247-1b7b1f3c5f9f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="item image">
+      </div>
+      <div class="wishlist-item-details">
+      <% @wishlist_items.each do |items| %>
+        <h3><%= items.name %></h3>
+        <p><%= items.description %></p>
+        <p><%= items.price %></p>
+        <p><%= items.category %></p>
+        <p><%= items.url %></p>
+        <p><%= items.user_id %></p>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>

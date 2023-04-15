@@ -1,4 +1,6 @@
 class WelcomeController < ApplicationController
-  def index
+  def show
+		@location = request.location.data["loc"]
+		require 'pry'; binding.pry
   end
 end

@@ -1,0 +1,311 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:5000/api/v1/login
+    body:
+      encoding: UTF-8
+      string: user%5Bemail%5D=plant_zaddy45%40gmail.com&user%5Bpassword%5D=leafy_greens34
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"34028fa965e78e334ee4ce3155079789"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b8e8d5ed-1bd7-4569-83ea-73f03f7e8fe7
+      X-Runtime:
+      - '0.311955'
+      Server-Timing:
+      - start_processing.action_controller;dur=3.59, sql.active_record;dur=5.43, instantiation.active_record;dur=2.06,
+        process_action.action_controller;dur=292.26
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"3","type":"user","attributes":{"email":"plant_zaddy45@gmail.com","user_type":"donor"}}}'
+  recorded_at: Fri, 14 Apr 2023 21:05:32 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/users/3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"34028fa965e78e334ee4ce3155079789"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - fc92d617-4753-4389-afab-88e431109a76
+      X-Runtime:
+      - '0.008309'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.28, sql.active_record;dur=0.80, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=1.70
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"3","type":"user","attributes":{"email":"plant_zaddy45@gmail.com","user_type":"donor"}}}'
+  recorded_at: Fri, 14 Apr 2023 21:05:32 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/users/3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"34028fa965e78e334ee4ce3155079789"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 3a804396-3fc3-4276-b861-74e786d286d7
+      X-Runtime:
+      - '0.008418'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.07, sql.active_record;dur=0.57, instantiation.active_record;dur=0.04,
+        process_action.action_controller;dur=3.07
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"3","type":"user","attributes":{"email":"plant_zaddy45@gmail.com","user_type":"donor"}}}'
+  recorded_at: Fri, 14 Apr 2023 21:05:32 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/users/3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"34028fa965e78e334ee4ce3155079789"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - fcd71483-1ea0-4068-8c92-b8b2c5c44afb
+      X-Runtime:
+      - '0.009468'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.13, sql.active_record;dur=2.42, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=3.48
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"3","type":"user","attributes":{"email":"plant_zaddy45@gmail.com","user_type":"donor"}}}'
+  recorded_at: Fri, 14 Apr 2023 21:05:32 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/users/3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"34028fa965e78e334ee4ce3155079789"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - daf35b61-92ff-4400-b999-f97cfb23d570
+      X-Runtime:
+      - '0.007898'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.07, sql.active_record;dur=0.51, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=2.54
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"3","type":"user","attributes":{"email":"plant_zaddy45@gmail.com","user_type":"donor"}}}'
+  recorded_at: Fri, 14 Apr 2023 21:05:32 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/users/3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"34028fa965e78e334ee4ce3155079789"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 1046be7f-fede-48d5-94f2-f8404c377956
+      X-Runtime:
+      - '0.007935'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.67, sql.active_record;dur=0.60, instantiation.active_record;dur=0.04,
+        process_action.action_controller;dur=1.57
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"3","type":"user","attributes":{"email":"plant_zaddy45@gmail.com","user_type":"donor"}}}'
+  recorded_at: Fri, 14 Apr 2023 21:05:32 GMT
+recorded_with: VCR 6.1.0

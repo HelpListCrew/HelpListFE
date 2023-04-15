@@ -7,10 +7,9 @@ describe "User Dashboard", :vcr do
       it "displays an items search bar" do
         allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
         visit dashboard_path
-        # save_and_open_page
-        # require 'pry'; binding.pry
+
         expect(current_path).to eq(dashboard_path)
-        expect(page).to have_field(:search)
+        expect(page).to have_field(:query)
       end
     end
   end

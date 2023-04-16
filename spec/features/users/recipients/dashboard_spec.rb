@@ -4,13 +4,27 @@ describe "User Dashboard", :vcr do
   describe "As a logged in recipient user" do
     describe "when I visit my dashboard" do
       let(:user) {User.new({:data=>{:id=>"5", :type=>"user", :attributes=>{:email=>"octodog86@gmail.com", :user_type=>"recipient"}}})}
-      it "displays an items search bar" do
+
+      before(:each) do
         allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
         visit dashboard_path
+      end
+
+      it "displays an items search bar" do
+        # allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+        # visit dashboard_path
 
         expect(current_path).to eq(dashboard_path)
         expect(page).to have_field(:query)
       end
+
+      #potentially add sad pathing
+      it "I can search for an item by name and click search" do
+        fill_in :query, with: "string cheese"
+        click_button "Search"
+
+        expect(current_path).to eq(search_path)
+      end    
     end
   end
 end

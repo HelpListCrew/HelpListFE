@@ -6,13 +6,17 @@
   
   <%= form.label :password, "Password:" %>
   <%= form.password_field :password %>
+
   <%= form.label :password_confirmation, "Password confirmation:" %>
   <%= form.password_field :password_confirmation %>
+<br>
   <%= form.radio_button(:user_type, "donor", checked: true) %>
   <%= form.label(:donor, "I am registering as a Donor!") %>
   
   <%= form.radio_button(:user_type, "recipient") %>
   <%= form.label(:recipient, "I am registering as a Recipient!") %>
-  
+  <br>
   <%= form.submit "Register", :class => "btn btn-primary" %>
 <% end %>
+
+<p>Have an account? <%= link_to "Login Here", root_path, method: :get, :class => "btn btn-outline-primary" %></p>

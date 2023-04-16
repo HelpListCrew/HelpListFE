@@ -2,7 +2,6 @@ class SessionsController < ApplicationController
 
 	def login
 		new_user = HelpListFacade.new(user_params).authenticate_user
-
 		if new_user
 			session[:user_id] = new_user.id
 			redirect_to dashboard_path

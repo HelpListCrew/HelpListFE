@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def show
 		@user = current_user
+    @wishlist_items = HelpListFacade.new.get_wishlist_items(@user.id)
   end
 
   def create

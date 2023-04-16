@@ -34,4 +34,9 @@ class HelpListService
 		response = connection.get("/api/v1/users/#{id}")
 		JSON.parse(response.body, symbolize_names: true)
 	end
+
+  def get_wishlist_items(id)
+    response = connection.get("/api/v1/users/#{id}/wishlist_items")
+    JSON.parse(response.body, symbolize_names: true)
+  end
 end

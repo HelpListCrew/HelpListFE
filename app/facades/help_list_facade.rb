@@ -34,4 +34,11 @@ class HelpListFacade
 		user = @service.find_user(id)
 		User.new(user)
 	end
+
+  def get_wishlist_items(id)
+    wishlist_items = @service.get_wishlist_items(id)
+    wishlist_items[:data].map do |item|
+      Item.new(item)
+    end
+  end  
 end

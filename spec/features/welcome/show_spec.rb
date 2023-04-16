@@ -26,7 +26,7 @@ RSpec.describe "Welcome Page" do
       end
 
       it "displays a link to search for organizations near me" do
-        expect(page).to have_link("Do you or someone you know need help?")
+        expect(page).to have_link("Click here to find help.")
       end
     end
   end

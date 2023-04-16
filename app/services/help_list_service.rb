@@ -4,6 +4,16 @@ class HelpListService
     Faraday.new(url: url)
   end
 
+  def create_wishlist_item(params)
+    response = connection.post("/api/v1/wishlist_items") do |con|
+			con.headers = { "CONTENT_TYPE" => "application/json" }
+			con.body = { wishlist_item: params }
+    end
+
+    JSON.parse(response.body, symbolize_names: true)
+    #make test
+  end
+
   def create_user(params)
     response = connection.post("/api/v1/users") do |con|
 			con.headers = { "CONTENT_TYPE" => "application/json" }

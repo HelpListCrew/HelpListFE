@@ -7,6 +7,14 @@
   #add CSS rule float: left
     <div class="explore-organizations">
       <h2>Explore Organizations Near Me</h2>
+
+      <%= form_with url: "/organizations/find_all", method: :get do |form| %>
+        <%= form.label :zip_code, "Zipcode:" %> 
+        <%= form.text_field :zip_code %> 
+        <%= form.label :radius, "Radius:" %> 
+        <%= form.select :radius, options_for_select(1..100) %> 
+        <%= form.submit "Search" %>
+      <% end %>
       <ul>
         <%# <li><%= link_to "Organization 1", organization_path(organization)</li> %> 
         <%# <li><%= link_to "Organization 2", organization_path(organization) %></li> 

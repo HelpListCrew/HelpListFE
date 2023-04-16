@@ -1,14 +1,17 @@
-<%= form_with url: "/login", method: :post do |form| %>
-  <%= form.label :email, "Email:"%>
-  <%= form.text_field :email %>
-  <%= form.label :password, "Password:" %>
-  <%= form.password_field :password %>
-  <%= form.submit "Login" %> 
-<% end %>
 
-<%= button_to "Login with Google", "/auth/google_oauth2", method: :get, data: { turbo: false }%>
+  <%= form_with url: "/login", method: :post, :class => "form-control" do |form| %>
+    <%= form.label :email, "Email:" %>
+    <%= form.text_field :email %>
+    <%= form.label :password, "Password:" %>
+    <%= form.password_field :password %>
+    <%= form.submit "Login", :class => "btn btn-primary"  %> 
 
-<p>Don't have an account? <%= link_to "Register Here", "/register" %> </p>
+    <%= button_to "Login with Google", "/auth/google_oauth2", method: :get, data: { turbo: false }, :class => "btn btn-primary" %>
+  <% end %> 
 
-<%= link_to  "Do you or someone you know need help?" %>
-# add path to google maps
+  <p>Don't have an account? <%= link_to "Register Here", "/register", :class => "btn btn-outline-primary" %> </p>
+
+  <div class="alert alert-primary" role=”alert”> 
+    Do you or someone you know need help? <a href=”#” class=”alert-link”> Click here to find help. </a>
+  </div>
+

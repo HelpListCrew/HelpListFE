@@ -25,9 +25,9 @@ describe "User Login", :vcr do
         fill_in :email, with: "plant_zaddy45@gmail.com"
         fill_in :password, with: "leafy_greens34"
         click_button "Login"
-				
+
         expect(current_path).to eq(dashboard_path)
-        expect(page).to have_content("Weclome back, plant_zaddy45@gmail.com")
+        expect(page).to have_content("Welcome back, plant_zaddy45@gmail.com!")
       end
     end
 

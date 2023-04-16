@@ -1,13 +1,20 @@
 <h1> Search Items </h1>
-<div id="items">
-  <% @kroger_facade.find_items.each do |item| %>
-    <div id="item-<%= item.id %>">
-      <p><%= image_tag item.image_url %></p>
-      <p><%= item.description %></p>
-      <p><%= item.brand %></p>
-      <p><%= item.price %></p>
-      <p><%= item.size %></p>
-      <%= button_to "Add to Wishlist", wishlist_items_path, params: {item_id: item.id} %>
-    </div>
-  <% end %>
-</div>
+
+<% unless @kroger_facade.find_items.all? { |item| item.price == "Unavailable" } %>
+  <div id="items">
+    <% @kroger_facade.find_items.each do |item| %>
+      <% unless item.price == "Unavailable" %>
+        <div id="item-<%= item.id %>">
+          <p><%= image_tag item.image_url %></p>
+          <p><%= item.description %></p>
+          <p><%= item.brand %></p>
+          <p><%= item.price %></p>
+          <p><%= item.size %></p>
+          <%= button_to "Add to Wishlist", wishlist_items_path, params: {item_id: item.id} %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+<% else %>
+  <p>No Items Available</p>
+<% end %>

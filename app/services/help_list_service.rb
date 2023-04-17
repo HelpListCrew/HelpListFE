@@ -20,6 +20,7 @@ class HelpListService
 			con.body = { user: params.to_hash }
     end
     JSON.parse(response.body, symbolize_names: true)
+    #make test
   end
 
 	def authenticate_user(params)
@@ -28,12 +29,21 @@ class HelpListService
 			con.body = { user: params.to_hash }
     end
     JSON.parse(response.body, symbolize_names: true)
+    #make test
 	end
 
 	def find_user(id)
 		response = connection.get("/api/v1/users/#{id}")
 		JSON.parse(response.body, symbolize_names: true)
+    #make test
 	end
+
+  def find_organizations(params)
+    response = connection.get("/api/v1/organizations/find_all") do |con|
+      con.params = params
+    end
+    JSON.parse(response.body, symbolize_names: true)
+  end
 
   def get_wishlist_items(id)
     response = connection.get("/api/v1//wishlist_items") do |con|

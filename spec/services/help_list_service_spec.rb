@@ -26,4 +26,48 @@ RSpec.describe HelpListService do
       expect(new_user[:data][:attributes][:user_type]).to be_a(String)
     end
   end
+
+  describe "#find_organizations", :vcr do 
+    let(:orgs) { HelpListService.new.find_organizations(address: "80226", miles: 50) }
+
+    it "returns a new json object" do 
+      expect(orgs).to be_a(Hash)
+      expect(orgs[:data]).to be_an(Array)
+      
+      orgs[:data].each do |org|
+        expect(org).to have_key(:id)
+        expect(org[:id]).to be_a(String)
+
+        expect(org).to have_key(:type)
+        expect(org[:type]).to be_a(String)
+
+        expect(org).to have_key(:attributes)
+        expect(org[:attributes]).to be_a(Hash)
+
+        expect(org[:attributes]).to have_key(:name)
+        expect(org[:attributes][:name]).to be_a(String)
+
+        expect(org[:attributes]).to have_key(:street_address)
+        expect(org[:attributes][:street_address]).to be_a(String)
+
+        expect(org[:attributes]).to have_key(:city)
+        expect(org[:attributes][:city]).to be_a(String)
+
+        expect(org[:attributes]).to have_key(:state)
+        expect(org[:attributes][:state]).to be_a(String)
+
+        expect(org[:attributes]).to have_key(:zip_code)
+        expect(org[:attributes][:zip_code]).to be_a(String)
+
+        expect(org[:attributes]).to have_key(:email)
+        expect(org[:attributes][:email]).to be_a(String)
+
+        expect(org[:attributes]).to have_key(:phone_number)
+        expect(org[:attributes][:phone_number]).to be_a(String)
+
+        expect(org[:attributes]).to have_key(:website)
+        expect(org[:attributes][:website]).to be_a(String)
+      end
+    end
+  end
 end

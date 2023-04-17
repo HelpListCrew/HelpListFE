@@ -4,10 +4,12 @@ class UsersController < ApplicationController
   end
 
   def show
-		@user = current_user
-		if @user
+		@user = current_user 
+		if @user.user_type == "recipient"
     	@wishlist_items = HelpListFacade.new.get_wishlist_items(@user.id)
-		end
+    elsif params[:address]
+      @organizations = HelpListFacade.new(params).find_organizations_near_me
+    end
   end
 
   def create

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:5000/api/v1//wishlist_items?user_id=5
+    uri: http://localhost:5000/api/v1/organizations/find_all?action=show&address=0&commit=Search&controller=users&miles=75
     body:
       encoding: US-ASCII
       string: ''
@@ -15,8 +15,8 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 201
-      message: Created
+      code: 200
+      message: OK
     headers:
       X-Frame-Options:
       - SAMEORIGIN
@@ -35,19 +35,19 @@ http_interactions:
       Vary:
       - Accept
       Etag:
-      - W/"8fe32e407a1038ee38753b70e5374b3a"
+      - W/"7fb9d166d1a15bce0b9f085f3818946f"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - d46fd0f1-e7df-4354-b1c8-843815ac490c
+      - ace67102-ab6f-400a-b28f-ec00cde7f058
       X-Runtime:
-      - '0.011254'
+      - '0.357640'
       Server-Timing:
-      - start_processing.action_controller;dur=0.07, sql.active_record;dur=0.95, process_action.action_controller;dur=1.75
+      - start_processing.action_controller;dur=0.08, sql.active_record;dur=1.29, process_action.action_controller;dur=351.91
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"data":[]}'
-  recorded_at: Sun, 16 Apr 2023 23:45:46 GMT
+      string: '{"data":{}}'
+  recorded_at: Mon, 17 Apr 2023 01:32:58 GMT
 recorded_with: VCR 6.1.0

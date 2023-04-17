@@ -9,6 +9,7 @@ RSpec.describe "Welcome Page" do
       it "displays the name of the application at the top of the page" do
         expect(page).to have_content("HelpList")
         expect(page).to have_content("Helping Humans Help Humans")
+        expect(page).to have_content("HelpList's mission is to crowdsource resources to lessen the burden for survivors, and make providing resources easy and accessible to the everyday person.")
       end
       
       it "displays a form to log in with an email and password" do

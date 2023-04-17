@@ -10,24 +10,32 @@ describe "Donor Dashboard", :vcr do
         visit dashboard_path
       end
       it "shows a section to explore organizations near me" do
-
-
         expect(current_path).to eq(dashboard_path)
         expect(page).to have_content("Explore Organizations Near Me")
       end
 
       it "displays a search form with a zipcode field and number selector for miles radius" do 
-        expect(page).to have_field(:zip_code) #numericality
-        expect(page).to have_selector(:radius)
-        expect(page).to have_button(:search)
+        expect(page).to have_field(:address) #numericality
+        page.has_select?("Radius")
+        expect(page).to have_button("Search")
       end
 
       it "when I enter a zip code and a mile radius I am shown a list of up to ten organizations near me as links" do
-        fill_in :zip_code with: 80226
-        select "5", from: :radius
+        fill_in :address, with: 80226
+        select 50, from: :miles
         click_on "Search"
+       
+        expect(page).to have_content("Welch LLC")
+        expect(page).to have_content("Robel, Dibbert and Windler")
+      end
 
-        expect(page).to have_content()
+      it "does not display any organizations with invalid params" do
+        fill_in :address, with: 00000
+        select 75, from: :miles
+        click_on "Search"
+    
+        expect(page).to_not have_content("Welch LLC")
+        expect(page).to_not have_content("Robel, Dibbert and Windler")
       end
 
       it "shows a section the donor's donated items" do

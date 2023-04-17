@@ -2,34 +2,28 @@
 <html>
   <head>
     <title>HelpListFE</title>
-      <h1>HelpList</h1>
-          <h2>Helping Humans Help Humans</h2>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+      <div style="text-align: center;">
+        <h1>HelpList</h1>
+            <h2>Helping Humans Help Humans</h2>
+            <meta name="viewport" content="width=device-width,initial-scale=1">
+            <%= csrf_meta_tags %>
+            <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+            <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+            <%= javascript_importmap_tags %>
   </head>
 
   <body>
 		<% flash.each do |type, msg| %>
 			<h3><b><%= msg %></b></h3>
 		<% end %>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <%= link_to "Home", root_path, class: "nav-link" %>
-			<% if @user %>
-				<%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
-				<%= link_to "Wishlist", wishlist_items_path, class: "nav-link" %>
-			<% end %>
-    </section>
-    </nav>
-
+    <nav>
+    <%= render partial: 'shared/nav_bar' %>
+    
     <section class="log-out">
       <% if @user %>
         <p><%= @user.email %></p>
-        <%= button_to "Log Out", logout_path, method: :delete, data: { "turbo-method": :delete } %>
+        <%= button_to "Log Out", logout_path, method: :delete, data: { "turbo-method": :delete }, :class => "btn btn-warning"%>
       <% end %>
     </section>
     </nav>

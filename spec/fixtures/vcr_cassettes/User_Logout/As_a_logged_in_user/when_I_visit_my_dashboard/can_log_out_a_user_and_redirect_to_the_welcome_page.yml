@@ -41,18 +41,18 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 435d8eed-1941-40d8-ba89-45c8e3ee2502
+      - f6086ebe-e492-4bdb-bb4e-b85c895fdbb0
       X-Runtime:
-      - '0.439802'
+      - '0.292409'
       Server-Timing:
-      - sql.active_record;dur=23.37, start_processing.action_controller;dur=0.13,
-        instantiation.active_record;dur=8.39, process_action.action_controller;dur=308.76
+      - start_processing.action_controller;dur=0.12, sql.active_record;dur=6.87, instantiation.active_record;dur=0.10,
+        process_action.action_controller;dur=280.55
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: '{"data":{"id":"3","type":"user","attributes":{"email":"plant_zaddy45@gmail.com","user_type":"donor"}}}'
-  recorded_at: Fri, 14 Apr 2023 02:10:13 GMT
+  recorded_at: Sun, 16 Apr 2023 23:44:23 GMT
 - request:
     method: get
     uri: http://localhost:5000/api/v1/users/3
@@ -92,16 +92,68 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 07f1ecf9-9d0a-4111-88d0-761abcf7b842
+      - ba13033b-421d-4af4-ac8e-3112e88b83ad
       X-Runtime:
-      - '0.026050'
+      - '0.007076'
       Server-Timing:
-      - start_processing.action_controller;dur=0.13, sql.active_record;dur=2.99, instantiation.active_record;dur=0.07,
-        process_action.action_controller;dur=17.93
+      - start_processing.action_controller;dur=0.05, sql.active_record;dur=0.70, instantiation.active_record;dur=0.02,
+        process_action.action_controller;dur=1.53
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: '{"data":{"id":"3","type":"user","attributes":{"email":"plant_zaddy45@gmail.com","user_type":"donor"}}}'
-  recorded_at: Fri, 14 Apr 2023 02:10:26 GMT
+  recorded_at: Sun, 16 Apr 2023 23:44:23 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1//wishlist_items?user_id=3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"98dbc90b93fdd8192ce48e6cf2677ad6"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b1a3dd32-fca1-49c6-8a88-004f07b62a33
+      X-Runtime:
+      - '0.008395'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.05, sql.active_record;dur=0.79, instantiation.active_record;dur=0.09,
+        process_action.action_controller;dur=2.56
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJkYXRhIjpbeyJpZCI6IjIiLCJ0eXBlIjoid2lzaGxpc3RfaXRlbSIsImF0dHJpYnV0ZXMiOnsiYXBpX2l0ZW1faWQiOiIxMyIsInB1cmNoYXNlZCI6ZmFsc2UsInJlY2VpdmVkIjpmYWxzZSwic2l6ZSI6Ikjws7qs6ZaBICIsIm5hbWUiOiJSYW1vbiBXZWlzc25hdCIsInByaWNlIjozNi4zNCwiaW1hZ2VfcGF0aCI6Imh0dHA6Ly9leGFtcGxlLmNvbS9qZXJlIn19LHsiaWQiOiIzIiwidHlwZSI6Indpc2hsaXN0X2l0ZW0iLCJhdHRyaWJ1dGVzIjp7ImFwaV9pdGVtX2lkIjoiMSIsInB1cmNoYXNlZCI6ZmFsc2UsInJlY2VpdmVkIjpmYWxzZSwic2l6ZSI6IiA34Ye7NCIsIm5hbWUiOiJSZXAuIEFudGhvbnkgRmlzaGVyIiwicHJpY2UiOjc2LjU3LCJpbWFnZV9wYXRoIjoiaHR0cDovL2V4YW1wbGUuY29tL2N5cnN0YWwifX0seyJpZCI6IjQiLCJ0eXBlIjoid2lzaGxpc3RfaXRlbSIsImF0dHJpYnV0ZXMiOnsiYXBpX2l0ZW1faWQiOiI1NyIsInB1cmNoYXNlZCI6ZmFsc2UsInJlY2VpdmVkIjpmYWxzZSwic2l6ZSI6IiDzh5m846uyXHUwMDI2IiwibmFtZSI6IkFyZGF0aCBPJ0Nvbm5lbGwiLCJwcmljZSI6ODkuMzIsImltYWdlX3BhdGgiOiJodHRwOi8vZXhhbXBsZS5jb20vYW5kcmUifX0seyJpZCI6IjUiLCJ0eXBlIjoid2lzaGxpc3RfaXRlbSIsImF0dHJpYnV0ZXMiOnsiYXBpX2l0ZW1faWQiOiI0IiwicHVyY2hhc2VkIjpmYWxzZSwicmVjZWl2ZWQiOmZhbHNlLCJzaXplIjoi7ZeQLuObmTciLCJuYW1lIjoiTXNnci4gVmVvbGEgTydIYXJhIiwicHJpY2UiOjQwLjA5LCJpbWFnZV9wYXRoIjoiaHR0cDovL2V4YW1wbGUuY29tL2pvc2lhaC5yb3dlIn19LHsiaWQiOiI2IiwidHlwZSI6Indpc2hsaXN0X2l0ZW0iLCJhdHRyaWJ1dGVzIjp7ImFwaV9pdGVtX2lkIjoiNTMiLCJwdXJjaGFzZWQiOmZhbHNlLCJyZWNlaXZlZCI6ZmFsc2UsInNpemUiOiIg9IWKjC5cdTAwMDIiLCJuYW1lIjoiQnJ5YW50IEh1ZHNvbiBJIiwicHJpY2UiOjM3LjUzLCJpbWFnZV9wYXRoIjoiaHR0cDovL2V4YW1wbGUuY29tL21hcmlseW5uIn19LHsiaWQiOiI3IiwidHlwZSI6Indpc2hsaXN0X2l0ZW0iLCJhdHRyaWJ1dGVzIjp7ImFwaV9pdGVtX2lkIjoiMTIiLCJwdXJjaGFzZWQiOmZhbHNlLCJyZWNlaXZlZCI6ZmFsc2UsInNpemUiOiLyrI+P8r6SuOqWjCAiLCJuYW1lIjoiTGlud29vZCBTbWl0aGFtIiwicHJpY2UiOjM3LjM5LCJpbWFnZV9wYXRoIjoiaHR0cDovL2V4YW1wbGUuY29tL3Jvc2FsZWUuZ3JhaGFtIn19LHsiaWQiOiI4IiwidHlwZSI6Indpc2hsaXN0X2l0ZW0iLCJhdHRyaWJ1dGVzIjp7ImFwaV9pdGVtX2lkIjoiMTYiLCJwdXJjaGFzZWQiOmZhbHNlLCJyZWNlaXZlZCI6ZmFsc2UsInNpemUiOiIw84mtheu7mTgiLCJuYW1lIjoiSm9leSBIYXJiZXIgSnIuIiwicHJpY2UiOjQ3LjkxLCJpbWFnZV9wYXRoIjoiaHR0cDovL2V4YW1wbGUuY29tL2R3YXluZV93ZWJlciJ9fSx7ImlkIjoiOSIsInR5cGUiOiJ3aXNobGlzdF9pdGVtIiwiYXR0cmlidXRlcyI6eyJhcGlfaXRlbV9pZCI6IjkwIiwicHVyY2hhc2VkIjpmYWxzZSwicmVjZWl2ZWQiOmZhbHNlLCJzaXplIjoiZVLhg5Q9IiwibmFtZSI6Ik1vemVsbGEgTml0enNjaGUiLCJwcmljZSI6MzYuMTMsImltYWdlX3BhdGgiOiJodHRwOi8vZXhhbXBsZS5jb20vYW5nZWxlbmFfc3BlbmNlciJ9fSx7ImlkIjoiMTAiLCJ0eXBlIjoid2lzaGxpc3RfaXRlbSIsImF0dHJpYnV0ZXMiOnsiYXBpX2l0ZW1faWQiOiIyMSIsInB1cmNoYXNlZCI6ZmFsc2UsInJlY2VpdmVkIjpmYWxzZSwic2l6ZSI6Ilx1MDAxMiBcYiAiLCJuYW1lIjoiRnJhbmsgR295ZXR0ZSIsInByaWNlIjo2My43NiwiaW1hZ2VfcGF0aCI6Imh0dHA6Ly9leGFtcGxlLmNvbS9hbmRlcnNvbiJ9fSx7ImlkIjoiMTEiLCJ0eXBlIjoid2lzaGxpc3RfaXRlbSIsImF0dHJpYnV0ZXMiOnsiYXBpX2l0ZW1faWQiOiI0MSIsInB1cmNoYXNlZCI6ZmFsc2UsInJlY2VpdmVkIjpmYWxzZSwic2l6ZSI6IuCijfOil5fxv4yDICIsIm5hbWUiOiJFcmxpbmRhIEN1bW1pbmdzIiwicHJpY2UiOjk2LjU0LCJpbWFnZV9wYXRoIjoiaHR0cDovL2V4YW1wbGUuY29tL2p1bGlvIn19XX0=
+  recorded_at: Sun, 16 Apr 2023 23:44:23 GMT
 recorded_with: VCR 6.1.0

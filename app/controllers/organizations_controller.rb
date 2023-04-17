@@ -1,9 +1,16 @@
 class OrganizationsController < ApplicationController
+  before_action :set_user
+
   def index
-    @organizations = HelpListFacade.new.get_organizations
+   
   end
 
   def show
     @organization = HelpListFacade.new.get_organization(params[:id])
+  end
+
+  private
+  def set_user
+   @user = current_user
   end
 end

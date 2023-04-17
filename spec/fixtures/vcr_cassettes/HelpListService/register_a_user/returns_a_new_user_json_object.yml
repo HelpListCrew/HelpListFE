@@ -37,19 +37,20 @@ http_interactions:
       Vary:
       - Accept
       Etag:
-      - W/"96751ebe4a765bb5d9846665c1cafa7c"
+      - W/"29a7129ae95c6c5a7fe04776fbb41505"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 371b43fd-b0cb-4188-b258-726d4cc67496
+      - d9dab85e-d2ec-49e7-a639-c732227a3a11
       X-Runtime:
-      - '0.285217'
+      - '0.434846'
       Server-Timing:
-      - start_processing.action_controller;dur=0.11, sql.active_record;dur=2.92, process_action.action_controller;dur=281.05
+      - sql.active_record;dur=51.00, start_processing.action_controller;dur=0.11,
+        process_action.action_controller;dur=321.65
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"12","type":"user","attributes":{"email":"octocat33@gmail.com","user_type":"donor"}}}'
-  recorded_at: Thu, 13 Apr 2023 16:29:52 GMT
+      string: '{"data":{"id":"4","type":"user","attributes":{"email":"octocat33@gmail.com","user_type":"donor"}}}'
+  recorded_at: Sun, 16 Apr 2023 21:10:14 GMT
 recorded_with: VCR 6.1.0

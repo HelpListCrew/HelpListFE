@@ -14,7 +14,7 @@ class KrogerService
                 "CONTENT_TYPE": "application/json",
                 "Authorization": "Bearer #{get_token}"
               }
-
+							
     response = connection(headers).get(url)
 
     JSON.parse(response.body, symbolize_names: true) 

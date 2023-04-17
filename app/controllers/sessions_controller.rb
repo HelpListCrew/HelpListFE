@@ -28,8 +28,10 @@ class SessionsController < ApplicationController
 
 			redirect_to dashboard_path
 		elsif params[:provider] = "kroger"
-			# params[:code]
-			require 'pry'; binding.pry
+			session[:user_token] = 
+			Rails.cache.fetch(:user_token, expires_in: 5.seconds) do
+				KrogerService.new.user_token(params[:code])
+			end
 		end
 	end
 

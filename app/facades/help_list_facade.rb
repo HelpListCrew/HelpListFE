@@ -34,4 +34,11 @@ class HelpListFacade
 		user = @service.find_user(id)
 		User.new(user)
 	end
+
+  def find_organizations_near_me
+    orgs =  @service.find_organizations(@params)
+    orgs[:data].map do |org|
+      Organization.new(org)
+    end
+  end
 end

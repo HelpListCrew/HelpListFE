@@ -10,5 +10,14 @@
 
 <p>Don't have an account? <%= link_to "Register Here", "/register" %> </p>
 
-<%= link_to  "Do you or someone you know need help?" %>
-# add path to google maps
+<p><%= link_to  "Do you or someone you know need help?" %></p>
+
+<iframe
+  width="600"
+  height="450"
+  style="border:0"
+  loading="lazy"
+  allowfullscreen
+  referrerpolicy="no-referrer-when-downgrade"
+  src="https://www.google.com/maps/embed/v1/search?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&region=US&zoom=12&q=women+shelters,near+<%= @location %>">
+</iframe>

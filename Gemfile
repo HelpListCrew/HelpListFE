@@ -78,3 +78,7 @@ group :development do
   # gem "spring"
 end
 
+
+gem "geocoder", "~> 1.8"
+gem "geokit", "~> 1.14"
+gem "ngrok", "~> 1.6"

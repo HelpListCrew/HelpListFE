@@ -24,9 +24,9 @@ describe "Donor Dashboard", :vcr do
         fill_in :address, with: 80226
         select 50, from: :miles
         click_on "Search"
-       
-        expect(page).to have_content("Welch LLC")
-        expect(page).to have_content("Robel, Dibbert and Windler")
+      
+        expect(page).to have_content("Schmitt-Walter")
+        expect(page).to have_content("Robel, Reilly and Baumbach")
       end
 
       it "does not display any organizations with invalid params" do
@@ -34,8 +34,8 @@ describe "Donor Dashboard", :vcr do
         select 75, from: :miles
         click_on "Search"
     
-        expect(page).to_not have_content("Welch LLC")
-        expect(page).to_not have_content("Robel, Dibbert and Windler")
+        expect(page).to_not have_content("Schmitt-Walter")
+        expect(page).to_not have_content("Robel, Reilly and Baumbach")
       end
 
       it "shows a section the donor's donated items" do

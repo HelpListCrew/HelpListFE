@@ -40,8 +40,13 @@ class HelpListService
 
   def find_organizations(params)
     response = connection.get("/api/v1/organizations/find_all") do |con|
-      # require 'pry'; binding.pry
       con.params = params
+    end
+  end
+
+  def get_wishlist_items(id)
+    response = connection.get("/api/v1//wishlist_items") do |con|
+			con.params[:user_id] = id
     end
     JSON.parse(response.body, symbolize_names: true)
   end

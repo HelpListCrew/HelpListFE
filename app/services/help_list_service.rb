@@ -51,4 +51,8 @@ class HelpListService
     end
     JSON.parse(response.body, symbolize_names: true)
   end
+
+  def delete_wishlist_item(id)
+    response = connection.delete("/api/v1/wishlist_items/#{id}") 
+  end
 end

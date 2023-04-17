@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   root "welcome#show"
-  resources :wishlist_items, only: [:index, :create]
+  resources :wishlist_items, only: [:index, :create, :destroy]
   resources :organizations, only: [:index, :show]
 
   get "/register", controller: "users", to: "users#new"

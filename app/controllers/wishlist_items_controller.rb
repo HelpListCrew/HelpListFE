@@ -13,4 +13,9 @@ class WishlistItemsController < ApplicationController
 
     redirect_to dashboard_path
   end
+
+  def destroy
+    HelpListService.new.delete_wishlist_item(params[:id])
+    redirect_to dashboard_path
+  end
 end

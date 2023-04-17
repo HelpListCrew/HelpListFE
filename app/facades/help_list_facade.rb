@@ -48,5 +48,5 @@ class HelpListFacade
     wishlist_items[:data].map do |item|
       HelpListItem.new(item)
     end
-  end  
+  end
 end

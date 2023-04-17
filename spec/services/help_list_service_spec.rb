@@ -69,5 +69,14 @@ RSpec.describe HelpListService do
         expect(org[:attributes][:website]).to be_a(String)
       end
     end
+
+    describe "#delete_wishlist_item", :vcr do
+      let(:delete_item) { HelpListService.new.delete_wishlist_item(3) }
+      
+      it "returns a new json object" do
+        expect(delete_item).to be_a(Hash)
+        expect(delete_item[:data]).to be_a(Hash)
+      end
+    end
   end
 end

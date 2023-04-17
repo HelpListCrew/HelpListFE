@@ -5,7 +5,6 @@ class KrogerFacade
 
   def find_items
     items = kroger_service.get_products(@params[:query])
-
     items[:data].map do |data|
       Item.new(data)
     end

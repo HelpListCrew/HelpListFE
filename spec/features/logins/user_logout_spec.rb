@@ -11,7 +11,7 @@ describe "User Logout", :vcr do
         click_button "Login"
 
         expect(current_path).to eq(dashboard_path)
-        click_link "Log Out"
+        click_button "Log Out"
 
         expect(current_path).to eq(root_path)
         expect(page).to have_content("You have been logged out")

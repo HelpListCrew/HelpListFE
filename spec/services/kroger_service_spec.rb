@@ -23,12 +23,4 @@ RSpec.describe "Kroger Service" do
       end
     end
 	end
-
-	describe "#get_product", :vcr do
-    let(:kroger_service) { KrogerService.new }
-		it "should retrieve JSON data for a product based on parameters" do
-			json_items = kroger_service.get_authorization_code
-			
-		end
-	end
 end

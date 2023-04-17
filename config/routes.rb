@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :wishlist_items, only: [:index, :create]
   resources :organizations, only: [:index, :show]
 
+  get "/organizations/:organization_id/users/:id", to: "organizations/users#show", as: "organization_user"
+
   get "/register", controller: "users", to: "users#new"
   post "/register", to: "users#create"
  

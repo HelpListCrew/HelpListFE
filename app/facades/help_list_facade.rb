@@ -43,7 +43,7 @@ class HelpListFacade
     end
   end
 
-  def get_wishlist_items(id)
+  def get_wishlist_items(id = @params[:id])
     wishlist_items = @service.get_wishlist_items(id)
     wishlist_items[:data].map do |item|
       HelpListItem.new(item)

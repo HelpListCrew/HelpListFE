@@ -1,0 +1,9 @@
+<h1>Recipient Wishlist Items</h1>
+
+<div id="wishlist_items">
+  <% @help_list_facade.get_wishlist_items.each do |wishlist_item| %>
+    <%= image_tag wishlist_item.image_path %>
+    <p><%= wishlist_item.name %></p>
+    <p><%= wishlist_item.price %></p>
+  <% end %>
+</div>

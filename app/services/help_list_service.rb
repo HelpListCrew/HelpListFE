@@ -36,7 +36,9 @@ class HelpListService
 	end
 
   def get_wishlist_items(id)
-    response = connection.get("/api/v1/users/#{id}/wishlist_items")
+    response = connection.get("/api/v1//wishlist_items") do |con|
+			con.params[:user_id] = id
+    end
     JSON.parse(response.body, symbolize_names: true)
   end
 end

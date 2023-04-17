@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:5000/api/v1/users/5/wishlist_items
+    uri: http://localhost:5000/api/v1//wishlist_items?user_id=5
     body:
       encoding: US-ASCII
       string: ''
@@ -39,15 +39,15 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 3131c314-f9c5-42de-9c2f-b0142a63c633
+      - d46fd0f1-e7df-4354-b1c8-843815ac490c
       X-Runtime:
-      - '0.011323'
+      - '0.011254'
       Server-Timing:
-      - start_processing.action_controller;dur=0.18, sql.active_record;dur=1.03, process_action.action_controller;dur=2.60
+      - start_processing.action_controller;dur=0.07, sql.active_record;dur=0.95, process_action.action_controller;dur=1.75
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: '{"data":[]}'
-  recorded_at: Sun, 16 Apr 2023 22:03:52 GMT
+  recorded_at: Sun, 16 Apr 2023 23:45:46 GMT
 recorded_with: VCR 6.1.0

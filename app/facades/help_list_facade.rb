@@ -38,7 +38,7 @@ class HelpListFacade
   def get_wishlist_items(id)
     wishlist_items = @service.get_wishlist_items(id)
     wishlist_items[:data].map do |item|
-      Item.new(item)
+      HelpListItem.new(item)
     end
   end  
 end

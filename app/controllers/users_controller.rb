@@ -5,6 +5,9 @@ class UsersController < ApplicationController
 
   def show
 		@user = current_user
+    if params[:address]
+      @organizations = HelpListFacade.new(params).find_organizations_near_me
+    end
   end
 
   def create

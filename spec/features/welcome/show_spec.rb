@@ -25,8 +25,11 @@ RSpec.describe "Welcome Page" do
         expect(page).to have_button("Login with Google")
       end
 
-      it "displays a link to search for organizations near me" do
-        expect(page).to have_link("Do you or someone you know need help?")
+      it "displays a header abouve the map of organizations" do
+        within("#map") {
+        expect(page).to have_content("Organizations Near Me:")
+        expect(page).to have_css("iframe")
+        }
       end
     end
   end

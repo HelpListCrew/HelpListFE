@@ -39,7 +39,8 @@ class HelpListService
 	end
 
   def find_organizations(params)
-    response = connection.get("api/v1/organizations/find_all") do |con|
+    response = connection.get("/api/v1/organizations/find_all") do |con|
+      # require 'pry'; binding.pry
       con.params = params
     end
     JSON.parse(response.body, symbolize_names: true)

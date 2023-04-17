@@ -19,12 +19,18 @@ class SessionsController < ApplicationController
   end  
 
 	def omniauth
-		user = HelpListFacade.new({	
-																uid: request.env['omniauth.auth'][:uid], 
-																email: request.env['omniauth.auth'][:info][:email]
-															}).find_or_create
-		session[:user_id] = user.id
-		redirect_to dashboard_path
+		if params[:provider] == "google_oauth2"
+			user = HelpListFacade.new({	
+																	uid: request.env['omniauth.auth'][:uid], 
+																	email: request.env['omniauth.auth'][:info][:email]
+																}).find_or_create
+			session[:user_id] = user.id
+
+			redirect_to dashboard_path
+		elsif params[:provider] = "kroger"
+			# params[:code]
+			require 'pry'; binding.pry
+		end
 	end
 
 	private

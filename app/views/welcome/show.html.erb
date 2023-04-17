@@ -7,6 +7,8 @@
 <% end %>
 
 <%= button_to "Login with Google", "/auth/google_oauth2", method: :get, data: { turbo: false }%>
+<%= button_to "Login with Kroger", "https://api.kroger.com/v1/connect/oauth2/authorize", method: :get, data: { turbo: false }, params: { scope: "product.compact&scope=profile.compact"], ["scope", "cart.basic:write"]]),
+client_id: ENV['KROGER_CLIENT_ID'], response_type: "code", redirect_uri: ENV['KROGER_REDIRECT_URL'] } %>
 
 <p>Don't have an account? <%= link_to "Register Here", "/register" %> </p>
 

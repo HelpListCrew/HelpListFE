@@ -32,6 +32,7 @@ class SessionsController < ApplicationController
 			Rails.cache.fetch(:user_token, expires_in: 5.seconds) do
 				KrogerService.new.user_token(params[:code])
 			end
+      redirect_to :back
 		end
 	end
 

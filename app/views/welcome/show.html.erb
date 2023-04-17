@@ -1,17 +1,19 @@
 
 <h2> HelpList's mission is to crowdsource resources to lessen the burden for survivors, and make providing resources easy and accessible to the everyday person. </h2>
+<% if !@user %>
+  <%= form_with url: "/login", method: :post do |form| %>
+    <%= form.label :email, "Email:"%>
+    <%= form.text_field :email %>
+    <%= form.label :password, "Password:" %>
+    <%= form.password_field :password %>
+    <%= form.submit "Login" %> 
+  <% end %>
 
-<%= form_with url: "/login", method: :post do |form| %>
-  <%= form.label :email, "Email:"%>
-  <%= form.text_field :email %>
-  <%= form.label :password, "Password:" %>
-  <%= form.password_field :password %>
-  <%= form.submit "Login" %> 
+  <%= button_to "Login with Google", "/auth/google_oauth2", method: :get, data: { turbo: false }%>
+
+  <p>Don't have an account? <%= link_to "Register Here", "/register" %> </p>
 <% end %>
 
-<%= button_to "Login with Google", "/auth/google_oauth2", method: :get, data: { turbo: false }%>
-
-<p>Don't have an account? <%= link_to "Register Here", "/register" %> </p>
 <div id= "map">
   <h3>Organizations Near Me:</h3>
 

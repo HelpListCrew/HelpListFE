@@ -29,9 +29,7 @@
     <section class="log-out">
       <% if @user %>
         <p><%= @user.email %></p>
-        <%= link_to "Log Out", logout_path, method: :delete, data: { "turbo-method": :delete } %>
-      <% else %>
-        <%= link_to "Login", login_path %>
+        <%= button_to "Log Out", logout_path, method: :delete, data: { "turbo-method": :delete } %>
       <% end %>
     </section>
     </nav>

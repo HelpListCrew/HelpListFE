@@ -34,4 +34,21 @@ RSpec.describe "Welcome Page" do
       end
     end
   end
+
+  describe "As a User" do
+    let(:user) {User.new({:data=>{:id=>"5", :type=>"user", :attributes=>{:email=>"octodog86@gmail.com", :user_type=>"donor"}}})}
+
+      before :each do 
+        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+        visit root_path
+      end
+    describe "when I visit the welcome page" do
+      it "it displays a button to log out if the user is already logged in" do 
+        expect(page).to have_button("Log Out")
+
+        expect(page).to_not have_button("Login")
+        expect(page).to_not have_button("Login with Google")
+      end
+    end
+  end
 end

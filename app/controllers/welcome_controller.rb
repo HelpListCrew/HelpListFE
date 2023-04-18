@@ -1,4 +1,6 @@
 class WelcomeController < ApplicationController
-  def index
+  def show
+		@user = current_user
+		@location = request.location.data["loc"]
   end
 end

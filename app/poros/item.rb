@@ -13,7 +13,7 @@ class Item
     @brand = data[:brand]
     @description = data[:description]
     @image_url = find_front_image(data[:images])
-    @price = data[:items].first[:price][:regular]
+    @price = get_price(data)
     @size = data[:items].first[:size]
   end
 
@@ -24,5 +24,13 @@ class Item
     end
     
     front_perspective[0][:sizes].select { |size| size[:size] == "medium" }.first[:url]
+  end
+
+  def get_price(data)
+    begin
+      data[:items].first[:price][:regular]
+    rescue => e
+      "Unavailable"
+    end
   end
 end

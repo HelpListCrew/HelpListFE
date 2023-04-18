@@ -1,6 +1,7 @@
 class KrogerService
   def get_products(product_name)
     get_url("/v1/products?filter.locationId=62000426&filter.term=#{CGI.escape(product_name)}")
+   
   end
 
   private
@@ -13,7 +14,7 @@ class KrogerService
                 "CONTENT_TYPE": "application/json",
                 "Authorization": "Bearer #{get_token}"
               }
-
+							
     response = connection(headers).get(url)
 
     JSON.parse(response.body, symbolize_names: true) 

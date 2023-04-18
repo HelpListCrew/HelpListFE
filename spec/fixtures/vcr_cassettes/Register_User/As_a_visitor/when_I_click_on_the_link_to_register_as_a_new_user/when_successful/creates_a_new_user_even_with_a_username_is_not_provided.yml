@@ -1,0 +1,107 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:5000/api/v1/users
+    body:
+      encoding: UTF-8
+      string: user%5Bemail%5D=plant_zaddy45%40gmail.com&user%5Bpassword%5D=leafy_greens34&user%5Buser_type%5D=donor
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"1c8189a64aade72d0e9fe18837f3eb6d"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 36e3ab65-fa15-4f8f-91c8-4c44f24d24df
+      X-Runtime:
+      - '0.426259'
+      Server-Timing:
+      - sql.active_record;dur=64.68, start_processing.action_controller;dur=0.11,
+        process_action.action_controller;dur=318.61
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"6","type":"user","attributes":{"email":"plant_zaddy45@gmail.com","user_type":"donor","username":null}}}'
+  recorded_at: Tue, 18 Apr 2023 01:47:08 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/users/6
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"1c8189a64aade72d0e9fe18837f3eb6d"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - d7d7870a-8245-4626-a3dc-66919fa2d122
+      X-Runtime:
+      - '0.008357'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.09, sql.active_record;dur=1.01, instantiation.active_record;dur=0.05,
+        process_action.action_controller;dur=2.44
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"6","type":"user","attributes":{"email":"plant_zaddy45@gmail.com","user_type":"donor","username":null}}}'
+  recorded_at: Tue, 18 Apr 2023 01:47:08 GMT
+recorded_with: VCR 6.1.0

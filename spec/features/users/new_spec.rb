@@ -9,6 +9,7 @@ RSpec.describe "Register User" do
     describe "when I click on the link to register as a new user" do
       context "when successful" do
         it "takes me to a form to register as a new user" do 
+          expect(page).to have_field(:username)
           expect(page).to have_field(:email)
           expect(page).to have_field(:password)
           expect(page).to have_field(:password_confirmation)
@@ -29,6 +30,18 @@ RSpec.describe "Register User" do
         end
 
         it "creates a new user when valid credentials are provided" do
+          fill_in :username, with: "bloomin_babe"
+          fill_in :email, with: "plant_zaddy45@gmail.com"
+          fill_in :password, with: "leafy_greens34"
+          fill_in :password_confirmation, with: "leafy_greens34"
+
+          choose(option: "donor")
+          click_button "Register"
+
+          expect(current_path).to eq(dashboard_path)
+        end
+
+        it "creates a new user even with a username is not provided" do
           fill_in :email, with: "plant_zaddy45@gmail.com"
           fill_in :password, with: "leafy_greens34"
           fill_in :password_confirmation, with: "leafy_greens34"

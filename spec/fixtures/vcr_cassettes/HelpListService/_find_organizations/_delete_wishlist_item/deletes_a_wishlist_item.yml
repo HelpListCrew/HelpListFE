@@ -1,8 +1,8 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: http://localhost:5000/api/v1/organizations/find_all?address=80226&miles=50
+    method: delete
+    uri: http://localhost:5000/api/v1/wishlist_items/1
     body:
       encoding: US-ASCII
       string: ''
@@ -15,8 +15,8 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 200
-      message: OK
+      code: 204
+      message: No Content
     headers:
       X-Frame-Options:
       - SAMEORIGIN
@@ -30,25 +30,19 @@ http_interactions:
       - none
       Referrer-Policy:
       - strict-origin-when-cross-origin
-      Content-Type:
-      - application/json; charset=utf-8
       Vary:
       - Accept
-      Etag:
-      - W/"7fb9d166d1a15bce0b9f085f3818946f"
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - no-cache
       X-Request-Id:
-      - 42942ff5-eac5-42df-959a-f83a889ca9f4
+      - 1272168c-0f1e-4962-a212-4e5dc5ea0f57
       X-Runtime:
-      - '3.684654'
+      - '0.061474'
       Server-Timing:
-      - start_processing.action_controller;dur=0.24, sql.active_record;dur=16.97,
-        process_action.action_controller;dur=3633.06
-      Transfer-Encoding:
-      - chunked
+      - start_processing.action_controller;dur=0.31, sql.active_record;dur=17.14,
+        instantiation.active_record;dur=11.27, process_action.action_controller;dur=45.02
     body:
       encoding: UTF-8
-      string: '{"data":{}}'
-  recorded_at: Tue, 18 Apr 2023 22:14:28 GMT
+      string: ''
+  recorded_at: Tue, 18 Apr 2023 22:50:59 GMT
 recorded_with: VCR 6.1.0

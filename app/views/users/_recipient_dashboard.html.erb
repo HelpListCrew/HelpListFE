@@ -16,8 +16,6 @@
     <% @wishlist_items.each do |item| %>
       <li>
         <p><%= item.name %></p><br>
-        <%# <% binding.pry %> %>
-
         <%= image_tag item.image_path %><br>
         <%= button_to "Delete", wishlist_item_path(item.id), method: :delete %>
       </li>

@@ -71,11 +71,9 @@ RSpec.describe HelpListService do
     end
 
     describe "#delete_wishlist_item", :vcr do
-      let(:delete_item) { HelpListService.new.delete_wishlist_item(3) }
-      
-      it "returns a new json object" do
-        expect(delete_item).to be_a(Hash)
-        expect(delete_item[:data]).to be_a(Hash)
+      it "deletes a wishlist item" do
+        response = HelpListService.new.delete_wishlist_item(1)
+      expect(response.status).to eq(204)
       end
     end
   end

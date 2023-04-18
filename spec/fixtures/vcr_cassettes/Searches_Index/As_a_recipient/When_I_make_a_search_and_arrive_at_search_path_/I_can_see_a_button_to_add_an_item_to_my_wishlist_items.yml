@@ -1,8 +1,8 @@
 ---
 http_interactions:
 - request:
-    method: delete
-    uri: http://localhost:5000/api/v1/wishlist_items/3
+    method: get
+    uri: http://localhost:5000/api/v1//wishlist_items?user_id=1
     body:
       encoding: US-ASCII
       string: ''
@@ -15,8 +15,8 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 404
-      message: Not Found
+      code: 201
+      message: Created
     headers:
       X-Frame-Options:
       - SAMEORIGIN
@@ -34,20 +34,21 @@ http_interactions:
       - application/json; charset=utf-8
       Vary:
       - Accept
+      Etag:
+      - W/"3bbc1cf32b5d982b3c4588707691df98"
       Cache-Control:
-      - no-cache
+      - max-age=0, private, must-revalidate
       X-Request-Id:
-      - d6be5375-f3a6-4362-9175-45cbaf61263f
+      - 057c3db0-94fd-41c0-a898-9cdd12235449
       X-Runtime:
-      - '0.051775'
+      - '0.090025'
       Server-Timing:
-      - start_processing.action_controller;dur=0.23, sql.active_record;dur=5.40, instantiation.active_record;dur=0.20,
-        process_action.action_controller;dur=37.93
+      - start_processing.action_controller;dur=0.51, sql.active_record;dur=16.31,
+        instantiation.active_record;dur=21.52, process_action.action_controller;dur=72.18
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"message":"your query could not be completed","errors":[{"status":"404","title":"Couldn''t
-        find WishlistItem with ''id''=3"}]}'
-  recorded_at: Mon, 17 Apr 2023 19:06:32 GMT
+      string: '{"data":[{"id":"1","type":"wishlist_item","attributes":{"api_item_id":"1","purchased":false,"received":false,"size":null,"name":null,"price":null,"image_path":null}}]}'
+  recorded_at: Tue, 18 Apr 2023 22:11:14 GMT
 recorded_with: VCR 6.1.0

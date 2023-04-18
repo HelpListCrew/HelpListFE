@@ -16,9 +16,10 @@
     <% @wishlist_items.each do |item| %>
       <li>
         <p><%= item.name %></p><br>
+        <%# <% binding.pry %> %>
+
         <%= image_tag item.image_path %><br>
-        <%= link_to "Delete", wishlist_item_path(item.id), method: :delete, data: { turbo_method: :delete } %>
-        <%# <%= link_to "Delete", wishlist_item_path(item.id), method: :delete, data: { confirm: "Are you sure you want to delete this item?" }, class: "btn btn-danger", :turbo => false %> 
+        <%= button_to "Delete", wishlist_item_path(item.id), method: :delete %>
       </li>
     <% end %>
   </ul>

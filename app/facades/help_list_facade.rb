@@ -37,16 +37,21 @@ class HelpListFacade
 
   def find_organizations_near_me
     orgs =  @service.find_organizations(@params)
-    # require 'pry'; binding.pry
+
     orgs[:data].map do |org|
       Organization.new(org)
     end
   end
 
-  def get_wishlist_items(id)
+  def get_wishlist_items(id = @params[:id])
     wishlist_items = @service.get_wishlist_items(id)
     wishlist_items[:data].map do |item|
       HelpListItem.new(item)
     end
   end
+
+	def get_unpurchased_wishlist_items(id)
+		wishlist_items = @service.get_unpurchased_wishlist_items(id)
+		wishlist_items[:data].map { |item| HelpListItem.new(item) }
+	end
 end

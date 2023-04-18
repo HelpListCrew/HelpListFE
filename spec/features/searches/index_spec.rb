@@ -28,12 +28,12 @@ RSpec.describe "Searches Index" do
         }
       end
 
-      xit "I can see a button to add an item to my wishlist items" do
+      it "I can see a button to add an item to my wishlist items" do
         within("#item-0004171623215") { click_button "Add to Wishlist" }
 
         expect(current_path).to eq(dashboard_path)
 
-        within("#wishlist_items") { expect(page).to have_content("Frigo® Cheese Heads® Original Mozzarella String Cheese") }
+        within("#wishlist-items") { expect(page).to have_content("Frigo® Cheese Heads® Original Mozzarella String Cheese") }
       end
     end
   end

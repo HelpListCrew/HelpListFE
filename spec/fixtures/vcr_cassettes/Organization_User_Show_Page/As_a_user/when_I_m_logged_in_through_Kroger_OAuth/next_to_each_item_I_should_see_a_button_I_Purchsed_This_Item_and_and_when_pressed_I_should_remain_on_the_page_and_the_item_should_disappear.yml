@@ -1,0 +1,159 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/wishlist_items?modifier=unpurchased&user_id=8
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"3103498172d70aa0826ee79565424050"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 2cfc8a12-3e83-4225-ba9d-b5b9cd27a5c2
+      X-Runtime:
+      - '0.029826'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.13, sql.active_record;dur=1.29, instantiation.active_record;dur=0.22,
+        process_action.action_controller;dur=15.36
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"21","type":"wishlist_item","attributes":{"api_item_id":"0004400006025","purchased":false,"received":false,"size":"18.71
+        oz","name":"OREO Double Stuf Chocolate Sandwich Cookies Family Size","price":4.59,"image_path":"https://www.kroger.com/product/images/medium/front/0004400006025"}}]}'
+  recorded_at: Tue, 18 Apr 2023 22:07:33 GMT
+- request:
+    method: patch
+    uri: http://localhost:5000/api/v1/wishlist_items/21?donor_id
+    body:
+      encoding: UTF-8
+      string: wishlist_item%5Bid%5D=21&wishlist_item%5Bpurchased%5D=true
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"b4ebcd29aab863d15bea3b9709d1c344"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - dc7fe3fd-2c1c-46fc-b43e-af13c38d79d3
+      X-Runtime:
+      - '0.174914'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.10, sql.active_record;dur=140.25,
+        instantiation.active_record;dur=0.22, process_action.action_controller;dur=165.61
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"21","type":"wishlist_item","attributes":{"api_item_id":"0004400006025","purchased":true,"received":false,"size":"18.71
+        oz","name":"OREO Double Stuf Chocolate Sandwich Cookies Family Size","price":4.59,"image_path":"https://www.kroger.com/product/images/medium/front/0004400006025"}}}'
+  recorded_at: Tue, 18 Apr 2023 22:07:34 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/wishlist_items?modifier=unpurchased&user_id=8
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"8fe32e407a1038ee38753b70e5374b3a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b6f18aa2-8184-4a94-a452-57ea0c26e291
+      X-Runtime:
+      - '0.026574'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.08, sql.active_record;dur=1.38, process_action.action_controller;dur=2.40
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":[]}'
+  recorded_at: Tue, 18 Apr 2023 22:07:34 GMT
+recorded_with: VCR 6.1.0

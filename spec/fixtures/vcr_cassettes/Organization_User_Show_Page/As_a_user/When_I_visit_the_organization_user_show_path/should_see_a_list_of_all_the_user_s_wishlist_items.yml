@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/wishlist_items?modifier=unpurchased&user_id=8
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"4e2dfe18d34dd05d63682147aa35e93a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 3565cf11-777f-417a-83e4-25da1a827bd8
+      X-Runtime:
+      - '0.194708'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.10, sql.active_record;dur=27.11,
+        instantiation.active_record;dur=6.13, process_action.action_controller;dur=35.18
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"17","type":"wishlist_item","attributes":{"api_item_id":"0072216022326","purchased":false,"received":false,"size":"12
+        cans / 12 fl oz","name":"Odell Sippin Pretty Fruited Sour Ale","price":22.99,"image_path":"https://www.kroger.com/product/images/medium/front/0072216022326"}},{"id":"18","type":"wishlist_item","attributes":{"api_item_id":"0004400005869","purchased":false,"received":false,"size":"17.6
+        oz","name":"Oreo Mega Stuf Chocolate Sandwich Cookies","price":4.59,"image_path":"https://www.kroger.com/product/images/medium/front/0004400005869"}}]}'
+  recorded_at: Tue, 18 Apr 2023 21:12:02 GMT
+recorded_with: VCR 6.1.0

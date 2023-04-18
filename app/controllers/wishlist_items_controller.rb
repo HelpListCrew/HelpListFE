@@ -13,4 +13,17 @@ class WishlistItemsController < ApplicationController
 
     redirect_to dashboard_path
   end
+
+	def update
+		if params[:purchased]
+			HelpListService.new.update_wishlist_item(session[:user_id], wishlist_item_params)
+		elsif params[:recieved]
+
+		end
+	end
+
+	private
+	def wishlist_item_params
+		params.permit(:id, :purchased, :received)
+	end
 end

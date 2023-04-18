@@ -51,4 +51,12 @@ class HelpListService
     end
     JSON.parse(response.body, symbolize_names: true)
   end
+
+	def update_wishlist_item(user_id, params)
+		connection.patch("/api/v1/wishlist_items/#{params[:id]}") do |con|
+			con.headers = { "CONTENT_TYPE" => "application/json" }
+			con.body = { wishlist_item: params.to_hash }
+			con.params[:donor_id] = user_id
+		end
+	end
 end

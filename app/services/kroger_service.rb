@@ -18,8 +18,7 @@ class KrogerService
     parsed_response[:access_token]
   end
 
-	def add_to_cart(code, api_item_id)
-		access_token = user_token(token)
+	def add_to_cart(access_token, api_item_id)
 		items = {
 			"items": [
 					{
@@ -30,7 +29,7 @@ class KrogerService
 				]
 			}.to_json
 
-		post_url(code, items)
+		post_url(access_token, items)
 	end
 
   private
@@ -49,10 +48,10 @@ class KrogerService
     JSON.parse(response.body, symbolize_names: true) 
   end
 
-  def post_url(token, items)
+  def post_url(access_token, items)
     headers = {
                 "CONTENT_TYPE": "application/json",
-                "Authorization": "Bearer #{token}"
+                "Authorization": "Bearer #{access_token}"
               }
 							
     response = Faraday.put("https://api.kroger.com/v1/cart/add") do |req|

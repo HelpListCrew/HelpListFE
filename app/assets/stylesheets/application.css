@@ -18,4 +18,6 @@
  *= require bootstrap.min
  */
 
- 
+ .btn-primary:hover {
+  transition: 0.9s;
+}

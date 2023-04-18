@@ -20,9 +20,9 @@ RSpec.describe "Register User" do
         end
         
         it "takes a user to the welcome page if they already have an account" do
-          expect(page).to have_content("Have an account? Login Here")
+          expect(page).to have_content("Have an account?")
 
-          click_link "Login Here"
+          click_button "Login Here"
 
           expect(current_path).to eq(root_path)
         end

@@ -1,0 +1,137 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.kroger.com/v1/connect/oauth2/authorize?client_id=hl-2b4c3f7824a4de1216a63be9add078ff8305312598840045032&redirect_uri=http://localhost:3000/auth/kroger/callback&response_type=code&scope=product.compact,profile.compact,cart.basic:write
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - text/html; charset=utf-8
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Cache-Control:
+      - no-store
+      Content-Security-Policy:
+      - default-src 'self' localhost:*; script-src 'self' 'unsafe-inline' 'unsafe-eval'
+        assets.adobedtm.com s.pinimg.com www.googletagmanager.com bat.bing.com www.googleadservices.com
+        googleads.g.doubleclick.net ct.pinterest.com; connect-src 'self' dpm.demdex.net
+        stats.kroger.com; font-src 'self' fonts.gstatic.com; frame-src kroger.demdex.com
+        *.kroger.demdex.com bid.g.doubleclick.net; img-src 'self' *.kroger.com sstats.kroger.com
+        *.google.com dpm.demdex.net bat.bing.com ct.pinterest.com cm.everesttech.net;
+        style-src 'self' 'unsafe-inline' fonts.googleapis.com;
+      X-Content-Type-Options:
+      - nosniff
+      X-Correlation-Id:
+      - akam_1681752007_9cb34393-7efb-4f58-b6ab-bf504951cc4e
+      X-Frame-Options:
+      - DENY
+      X-Kroger-Proxy-Latency:
+      - '1'
+      X-Kroger-Upstream-Latency:
+      - '6'
+      X-Vcap-Request-Id:
+      - 7a9408d9-73e8-401e-63d5-99fdb3297a8d
+      X-Xss-Protection:
+      - '1'
+      Vary:
+      - Accept-Encoding
+      - origin
+      Date:
+      - Mon, 17 Apr 2023 17:20:07 GMT
+      Connection:
+      - close
+      Server-Timing:
+      - ak_p; desc="467153_400543981_2230523197_9168_11780_8_-";dur=1
+      - cdn-cache; desc=MISS
+      - edge; dur=54
+      - origin; dur=38
+      Akamai-Grn:
+      - 0.edd0df17.1681752007.84f3153d
+      Strict-Transport-Security:
+      - max-age=31536000
+      Set-Cookie:
+      - _abck=7E7387E5E6BE8F0C603984715E9196FE~-1~YAAQ7dDfFw5f22SHAQAAfCQ7kAneoYYyfOChO/WPeR1erRyJCa1I+8HxF2nEyGoOWQLZZyp9UxCDEsMwbvYj53hGnZyJMbjoZ/IHBOTxPXTn5bI9cQKKA3GHHv06z5qldlJ6pjVk/C7TW56BMhRu9jhEEPPlnm06lTwhafvvoO3xljPtJsRlzEGPp3gpthpTlGxAFkWAPqkqh2VxTNoA9HbpCd0vh5oVs9SrgX1b0ryRE5ZQLBLdOUpctK1M6JHFi7HWchtxbZL1SkbOdToKIHipfeCXFZmuq+5UWUvAt3cnC7EzWZgctGceRzz2iWZBe/T01Lu5rucpiQChBYIwmAaEorCP79SGZRaqEC5s~-1~-1~1681755558;
+        Domain=.kroger.com; Path=/; Expires=Tue, 16 Apr 2024 17:20:07 GMT; Max-Age=31536000;
+        Secure
+      - bm_sz=94211F1A000043BD5C3B56C3DA43413C~YAAQ7dDfFw9f22SHAQAAfCQ7kBPRc1FpFZzaZt8WxBQoBN5u3wz7w6n9NZXYOp9ZClPVGBqdnCIZQOtL5OUAHd95OwOCwKcomOaT8TvAfLJSL/3GJahlcJ/1bpdqIgRDOcRk/t0J6qv2rhUxwfZeCNW6OPfJC2AFT1Svl9yOESRP7gb4dTf1P3wf7txF3TvKnNsHi2L/EpFWoLUg13cLOdRAG40CW+zYaFfl/SX0/mJnlyu8yKKtpepJb6nkZuOttYrXbeDZKboJYYXC+4cJTJmZ9qtMDDDXKuHDKWpRPNyb+gEwp6Fuxo+86ujtD/5gzvX4susNndwBF73MBb7u4znYyPS8zFbc7zYjCOLpT8o5n9P6GGD8DelEBadU99kQFgI=~3618114~3421751;
+        Domain=.kroger.com; Path=/; Expires=Mon, 17 Apr 2023 21:20:07 GMT; Max-Age=14400
+    body:
+      encoding: UTF-8
+      string: |
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+            <title>Kroger Identity - Error</title>
+            <link rel="icon" type="image/png" href="/v1/connect/images/favicon.ico">
+            <link rel="stylesheet" href="/v1/connect/css/kds-reset.css">
+            <link rel="stylesheet" href="/v1/connect/css/kds-utils.css">
+            <link rel="stylesheet" href="/v1/connect/css/kds-styles.css">
+            <link rel="stylesheet" href="/v1/connect/css/idp.css">
+        </head>
+        <body>
+            <div class="w-full sm:w-4/5 sm:line-length mx-auto sm:my-48 p-32 border border-solid rounded-4 border-default-300">
+              <h2 class="kds-Heading kds-Heading--xl mb-16">An Error Occurred</h2>
+              <div>
+                <h6 class="kds-Heading kds-Heading--l my-8" id="error">invalid_scope</h6>
+                <p id="error_details">invalid scope product.compact,profile.compact,cart.basic:write</p>
+              </div>
+            </div>
+
+            <footer class="brand-container">
+              <img class="brand-image" src="/v1/connect/images/brands/bakers.svg" alt="Bakers logo">
+              <img class="brand-image" src="/v1/connect/images/brands/city_market.svg" alt="City Market logo">
+              <img class="brand-image" src="/v1/connect/images/brands/copps.svg" alt="Copps logo">
+              <img class="brand-image" src="/v1/connect/images/brands/dillons.svg" alt="Dillons logo">
+              <img class="brand-image" src="/v1/connect/images/brands/food_4_less.svg" alt="Food 4 Less logo">
+              <img class="brand-image" src="/v1/connect/images/brands/foods_co.svg" alt="Foods Co. logo">
+              <img class="brand-image" src="/v1/connect/images/brands/fred_meyer.svg" alt="Fred Meyer logo">
+              <img class="brand-image" src="/v1/connect/images/brands/frys.svg" alt="Fry's logo">
+              <img class="brand-image" src="/v1/connect/images/brands/gerbes.svg" alt="Gerbes logo">
+              <img class="brand-image" src="/v1/connect/images/brands/harris_teeter.svg" alt="Harris Teeter logo">
+              <img class="brand-image" src="/v1/connect/images/brands/jay_c.svg" alt="Jay C Food Stores logo">
+              <img class="brand-image" src="/v1/connect/images/brands/king_soopers.svg" alt="King Soopers logo">
+              <img class="brand-image" src="/v1/connect/images/brands/kroger.svg" alt="Kroger logo">
+              <img class="brand-image" src="/v1/connect/images/brands/marianos.svg" alt="Mariano's logo">
+              <img class="brand-image" src="/v1/connect/images/brands/metro_market.svg" alt="Metro Market logo">
+              <img class="brand-image" src="/v1/connect/images/brands/owens.svg" alt="Owen's logo">
+              <img class="brand-image" src="/v1/connect/images/brands/pay_less.svg" alt="Pay Less logo">
+              <img class="brand-image" src="/v1/connect/images/brands/pick_n_save.svg" alt="Pick 'n Save logo">
+              <img class="brand-image" src="/v1/connect/images/brands/qfc.svg" alt="QFC logo">
+              <img class="brand-image" src="/v1/connect/images/brands/ralphs.svg" alt="Ralphs logo">
+              <img class="brand-image" src="/v1/connect/images/brands/ruler.svg" alt="Ruler Foods logo">
+              <img class="brand-image" src="/v1/connect/images/brands/smiths.svg" alt="Smith's logo">
+          </footer>
+
+            <script src="/v1/connect/js/kroger-usage-metrics.js"></script>
+            <script src="/v1/connect/js/ipa-omniture.js"></script>
+            <script src=""></script>
+            <script>
+              initializeVanillaUsageMetrics();
+              processSigninErrorActivity("unknown", "invalid_scope");
+            </script>
+            <script type="text/javascript">
+              _satellite.pageBottom();
+            </script>
+        </body>
+        </html>
+  recorded_at: Mon, 17 Apr 2023 17:20:07 GMT
+recorded_with: VCR 6.1.0

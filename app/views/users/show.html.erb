@@ -1,8 +1,7 @@
 #to identify dashboard
 <h1>Dashboard</h1>
 
-<p>Welcome back, <%= @user.email %>!</p>
-
+<p>Welcome back, <%= @user.username %>!</p>
 <% if @user.user_type == "donor" %>
   <%= render partial: 'donor_dashboard' %>
 <% else %>

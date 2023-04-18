@@ -1,5 +1,9 @@
 #to identify donor dashboard for testing
-<h1><%= @user.email%>'s Donor Dashboard</h1>
+<% if !@user.username.nil? %>
+  <h1><%= @user.username%>'s Donor Dashboard</h1>
+<% else %>
+  <h1>Donor Dashboard</h1>
+<% end %>
 
 <section>
   <div class="left-section">

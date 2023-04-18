@@ -1,0 +1,20 @@
+<h1>Recipient Wishlist Items</h1>
+<% unless session_access_token %>
+  <%= button_to "Login with Kroger", "https://api.kroger.com/v1/connect/oauth2/authorize", method: :get, data: { turbo: false }, params: { scope: "product.compact profile.compact cart.basic:write", client_id: ENV['KROGER_CLIENT_ID'], response_type: "code", redirect_uri: ENV['KROGER_REDIRECT_URL'] } %>
+<% end %>
+
+<div id="wishlist_items">
+  <% @help_list_facade.get_unpurchased_wishlist_items(@recipient).each do |wishlist_item| %>
+    <div id="wishlist_item-<%= wishlist_item.api_item_id%>">
+      <%= image_tag wishlist_item.image_path %>
+      <p><%= wishlist_item.name %></p>
+      <p><%= wishlist_item.price %></p>
+      <% if session_access_token %>
+				<%= button_to "Add to Kroger Cart", kroger_add_to_cart_path, params: { api_item_id: wishlist_item.api_item_id } %>
+				<%= button_to "I Purchased This Item", wishlist_item_path(wishlist_item.id), params: { purchased: true }, method: :patch %>
+			<% else %>
+				<p>Login to Kroger Cart Above</p>
+			<% end %>
+    </div>
+  <% end %>
+</div>

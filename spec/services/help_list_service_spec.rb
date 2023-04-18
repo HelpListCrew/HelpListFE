@@ -69,5 +69,53 @@ RSpec.describe HelpListService do
         expect(org[:attributes][:website]).to be_a(String)
       end
     end
+
+    describe "#delete_wishlist_item", :vcr do
+      it "deletes a wishlist item" do
+        response = HelpListService.new.delete_wishlist_item(1)
+      expect(response.status).to eq(204)
+      end
+    end
+  end
+
+  describe "#get_unpurchased_wishlist_items", :vcr do 
+    let(:items) { HelpListService.new.get_unpurchased_wishlist_items(8) }
+
+    it "returns all unpurchased items for a user" do 
+      expect(items).to be_a(Hash)
+      expect(items[:data]).to be_an(Array)
+
+			items[:data].each do |item|
+        expect(item).to have_key(:id)
+        expect(item[:id]).to be_a(String)
+
+        expect(item).to have_key(:type)
+        expect(item[:type]).to be_a(String)
+
+        expect(item).to have_key(:attributes)
+        expect(item[:attributes]).to be_a(Hash)
+
+        expect(item[:attributes]).to have_key(:api_item_id)
+        expect(item[:attributes][:api_item_id]).to be_a(String)
+
+        expect(item[:attributes]).to have_key(:purchased)
+        expect(item[:attributes][:purchased]).to be(false)
+
+        expect(item[:attributes]).to have_key(:received)
+        expect(item[:attributes][:received]).to be(false)
+
+        expect(item[:attributes]).to have_key(:image_path)
+        expect(item[:attributes][:image_path]).to be_a(String)
+
+        expect(item[:attributes]).to have_key(:name)
+        expect(item[:attributes][:name]).to be_a(String)
+
+        expect(item[:attributes]).to have_key(:price)
+        expect(item[:attributes][:price]).to be_a(Float)
+
+        expect(item[:attributes]).to have_key(:size)
+        expect(item[:attributes][:size]).to be_a(String)
+      end
+    end
   end
 end

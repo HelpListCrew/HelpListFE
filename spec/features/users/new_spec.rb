@@ -9,6 +9,7 @@ RSpec.describe "Register User" do
     describe "when I click on the link to register as a new user" do
       context "when successful" do
         it "takes me to a form to register as a new user" do 
+          expect(page).to have_field(:username)
           expect(page).to have_field(:email)
           expect(page).to have_field(:password)
           expect(page).to have_field(:password_confirmation)
@@ -28,7 +29,19 @@ RSpec.describe "Register User" do
         end
 
         it "creates a new user when valid credentials are provided" do
+          fill_in :username, with: "bloomin_babe"
           fill_in :email, with: "plant_zaddy45@gmail.com"
+          fill_in :password, with: "leafy_greens34"
+          fill_in :password_confirmation, with: "leafy_greens34"
+
+          choose(option: "donor")
+          click_button "Register"
+
+          expect(current_path).to eq(dashboard_path)
+        end
+
+        it "creates a new user when no username is provided" do
+          fill_in :email, with: "plant_mami45@gmail.com"
           fill_in :password, with: "leafy_greens34"
           fill_in :password_confirmation, with: "leafy_greens34"
 
@@ -46,7 +59,7 @@ RSpec.describe "Register User" do
 
           click_button "Register"
 
-          recipient = HelpListFacade.new.find_user(3)
+          recipient = HelpListFacade.new.find_user(13)
 
           expect(recipient.user_type).to eq("recipient")
           expect(recipient.email).to eq("spoon_fight_at_night33@gmail.com")
@@ -60,7 +73,7 @@ RSpec.describe "Register User" do
 
           click_button "Register"
 
-          recipient = HelpListFacade.new.find_user(4)
+          recipient = HelpListFacade.new.find_user(14)
 
           expect(recipient.user_type).to eq("donor")
           expect(recipient.email).to eq("snickerz_lover85@gmail.com")

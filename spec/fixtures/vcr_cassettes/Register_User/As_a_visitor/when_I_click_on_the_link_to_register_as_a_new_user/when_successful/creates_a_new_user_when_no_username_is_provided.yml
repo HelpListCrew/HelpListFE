@@ -1,0 +1,106 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:5000/api/v1/users
+    body:
+      encoding: UTF-8
+      string: user%5Bemail%5D=plant_mami45%40gmail.com&user%5Bpassword%5D=leafy_greens34&user%5Buser_type%5D=donor
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"3ff62ace478ed671d4ea7a2f8df98c60"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ba283864-4327-440c-9b2b-dcf24bdd3caa
+      X-Runtime:
+      - '0.269226'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.07, sql.active_record;dur=3.38, process_action.action_controller;dur=264.79
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"12","type":"user","attributes":{"email":"plant_mami45@gmail.com","user_type":"donor","username":null}}}'
+  recorded_at: Tue, 18 Apr 2023 02:18:01 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/users/12
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"3ff62ace478ed671d4ea7a2f8df98c60"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - cac257e4-dbcb-4c48-a8d7-6181186c4cdb
+      X-Runtime:
+      - '0.006207'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.07, sql.active_record;dur=0.77, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=1.62
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"12","type":"user","attributes":{"email":"plant_mami45@gmail.com","user_type":"donor","username":null}}}'
+  recorded_at: Tue, 18 Apr 2023 02:18:01 GMT
+recorded_with: VCR 6.1.0

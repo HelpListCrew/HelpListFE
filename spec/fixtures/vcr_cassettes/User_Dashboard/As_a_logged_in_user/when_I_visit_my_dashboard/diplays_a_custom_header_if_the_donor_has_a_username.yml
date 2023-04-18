@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: http://localhost:5000/api/v1/users
+    uri: http://localhost:5000/api/v1/login
     body:
       encoding: UTF-8
-      string: user%5Bemail%5D=spoon_fight_at_night33%40gmail.com&user%5Bpassword%5D=nightfight&user%5Buser_type%5D=recipient
+      string: user%5Bemail%5D=crzy_cat_ldy33%40gmail.com&user%5Bpassword%5D=cat
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -17,8 +17,8 @@ http_interactions:
       - Ruby
   response:
     status:
-      code: 404
-      message: Not Found
+      code: 201
+      message: Created
     headers:
       X-Frame-Options:
       - SAMEORIGIN
@@ -36,25 +36,26 @@ http_interactions:
       - application/json; charset=utf-8
       Vary:
       - Accept
+      Etag:
+      - W/"7bf84b99a8b2e1faa5f74b5bfc7f9589"
       Cache-Control:
-      - no-cache
+      - max-age=0, private, must-revalidate
       X-Request-Id:
-      - bb85e679-59b5-430f-9142-e7adff28dc75
+      - da264571-f036-44e0-a14e-250fa798bff8
       X-Runtime:
-      - '0.532646'
+      - '0.410015'
       Server-Timing:
-      - start_processing.action_controller;dur=0.17, sql.active_record;dur=13.56,
-        process_action.action_controller;dur=523.02
+      - sql.active_record;dur=45.34, start_processing.action_controller;dur=0.14,
+        instantiation.active_record;dur=7.56, process_action.action_controller;dur=295.95
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"message":"your query could not be completed","errors":[{"status":"400","title":"Email
-        has already been taken"}]}'
-  recorded_at: Tue, 18 Apr 2023 17:21:11 GMT
+      string: '{"data":{"id":"23","type":"user","attributes":{"email":"crzy_cat_ldy33@gmail.com","user_type":"donor","username":"pixelated_tiger"}}}'
+  recorded_at: Tue, 18 Apr 2023 19:49:22 GMT
 - request:
     method: get
-    uri: http://localhost:5000/api/v1/users/13
+    uri: http://localhost:5000/api/v1/users/23
     body:
       encoding: US-ASCII
       string: ''
@@ -87,20 +88,20 @@ http_interactions:
       Vary:
       - Accept
       Etag:
-      - W/"673128ab983c841d3d320e7b7dda2b2c"
+      - W/"7bf84b99a8b2e1faa5f74b5bfc7f9589"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - cf341fc3-a73d-4a28-a830-f199faf8ceae
+      - 41f1b22b-5ca0-4adb-b167-23d75506b601
       X-Runtime:
-      - '0.029896'
+      - '0.008914'
       Server-Timing:
-      - start_processing.action_controller;dur=0.10, sql.active_record;dur=21.38,
-        instantiation.active_record;dur=0.12, process_action.action_controller;dur=23.41
+      - start_processing.action_controller;dur=0.10, sql.active_record;dur=0.84, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=2.82
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"13","type":"user","attributes":{"email":"spoon_fight_at_night33@gmail.com","user_type":"recipient","username":null}}}'
-  recorded_at: Tue, 18 Apr 2023 17:21:11 GMT
+      string: '{"data":{"id":"23","type":"user","attributes":{"email":"crzy_cat_ldy33@gmail.com","user_type":"donor","username":"pixelated_tiger"}}}'
+  recorded_at: Tue, 18 Apr 2023 19:49:22 GMT
 recorded_with: VCR 6.1.0

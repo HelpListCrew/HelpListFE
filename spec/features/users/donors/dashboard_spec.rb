@@ -3,12 +3,17 @@ require "rails_helper"
 describe "Donor Dashboard", :vcr do
   describe "As a logged in donor user" do
     describe "when I visit my dashboard" do
-      let(:user) {User.new({:data=>{:id=>"5", :type=>"user", :attributes=>{:email=>"octodog86@gmail.com", :user_type=>"donor"}}})}
 
+      let(:user) {User.new({:data=>{:id=>"5", :type=>"user", :attributes=>{:email=>"octodog86@gmail.com", :user_type=>"donor"}}})}
       before :each do 
         allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
         visit dashboard_path
       end
+
+      it "displays a generic welcome if the user has no username" do 
+        expect(page).to have_content("Donor Dashboard")
+      end
+      
       it "shows a section to explore organizations near me" do
         expect(current_path).to eq(dashboard_path)
         expect(page).to have_content("Explore Organizations Near Me")

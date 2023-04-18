@@ -17,8 +17,8 @@ http_interactions:
       - Ruby
   response:
     status:
-      code: 201
-      message: Created
+      code: 404
+      message: Not Found
     headers:
       X-Frame-Options:
       - SAMEORIGIN
@@ -36,25 +36,25 @@ http_interactions:
       - application/json; charset=utf-8
       Vary:
       - Accept
-      Etag:
-      - W/"daa1b235fc4c1a175e77241de3e7eed5"
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - no-cache
       X-Request-Id:
-      - 7441e78a-e731-4d42-bb13-96916e42d3e2
+      - 91d5366d-6fa4-4fe1-a88e-b7e00f2d3e75
       X-Runtime:
-      - '0.267711'
+      - '0.609333'
       Server-Timing:
-      - start_processing.action_controller;dur=0.07, sql.active_record;dur=2.78, process_action.action_controller;dur=260.22
+      - sql.active_record;dur=36.23, start_processing.action_controller;dur=0.12,
+        process_action.action_controller;dur=503.00
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"4","type":"user","attributes":{"email":"snickerz_lover85@gmail.com","user_type":"donor"}}}'
-  recorded_at: Sun, 16 Apr 2023 23:32:21 GMT
+      string: '{"message":"your query could not be completed","errors":[{"status":"400","title":"Email
+        has already been taken"}]}'
+  recorded_at: Tue, 18 Apr 2023 17:25:09 GMT
 - request:
     method: get
-    uri: http://localhost:5000/api/v1/users/4
+    uri: http://localhost:5000/api/v1/users/14
     body:
       encoding: US-ASCII
       string: ''
@@ -87,121 +87,20 @@ http_interactions:
       Vary:
       - Accept
       Etag:
-      - W/"daa1b235fc4c1a175e77241de3e7eed5"
+      - W/"caea59ae93e58cf64bd69584eebb6a38"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - c750c798-dde7-4bda-b2cb-5dcbca262aed
+      - ef83833b-f30c-4905-a099-d84cba18876f
       X-Runtime:
-      - '0.007134'
+      - '0.011207'
       Server-Timing:
-      - start_processing.action_controller;dur=0.07, sql.active_record;dur=0.51, instantiation.active_record;dur=0.03,
-        process_action.action_controller;dur=1.10
+      - start_processing.action_controller;dur=0.08, sql.active_record;dur=1.42, instantiation.active_record;dur=0.08,
+        process_action.action_controller;dur=5.64
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"4","type":"user","attributes":{"email":"snickerz_lover85@gmail.com","user_type":"donor"}}}'
-  recorded_at: Sun, 16 Apr 2023 23:32:21 GMT
-- request:
-    method: get
-    uri: http://localhost:5000/api/v1//wishlist_items?user_id=4
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.7.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 201
-      message: Created
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - '0'
-      X-Content-Type-Options:
-      - nosniff
-      X-Download-Options:
-      - noopen
-      X-Permitted-Cross-Domain-Policies:
-      - none
-      Referrer-Policy:
-      - strict-origin-when-cross-origin
-      Content-Type:
-      - application/json; charset=utf-8
-      Vary:
-      - Accept
-      Etag:
-      - W/"8fe32e407a1038ee38753b70e5374b3a"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 4e18b08a-c2ee-4416-a14f-c22417978802
-      X-Runtime:
-      - '0.006454'
-      Server-Timing:
-      - start_processing.action_controller;dur=0.05, sql.active_record;dur=0.47, process_action.action_controller;dur=1.04
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: UTF-8
-      string: '{"data":[]}'
-  recorded_at: Sun, 16 Apr 2023 23:32:21 GMT
-- request:
-    method: get
-    uri: http://localhost:5000/api/v1/users/4
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.7.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 201
-      message: Created
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - '0'
-      X-Content-Type-Options:
-      - nosniff
-      X-Download-Options:
-      - noopen
-      X-Permitted-Cross-Domain-Policies:
-      - none
-      Referrer-Policy:
-      - strict-origin-when-cross-origin
-      Content-Type:
-      - application/json; charset=utf-8
-      Vary:
-      - Accept
-      Etag:
-      - W/"daa1b235fc4c1a175e77241de3e7eed5"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 59001161-102f-4826-96e8-c59d8e8195f1
-      X-Runtime:
-      - '0.014136'
-      Server-Timing:
-      - start_processing.action_controller;dur=0.05, sql.active_record;dur=0.46, instantiation.active_record;dur=0.03,
-        process_action.action_controller;dur=8.79
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: UTF-8
-      string: '{"data":{"id":"4","type":"user","attributes":{"email":"snickerz_lover85@gmail.com","user_type":"donor"}}}'
-  recorded_at: Sun, 16 Apr 2023 23:32:21 GMT
+      string: '{"data":{"id":"14","type":"user","attributes":{"email":"snickerz_lover85@gmail.com","user_type":"donor","username":null}}}'
+  recorded_at: Tue, 18 Apr 2023 17:25:09 GMT
 recorded_with: VCR 6.1.0

@@ -1,22 +1,5 @@
 <h1>Register with HelpList</h1>
 
-<form>
-  <fieldset>
-    <div class="form-group">
-      <%= form_with url: "/register", method: :post do |form| %>
-        <label for="staticEmail" class="col-sm-2 col-form-label">
-        <%= form.label :email, "Email:" %>
-        <%= form.text_field :email %>
-        <%= form.label :password, "Password:" %>
-        <%= form.password_field :password %>
-        <%= form.label :password_confirmation, "Password confirmation:" %>
-        <%= form.password_field :password_confirmation %>
-        <%= form.radio_button(:user_type, "donor", checked: true) %>
-        <%= form.label(:donor, "I am registering as a Donor!") %>
-        <%= form.radio_button(:user_type, "recipient") %>
-        <%= form.label(:recipient, "I am registering as a Recipient!") %>
-        <%= form.submit "Register", :class => "btn btn-primary" %></label>
-      <% end %><br>
 <%= form_with url: "/register", method: :post do |form| %>
   <%= form.label :username, "Username(optional):" %>
   <%= form.text_field :username %>
@@ -30,9 +13,7 @@
   <%= form.label(:donor, "I am registering as a Donor!") %>
   <%= form.radio_button(:user_type, "recipient") %>
   <%= form.label(:recipient, "I am registering as a Recipient!") %>
-  <%= form.submit "Register" %>
+  <%= form.submit "Register", :class => "btn btn-primary" %>
 <% end %>
-
-</div>
 
 <p>Have an account? <%= button_to "Login Here", root_path, method: :get, :class=>"btn btn-secondary"%></p>

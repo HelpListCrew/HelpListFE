@@ -25,7 +25,7 @@ class HelpListFacade
 	def find_or_create
 		user = @service.authenticate_user(@params)
 		if user[:errors]
-			user = @service.create_user({uid: @params[:uid], email: @params[:email], password: SecureRandom.hex(15)})
+			user = @service.create_user({uid: @params[:uid], email: @params[:email], username: @params[:username], password: SecureRandom.hex(15)})
 		end
 		User.new(user)
 	end

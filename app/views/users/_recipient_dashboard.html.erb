@@ -1,5 +1,9 @@
 #to identify recipient dashboard for testing
-<h1><%= @user.email %>'s Recipient Dashboard</h1>
+<% if !@user.username.nil? %>
+  <h1><%= @user.username %>'s Recipient Dashboard</h1>
+<% else %>
+  <h1>Recipient Dashboard</h1>
+<% end %>
 
 <%= form_with url: search_path, method: :get, class: "form-inline my-2 my-lg-0" do |f| %>
   <%= f.search_field :query, class: "form-control mr-sm-2", placeholder: "Search for an item", aria_label: "Search" %>

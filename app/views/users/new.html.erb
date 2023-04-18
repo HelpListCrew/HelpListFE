@@ -1,6 +1,9 @@
 <h1>Register with HelpList</h1>
 
 <%= form_with url: "/register", method: :post, :class => "form-control" do |form| %>
+  <%= form.label :username, "Username (optional):" %>
+  <%= form.text_field :username %>
+
   <%= form.label :email, "Email:" %>
   <%= form.text_field :email %>
   

@@ -59,4 +59,12 @@ class HelpListService
 			con.params[:donor_id] = user_id
 		end
 	end
+
+	def get_unpurchased_wishlist_items(id)
+		response = connection.get("/api/v1/wishlist_items") do |con|
+			con.params[:user_id] = id
+			con.params[:modifier] = "unpurchased"
+		end
+		JSON.parse(response.body, symbolize_names: true)
+	end
 end

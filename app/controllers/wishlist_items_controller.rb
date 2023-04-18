@@ -17,8 +17,7 @@ class WishlistItemsController < ApplicationController
 	def update
 		if params[:purchased]
 			HelpListService.new.update_wishlist_item(session[:user_id], wishlist_item_params)
-		elsif params[:recieved]
-
+			redirect_to session[:return_to]
 		end
 	end
 

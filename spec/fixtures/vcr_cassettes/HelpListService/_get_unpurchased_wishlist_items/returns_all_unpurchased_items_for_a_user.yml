@@ -39,12 +39,12 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 3565cf11-777f-417a-83e4-25da1a827bd8
+      - 07a15f24-3e27-49e0-8a7f-459aac6a74e1
       X-Runtime:
-      - '0.194708'
+      - '0.039241'
       Server-Timing:
-      - start_processing.action_controller;dur=0.10, sql.active_record;dur=27.11,
-        instantiation.active_record;dur=6.13, process_action.action_controller;dur=35.18
+      - start_processing.action_controller;dur=0.15, sql.active_record;dur=2.16, instantiation.active_record;dur=0.25,
+        process_action.action_controller;dur=12.75
       Transfer-Encoding:
       - chunked
     body:
@@ -52,5 +52,5 @@ http_interactions:
       string: '{"data":[{"id":"17","type":"wishlist_item","attributes":{"api_item_id":"0072216022326","purchased":false,"received":false,"size":"12
         cans / 12 fl oz","name":"Odell Sippin Pretty Fruited Sour Ale","price":22.99,"image_path":"https://www.kroger.com/product/images/medium/front/0072216022326"}},{"id":"18","type":"wishlist_item","attributes":{"api_item_id":"0004400005869","purchased":false,"received":false,"size":"17.6
         oz","name":"Oreo Mega Stuf Chocolate Sandwich Cookies","price":4.59,"image_path":"https://www.kroger.com/product/images/medium/front/0004400005869"}}]}'
-  recorded_at: Tue, 18 Apr 2023 21:12:02 GMT
+  recorded_at: Tue, 18 Apr 2023 19:50:03 GMT
 recorded_with: VCR 6.1.0

@@ -30,4 +30,20 @@ RSpec.describe HelpListFacade do
       expect(org.zip_code).to be_a(String)
     end
   end
+
+  describe "#get_unpurchased_wishlist_items", :vcr do 
+    it "returns a list of organizations near the given params" do 
+      facade = HelpListFacade.new(address: "80226", miles: 10)
+      items = facade.get_unpurchased_wishlist_items(8)
+      item = items.first
+
+			expect(item).to be_a(HelpListItem)
+      expect(item.api_item_id).to be_a(String)
+      expect(item.image_path).to be_a(String)
+      expect(item.name).to be_a(String)
+      expect(item.id).to be_a(String)
+      expect(item.size).to be_a(String)
+      expect(item.price).to be_a(Float)
+    end
+  end
 end

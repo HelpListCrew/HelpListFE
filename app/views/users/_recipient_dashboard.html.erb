@@ -15,8 +15,9 @@
   <ul>
     <% @wishlist_items.each do |item| %>
       <li>
-        <%= item.name %>
-        #need to add more info here
+        <p><%= item.name %></p><br>
+        <%= image_tag item.image_path %><br>
+        <%= button_to "Delete", wishlist_item_path(item.id), method: :delete %>
       </li>
     <% end %>
   </ul>

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   root "welcome#show"
-  resources :wishlist_items, only: [:index, :create, :update]
+  resources :wishlist_items, only: [:index, :create, :update, :destroy]
   resources :organizations, only: [:index, :show]
 
   get "/organizations/:organization_id/users/:id", to: "organizations/users#show", as: "organization_user"

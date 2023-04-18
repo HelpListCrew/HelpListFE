@@ -69,6 +69,13 @@ RSpec.describe HelpListService do
         expect(org[:attributes][:website]).to be_a(String)
       end
     end
+
+    describe "#delete_wishlist_item", :vcr do
+      it "deletes a wishlist item" do
+        response = HelpListService.new.delete_wishlist_item(1)
+      expect(response.status).to eq(204)
+      end
+    end
   end
 
   describe "#get_unpurchased_wishlist_items", :vcr do 

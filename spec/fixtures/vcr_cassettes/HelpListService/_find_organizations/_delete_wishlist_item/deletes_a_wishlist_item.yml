@@ -1,8 +1,8 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: http://localhost:5000/api/v1//wishlist_items?user_id=5
+    method: delete
+    uri: http://localhost:5000/api/v1/wishlist_items/1
     body:
       encoding: US-ASCII
       string: ''
@@ -15,8 +15,8 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 201
-      message: Created
+      code: 204
+      message: No Content
     headers:
       X-Frame-Options:
       - SAMEORIGIN
@@ -30,24 +30,19 @@ http_interactions:
       - none
       Referrer-Policy:
       - strict-origin-when-cross-origin
-      Content-Type:
-      - application/json; charset=utf-8
       Vary:
       - Accept
-      Etag:
-      - W/"8fe32e407a1038ee38753b70e5374b3a"
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - no-cache
       X-Request-Id:
-      - e3f00122-f4df-439a-a22e-d61d6a142cba
+      - 1272168c-0f1e-4962-a212-4e5dc5ea0f57
       X-Runtime:
-      - '0.038544'
+      - '0.061474'
       Server-Timing:
-      - start_processing.action_controller;dur=0.19, sql.active_record;dur=9.60, process_action.action_controller;dur=26.35
-      Transfer-Encoding:
-      - chunked
+      - start_processing.action_controller;dur=0.31, sql.active_record;dur=17.14,
+        instantiation.active_record;dur=11.27, process_action.action_controller;dur=45.02
     body:
       encoding: UTF-8
-      string: '{"data":[]}'
-  recorded_at: Tue, 18 Apr 2023 21:47:44 GMT
+      string: ''
+  recorded_at: Tue, 18 Apr 2023 22:50:59 GMT
 recorded_with: VCR 6.1.0

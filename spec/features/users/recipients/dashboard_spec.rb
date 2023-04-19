@@ -33,7 +33,7 @@ describe "User Dashboard", :vcr do
         expect(page).to have_content("Wishlist Items")
       end
 
-      xit "shows a section the recipient's wished items" do
+      it "shows a section the recipient's wished items" do
         visit dashboard_path
         
         fill_in :query, with: "string cheese"

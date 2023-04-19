@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/wishlist_items?modifier=donated&user_id=2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"bcc9412ec818663cf1183d05a2836989"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 48b76e69-863e-4f49-8e1f-2e380f60cde3
+      X-Runtime:
+      - '0.118725'
+      Server-Timing:
+      - sql.active_record;dur=48.78, start_processing.action_controller;dur=0.09,
+        instantiation.active_record;dur=4.01, process_action.action_controller;dur=33.14
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJkYXRhIjpbeyJpZCI6IjgiLCJ0eXBlIjoid2lzaGxpc3RfaXRlbSIsImF0dHJpYnV0ZXMiOnsiYXBpX2l0ZW1faWQiOiIwMDYzNjI1MTc0MzM1IiwicHVyY2hhc2VkIjpmYWxzZSwicmVjZWl2ZWQiOmZhbHNlLCJzaXplIjoiNiBjYW5zIC8gMTIgZmwgb3oiLCJuYW1lIjoiU3RvbmUgQnJld2luZyBDby7CriBJUEEiLCJwcmljZSI6MTAuOTksImltYWdlX3BhdGgiOiJodHRwczovL3d3dy5rcm9nZXIuY29tL3Byb2R1Y3QvaW1hZ2VzL21lZGl1bS9mcm9udC8wMDYzNjI1MTc0MzM1In19LHsiaWQiOiI5IiwidHlwZSI6Indpc2hsaXN0X2l0ZW0iLCJhdHRyaWJ1dGVzIjp7ImFwaV9pdGVtX2lkIjoiMDAwNDQwMDAwMDA1NyIsInB1cmNoYXNlZCI6ZmFsc2UsInJlY2VpdmVkIjpmYWxzZSwic2l6ZSI6IjE2LjAgb3oiLCJuYW1lIjoiUHJlbWl1bSBPcmlnaW5hbCBTYWx0aW5lIENyYWNrZXJzIiwicHJpY2UiOjQuOTksImltYWdlX3BhdGgiOiJodHRwczovL3d3dy5rcm9nZXIuY29tL3Byb2R1Y3QvaW1hZ2VzL21lZGl1bS9mcm9udC8wMDA0NDAwMDAwMDU3In19LHsiaWQiOiIxMCIsInR5cGUiOiJ3aXNobGlzdF9pdGVtIiwiYXR0cmlidXRlcyI6eyJhcGlfaXRlbV9pZCI6IjAwMDQxNzE2MjMyMTUiLCJwdXJjaGFzZWQiOmZhbHNlLCJyZWNlaXZlZCI6ZmFsc2UsInNpemUiOiIxMiBjdCAvIDEgb3oiLCJuYW1lIjoiRnJpZ2/CriBDaGVlc2UgSGVhZHPCriBPcmlnaW5hbCBNb3p6YXJlbGxhIFN0cmluZyBDaGVlc2UiLCJwcmljZSI6NS45OSwiaW1hZ2VfcGF0aCI6Imh0dHBzOi8vd3d3Lmtyb2dlci5jb20vcHJvZHVjdC9pbWFnZXMvbWVkaXVtL2Zyb250LzAwMDQxNzE2MjMyMTUifX0seyJpZCI6IjExIiwidHlwZSI6Indpc2hsaXN0X2l0ZW0iLCJhdHRyaWJ1dGVzIjp7ImFwaV9pdGVtX2lkIjoiMDAwMDAwMDAwNDY2NCIsInB1cmNoYXNlZCI6ZmFsc2UsInJlY2VpdmVkIjpmYWxzZSwic2l6ZSI6IjEgbGIiLCJuYW1lIjoiT24gdGhlIFZpbmUgUmVkIFRvbWF0b2VzICg0LTUgVG9tYXRvZXMgcGVyIEJ1bmNoKSIsInByaWNlIjoyLjE5LCJpbWFnZV9wYXRoIjoiaHR0cHM6Ly93d3cua3JvZ2VyLmNvbS9wcm9kdWN0L2ltYWdlcy9tZWRpdW0vZnJvbnQvMDAwMDAwMDAwNDY2NCJ9fV19
+  recorded_at: Wed, 19 Apr 2023 19:20:38 GMT
+recorded_with: VCR 6.1.0

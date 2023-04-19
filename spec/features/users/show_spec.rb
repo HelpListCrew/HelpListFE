@@ -4,6 +4,7 @@ describe "User Dashboard", :vcr do
   describe "As a logged in user" do
     describe "when I visit my dashboard" do
       it "displays a generic header if user has no username" do
+        allow_any_instance_of(HelpListFacade).to receive(:get_donated_items).and_return([])
         visit root_path
 
         fill_in :email, with: "plant_zaddy45@gmail.com"
@@ -15,6 +16,7 @@ describe "User Dashboard", :vcr do
       end
 
       it "diplays a custom header if the donor has a username", :vcr do 
+        allow_any_instance_of(HelpListFacade).to receive(:get_donated_items).and_return([])
         visit root_path
 
         fill_in :email, with: "crzy_cat_ldy33@gmail.com"

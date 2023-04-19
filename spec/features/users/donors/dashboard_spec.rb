@@ -7,6 +7,7 @@ describe "Donor Dashboard", :vcr do
       let(:user) {User.new({:data=>{:id=>"5", :type=>"user", :attributes=>{:email=>"octodog86@gmail.com", :user_type=>"donor"}}})}
       before :each do 
         allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+        allow_any_instance_of(HelpListFacade).to receive(:get_donated_items).and_return([])
         visit dashboard_path
       end
 
@@ -42,13 +43,21 @@ describe "Donor Dashboard", :vcr do
         expect(page).to_not have_content("Schmitt-Walter")
         expect(page).to_not have_content("Robel, Reilly and Baumbach")
       end
+    end
 
+    describe "when I visit my dashboard with donated items" do
       it "shows a section the donor's donated items" do
-      #add to test to expect page to have list of donated items
+        donor = User.new({:data=>{:id=>"2", :type=>"user", :attributes=>{:email=>"donor@gmail.com", :user_type=>"donor"}}})
+        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(donor)
+        visit dashboard_path
+
         expect(current_path).to eq(dashboard_path)
-        expect(page).to have_content("Donated Items")
+
+        within("#donated-items") {
+          expect(page).to have_css("img", count: 4)
+          expect(page).to have_css("p", count: 8)
+        }
       end
     end
   end    
 end      
-

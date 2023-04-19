@@ -19,7 +19,6 @@ class HelpListService
 			con.body = { user: params.to_hash }
     end
     JSON.parse(response.body, symbolize_names: true)
-    #make test
   end
 
 	def authenticate_user(params)
@@ -28,7 +27,6 @@ class HelpListService
 			con.body = { user: params.to_hash }
     end
     JSON.parse(response.body, symbolize_names: true)
-    #make test
 	end
 
 	def find_user(id)
@@ -49,6 +47,7 @@ class HelpListService
 			con.params[:user_id] = id
     end
     JSON.parse(response.body, symbolize_names: true)
+    #make test
   end
   
 	def update_wishlist_item(user_id, params)
@@ -57,6 +56,7 @@ class HelpListService
 			con.body = { wishlist_item: params.to_hash }
 			con.params[:donor_id] = user_id
 		end
+    #make test
 	end
 
 	def get_unpurchased_wishlist_items(id)

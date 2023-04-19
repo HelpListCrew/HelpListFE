@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:5000/api/v1/login
+    body:
+      encoding: UTF-8
+      string: user%5Bemail%5D=recipient%40gmail.com&user%5Bpassword%5D=123&user%5Busername%5D=hithere
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"8b1308ff33a5d5cc4d22a6fdab9efbf4"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 29afe257-e744-488f-8ccc-10e212d53051
+      X-Runtime:
+      - '0.286806'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.17, sql.active_record;dur=2.23, instantiation.active_record;dur=0.37,
+        process_action.action_controller;dur=265.50
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"1","type":"user","attributes":{"email":"recipient@gmail.com","user_type":"recipient","username":null}}}'
+  recorded_at: Wed, 19 Apr 2023 18:32:32 GMT
+recorded_with: VCR 6.1.0

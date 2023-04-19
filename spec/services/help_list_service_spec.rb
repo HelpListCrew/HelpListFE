@@ -162,7 +162,6 @@ RSpec.describe HelpListService do
     let(:item) { HelpListService.new.create_wishlist_item({api_item_id: "0001111041700", recipient_id: 1}) }
     let(:item2) { HelpListService.new.create_wishlist_item({api_item_id: "0001111042315", recipient_id: 1, size: "10.00", name: "Fat Free Milk", price: 5.00, image_path: "www.here.now"}) }
 
-
     it "creates a new wishlist item for an organization user" do
       keys = [
               :api_item_id, 
@@ -193,6 +192,24 @@ RSpec.describe HelpListService do
       expect(item2[:data][:attributes][:name]).to be_a(String)
       expect(item2[:data][:attributes][:price]).to be_a(Float)
       expect(item2[:data][:attributes][:image_path]).to be_a(String)
+    end
+  end
+
+  describe "#authenticate_user", :vcr do
+    let(:user) {HelpListService.new.authenticate_user({email: "recipient@gmail.com", password: "123"})}
+    
+    it "authenticates login information of a user" do
+      expect(user).to be_a(Hash)
+      expect(user).to have_key(:data)
+      expect(user[:data]).to be_a(Hash)
+      expect(user[:data].keys).to eq([:id, :type, :attributes])
+      expect(user[:data][:id]).to be_a(String)
+      expect(user[:data][:type]).to be_a(String)
+      expect(user[:data][:attributes]).to be_a(Hash)
+      expect(user[:data][:attributes].keys).to eq([:email, :user_type, :username])
+      expect(user[:data][:attributes][:email]).to be_a(String)
+      expect(user[:data][:attributes][:user_type]).to be_a(String)
+      expect(user[:data][:attributes][:username]).to be(nil)
     end
   end
 end

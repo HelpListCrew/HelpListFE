@@ -1,9 +1,9 @@
-#to identify recipient dashboard for testing
-<% if !@user.username.nil? %>
-  <h1><%= @user.username %>'s Recipient Dashboard</h1>
-<% else %>
-  <h1>Recipient Dashboard</h1>
-<% end %>
+<div style="text-align: center;">
+  <% if !@user.username.nil? %>
+    <h1><%= @user.username %>'s Recipient Dashboard</h1>
+  <% else %>
+    <h1>Recipient Dashboard</h1>
+  <% end %>
 
 <div class="border">
   <%= form_with url: search_path, method: :get, class: "form-inline my-2 my-lg-0" do |f| %>
@@ -19,6 +19,7 @@
         <p><%= image_tag item.image_path %></p>
         <p><%= button_to "Delete", wishlist_item_path(item.id), method: :delete, class: "btn btn-danger" %></p>
     <% end %>
+</div>  
 </div>
 
 

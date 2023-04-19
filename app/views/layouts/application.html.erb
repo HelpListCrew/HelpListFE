@@ -19,12 +19,12 @@
   <body>
     <%= render partial: 'shared/nav_bar' , class: "navbar" %><br>
     
+  <div style="text-align: right;">  
     <section class="log-out">
       <% if @user %>
-        <p><%= @user.email %></p>
         <%= button_to "Log Out", logout_path, method: :delete, data: { "turbo-method": :delete }, :class => "btn btn-warning"%>
       <% end %>
-    </section>
+    </section><br>
     </nav>
     
     <% flash.each do |name, msg| %>

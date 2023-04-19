@@ -6,21 +6,18 @@
         <div class="banner">
         <h1 class="title">HelpList</h1>
             <h2 class="tagline">Helping Humans Help Humans</h2>
-        </div>
+        </div><br>
             <meta name="viewport" content="width=device-width,initial-scale=1">
             <%= stylesheet_link_tag "application", media: "all", "data-turbo-track": "reload" %>
             <%= stylesheet_link_tag "custom", media: "all" %>
             <%= csrf_meta_tags %>
             <%= csp_meta_tag %>
             <%= javascript_importmap_tags %>
+      </div>
   </head>
 
   <body>
-		<% flash.each do |type, msg| %>
-			<h3><b><%= msg %></b></h3>
-		<% end %>
-
-    <%= render partial: 'shared/nav_bar' %>
+    <%= render partial: 'shared/nav_bar' , class: "navbar" %><br>
     
     <section class="log-out">
       <% if @user %>

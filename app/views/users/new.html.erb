@@ -1,29 +1,29 @@
+<div style="text-align: center;">
 <h1>Register with HelpList</h1>
+  <%= form_with url: "/register", method: :post, html: { class: 'my-form-class', id: 'my-form-id' } do |form| %>
+    <%= form.label :username, "Username(optional):" %>
+    <%= form.text_field :username %><br>
 
-<%# <div class="form-group">
-  <label for="exampleInputEmail1" class="form-label mt-4">Email address</label>
-  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> %>
-    <%= form_with url: "/register", method: :post, html: { class: 'my-form-class', id: 'my-form-id' } do |form| %>
-      <%= form.label :username, "Username(optional):" %>
-      <%= form.text_field :username %><br>
+    <%= form.label :email, "Email:" %>
+    <%= form.text_field :email%><br>
 
-      <%= form.label :email, "Email:" %>
-      <%= form.text_field :email%><br>
+    <%= form.label :password, "Password:" %>
+    <%= form.password_field :password %><br>
 
-      <%= form.label :password, "Password:" %>
-      <%= form.password_field :password %><br>
+    <%= form.label :password_confirmation, "Password confirmation:" %>
+    <%= form.password_field :password_confirmation %><br>
 
-      <%= form.label :password_confirmation, "Password confirmation:" %>
-      <%= form.password_field :password_confirmation %><br>
+    <%= form.radio_button(:user_type, "donor", checked: true) %>
+    <%= form.label(:donor, "I am registering as a Donor!") %><br>
 
-      <%= form.radio_button(:user_type, "donor", checked: true) %>
-      <%= form.label(:donor, "I am registering as a Donor!") %><br>
+    <%= form.radio_button(:user_type, "recipient") %>
+    <%= form.label(:recipient, "I am registering as a Recipient!") %><br>
 
-      <%= form.radio_button(:user_type, "recipient") %>
-      <%= form.label(:recipient, "I am registering as a Recipient!") %><br>
+    <%= form.submit "Register", class: "btn btn-primary" %><br>
+  <% end %>
+</div>
+<div>     
+  <div style="text-align: center;">
+  <p>Already have an account? <%= button_to "Login Here", root_path, method: :get, class: "btn btn-secondary"%></p>
+</div>
 
-      <%= form.submit "Register", class: "btn btn-primary" %><br>
-    <% end %>
-
-<p>Have an account? <%= button_to "Login Here", root_path, method: :get, class: "btn btn-secondary"%></p>

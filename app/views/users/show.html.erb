@@ -1,6 +1,3 @@
-#to identify dashboard
-<h1>Dashboard</h1>
-
 <p>Welcome to HelpList, <%= @user.username %>!</p>
 <% if @user.user_type == "donor" %>
   <%= render partial: 'donor_dashboard' %>

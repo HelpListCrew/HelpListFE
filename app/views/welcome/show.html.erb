@@ -1,19 +1,54 @@
-<p class="lead">HelpList's mission is to crowdsource resources to lessen the burden for survivors, and to make providing resources easy and accessible to the everyday person. </p>
-<% if !@user %>
-  <%= form_with url: "/login", method: :post  do |form| %>
-    <%= form.label :email, "Email:"%>
-    <%= form.text_field :email %>
-    <%= form.label :password, "Password:" %>
-    <%= form.password_field :password %>
-    <%= form.submit "Login", :class => "btn btn-primary"%> 
-  <% end %><br>
+<div class="card">
+<div style="text-align: center;">
+  <div class="card-body">
+    <h4 class="card-title">Register</h4>
+    <h6 class="card-subtitle mb-2 text-muted">Create Your HelpList Account</h6>
+    <p class="card-text">When creating a new account on Helplist, you have the option to register either as a recipient from one of our partner organizations or as a donor. As a recipient, you can create a wishlist of items you need, while as a donor, you can purchase wishlist items to fulfill the needs of recipients.</p>
+    <p>Don't have an account? <%= button_to "Register Here", register_path, class: "btn btn-info" %> </p>
+  </div>
+</div><br>
 
-  <%= button_to "Login with Google", "/auth/google_oauth2", method: :get, data: { turbo: false }, :class => "btn btn-success" %><br>
+<div class="card">
+  <div style="text-align: center;">
+    <div class="card-body">
+      <h4 class="card-title">Login</h4>
+      <h6 class="card-subtitle mb-2 text-muted">Choose Your Login</h6>
+      <p class="card-text">Login with your Google account or an existing HelpList account with your email.</p>
+    </div>
+    <% if !@user %>
+      <%= form_with url: "/login", method: :post, html: { class: 'my-form-class', id: 'my-form-id' }  do |form| %>
+        <%= form.label :email, "Email:"%>
+        <%= form.text_field :email %><br>
 
-  <p>Don't have an account? <%= button_to "Register Here", register_path, class: "btn btn-secondary" %> </p>
-<% end %>
+        <%= form.label :password, "Password:" %>
+        <%= form.password_field :password %><br>
 
-  <div id= "map">
+        <%= form.submit "Login", class: "btn btn-primary"%><br>
+      <% end %>
+    <% end %><br>
+    <%= button_to "Login with Google", "/auth/google_oauth2", method: :get, data: { turbo: false }, :class => "btn btn-success" %><br>
+    </div>
+  </div>
+</div><br>
+
+<div class="card mb-3">
+  <div style="text-align: center;">
+  <h3 class="card-header">What we do...</h3>
+  <div class="card-body">
+    <h5 class="card-title">HelpList's Mission</h5>
+    <h6 class="card-subtitle text-muted">Helping Humans Help Humans</h6>
+  </div>
+  <img style="height: 200px; width: 100%; display: block;" src=https://lh3.googleusercontent.com/kydAboKaeIqw3gzhuPNZZjtWFyoReO34izzeHSctvL4ZC-oeYSFO9YoelXuxbvbopGm8EmK5CMzS3duHFJXArwULPCTqlVnyiFOlyno alt="Card image">
+  <div class="card-body">
+    <p class="card-text">Our mission is to crowdsource resources to lessen the burden for survivors rebuilding their lives, and to make providing resources easy and accessible to the everyday person.</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Find an orginazation near you.</li>
+    <li class="list-group-item">View a survivor's wishlist.</li>
+    <li class="list-group-item">Purchase one item or all the items on a wishlist.</li>
+  </ul><br>
+  
+  <div class="card-body">
     <h3>Organizations Near Me:</h3>
       <iframe
         width="600"
@@ -23,4 +58,9 @@
         allowfullscreen
         referrerpolicy="no-referrer-when-downgrade"
         src="https://www.google.com/maps/embed/v1/search?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&region=US&zoom=12&q=women+shelters,near+<%= @location %>">
+      </iframe>
   </div>
+</div>
+
+
+

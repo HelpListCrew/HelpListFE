@@ -275,22 +275,35 @@ RSpec.describe HelpListService do
     end
   end
 
-  # describe "#get_wishlist_items", :vcr do
-  #   # let(:item1) { HelpListService.new.create_wishlist_item({api_item_id: "0001111041700", recipient_id: 1}) }
-  #   # let(:item2) { HelpListService.new.create_wishlist_item({api_item_id: "0001111042315", recipient_id: 1, size: "10.00", name: "Fat Free Milk", price: 5.00, image_path: "www.here.now"}) }
+  describe "#get_wishlist_items", :vcr do
+    let(:wisheditems) { HelpListService.new.get_wishlist_items(8) }
 
-  #   # let(:items) { HelpListService.new.get_wishlist_items(1) }
-  #   let(:help_list_service) { instance_double(HelpListService) }
-  #   let(:items) {[]}
-    
+    it "finds wishlist items by user id" do
+      keys = [
+        :api_item_id, 
+        :purchased, 
+        :received, 
+        :size, 
+        :name, 
+        :price, 
+        :image_path 
+      ]
 
-  #   before do
-  #     allow(HelpListService).to receive(:new).and_return(help_list_service)
-  #     allow(help_list_service).to receive(:get_wishlist_items).with(1).and_return(items)
-  #   end
-
-  #   it "finds wishlist items by user id" do
-  #     require 'pry'; binding.pry
-  #   end
-  # end
+      expect(wisheditems).to be_a(Hash)
+      expect(wisheditems[:data]).to be_an(Array)
+      expect(wisheditems[:data][0]).to be_a(Hash)
+      expect(wisheditems[:data][0].keys).to eq([:id, :type, :attributes])
+      expect(wisheditems[:data][0][:id]).to be_a(String)
+      expect(wisheditems[:data][0][:type]).to be_a(String)
+      expect(wisheditems[:data][0][:attributes]).to be_a(Hash)
+      expect(wisheditems[:data][0][:attributes].keys).to eq(keys)
+      expect(wisheditems[:data][0][:attributes][:api_item_id]).to be_a(String)
+      expect(wisheditems[:data][0][:attributes][:purchased]).to be(false)
+      expect(wisheditems[:data][0][:attributes][:received]).to be(false)
+      expect(wisheditems[:data][0][:attributes][:size]).to be_a(String)
+      expect(wisheditems[:data][0][:attributes][:name]).to be_a(String)
+      expect(wisheditems[:data][0][:attributes][:price]).to be_a(Float)
+      expect(wisheditems[:data][0][:attributes][:image_path]).to be_a(String)
+    end
+  end
 end

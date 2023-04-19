@@ -197,6 +197,7 @@ RSpec.describe HelpListService do
 
   describe "#authenticate_user", :vcr do
     let(:user) {HelpListService.new.authenticate_user({email: "recipient@gmail.com", password: "123"})}
+    let(:user2) {HelpListService.new.authenticate_user({email: "anotherrecipient@gmail.com", password: "123"})}
     
     it "authenticates login information of a user" do
       expect(user).to be_a(Hash)
@@ -210,6 +211,7 @@ RSpec.describe HelpListService do
       expect(user[:data][:attributes][:email]).to be_a(String)
       expect(user[:data][:attributes][:user_type]).to be_a(String)
       expect(user[:data][:attributes][:username]).to be(nil)
+      expect(user2[:data][:attributes][:username]).to be_a(String)
     end
   end
 end

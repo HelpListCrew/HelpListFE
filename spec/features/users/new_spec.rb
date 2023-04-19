@@ -21,7 +21,7 @@ RSpec.describe "Register User" do
         end
         
         it "takes a user to the welcome page if they already have an account" do
-          expect(page).to have_content("Have an account?")
+          expect(page).to have_content("Already have an account?")
 
           click_button "Login Here"
 

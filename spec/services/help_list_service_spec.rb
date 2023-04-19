@@ -306,4 +306,35 @@ RSpec.describe HelpListService do
       expect(wisheditems[:data][0][:attributes][:image_path]).to be_a(String)
     end
   end
+
+  describe "#update_wishlist_item", :vcr do
+    let(:wisheditem) { HelpListService.new.update_wishlist_item(8, {id: 2, purchased: true}) }
+
+    it "updates an existing wishlist item" do
+      keys = [
+        :api_item_id, 
+        :purchased, 
+        :received, 
+        :size, 
+        :name, 
+        :price, 
+        :image_path 
+      ]
+
+      expect(wisheditem).to be_a(Hash)
+      expect(wisheditem[:data]).to be_a(Hash)
+      expect(wisheditem[:data].keys).to eq([:id, :type, :attributes])
+      expect(wisheditem[:data][:id]).to be_a(String)
+      expect(wisheditem[:data][:type]).to be_a(String)
+      expect(wisheditem[:data][:attributes]).to be_a(Hash)
+      expect(wisheditem[:data][:attributes].keys).to eq(keys)
+      expect(wisheditem[:data][:attributes][:api_item_id]).to be_a(String)
+      expect(wisheditem[:data][:attributes][:purchased]).to be(true)
+      expect(wisheditem[:data][:attributes][:received]).to be(false)
+      expect(wisheditem[:data][:attributes][:size]).to be_a(String)
+      expect(wisheditem[:data][:attributes][:name]).to be_a(String)
+      expect(wisheditem[:data][:attributes][:price]).to be_a(Float)
+      expect(wisheditem[:data][:attributes][:image_path]).to be_a(String)
+    end
+  end
 end

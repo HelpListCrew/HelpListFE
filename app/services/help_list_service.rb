@@ -75,4 +75,13 @@ class HelpListService
     response = connection.get("/api/v1/organizations/#{id}")
     JSON.parse(response.body, symbolize_names: true)
   end
+
+  def get_donated_items(id)
+    response = connection.get("/api/v1/wishlist_items") do |con|
+      con.params[:user_id] = id
+      con.params[:modifier] = "donated"
+    end
+
+    JSON.parse(response.body, symbolize_names: true)
+  end
 end

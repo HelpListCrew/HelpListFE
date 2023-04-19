@@ -20,6 +20,7 @@ describe "User Login", :vcr do
 
     describe "when I fill in the login form" do
       it "logs me in and redirects me to my dashboard" do
+        allow_any_instance_of(HelpListFacade).to receive(:get_donated_items).and_return([])
         visit root_path
 				
         fill_in :email, with: "plant_zaddy45@gmail.com"

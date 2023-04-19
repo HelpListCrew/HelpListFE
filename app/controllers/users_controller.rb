@@ -7,8 +7,9 @@ class UsersController < ApplicationController
 		@user = current_user 
 		if @user.user_type == "recipient"
     	@wishlist_items = HelpListFacade.new.get_wishlist_items(@user.id)
-    elsif params[:address]
-      @organizations = HelpListFacade.new(params).find_organizations_near_me
+    else
+      @donated_items = HelpListFacade.new(id: @user.id).get_donated_items
+      @organizations = HelpListFacade.new(params).find_organizations_near_me if params[:address]
     end
   end
 

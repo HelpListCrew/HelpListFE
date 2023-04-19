@@ -1,10 +1,8 @@
-<div style="text-align: center;">
-  <p>Welcome to HelpList, <%= @user.username %>!</p>
-  <% if @user.user_type == "donor" %>
-    <%= render partial: 'donor_dashboard' %>
-  <% else %>
-    <%= render partial: 'recipient_dashboard' %>
-  <% end %>
-</div>  
+<p>Welcome to HelpList, <%= @user.username %>!</p>
+<% if @user.user_type == "donor" %>
+  <%= render partial: 'donor_dashboard' %>
+<% else %>
+  <%= render partial: 'recipient_dashboard' %>
+<% end %>
 
 

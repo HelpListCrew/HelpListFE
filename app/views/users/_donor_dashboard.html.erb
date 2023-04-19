@@ -1,3 +1,4 @@
+#to identify donor dashboard for testing
 <% if !@user.username.nil? %>
   <h1><%= @user.username%>'s Donor Dashboard</h1>
 <% else %>
@@ -6,6 +7,7 @@
 
 <section>
   <div class="left-section">
+  #add CSS rule float: left
     <div class="explore-organizations">
       <h2>Explore Organizations Near Me</h2>
 
@@ -26,7 +28,7 @@
     </div>
   </div>
 </section>
-
+#need to iterate through wishlist donated items
 <section>
  <div class="right-section">
  #add CSS rule float: right

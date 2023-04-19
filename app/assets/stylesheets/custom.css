@@ -36,4 +36,12 @@ body {
   border-radius: 10px;
 }
 
+.left-section {
+  float: left;
+  width: 50%;
+}
 
+.right-section {
+  float: right;
+  width: 50%;
+}

@@ -1,0 +1,10 @@
+<h1><%= @organization.name %></h1>
+
+<% unless @organization.mission_statement.nil? %>
+  <div id="mission-statement">
+    <h4>Mission Statement:</h4>
+    <p> <%= @organization.mission_statement %></p>
+  </div>
+<% end %>
+
+<%= link_to "View all Recipients", "/organizations/#{@organization.id}/users" %>

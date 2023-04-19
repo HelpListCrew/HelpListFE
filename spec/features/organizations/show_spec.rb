@@ -29,7 +29,7 @@ RSpec.describe "Organizations Show" do
 
           expect(page).to have_link("View all Recipients")
           click_link("View all Recipients")
-          expect(current_path).to eq("/organizations/1/recipients")
+          expect(current_path).to eq("/organizations/1/users")
         end
       end
     end

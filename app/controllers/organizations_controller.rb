@@ -6,7 +6,6 @@ class OrganizationsController < ApplicationController
   end
 
   def show
-    # @user = current_user
     @organization = HelpListFacade.new.get_organization(params[:id])
   end
 

@@ -1,10 +1,6 @@
 class HelpListService
   def connection
-    # if !Rails.env.test?
-			url = "https://help-list-be.herokuapp.com/"
-		# else
-		# 	url = "http://localhost:5000" 
-    # end
+		url = "http://localhost:5000" 
     Faraday.new(url: url)
   end
 
@@ -55,7 +51,7 @@ class HelpListService
     end
     JSON.parse(response.body, symbolize_names: true)
   end
-
+  
 	def update_wishlist_item(user_id, params)
 		connection.patch("/api/v1/wishlist_items/#{params[:id]}") do |con|
 			con.headers = { "CONTENT_TYPE" => "application/json" }
@@ -74,5 +70,10 @@ class HelpListService
 
   def delete_wishlist_item(id)
     response = connection.delete("/api/v1/wishlist_items/#{id}") 
+  end
+
+  def get_org_by_id(id)
+    response = connection.get("/api/v1/organizations/#{id}")
+    JSON.parse(response.body, symbolize_names: true)
   end
 end

@@ -29,6 +29,45 @@ RSpec.describe HelpListFacade do
       expect(org.street_address).to be_a(String)
       expect(org.website).to be_a(String)
       expect(org.zip_code).to be_a(String)
+      expect(org.mission_statement).to be_a(String).or be_nil
+
+    end
+  end
+
+  describe "#get_organization(id)", :vcr do
+    it "returns an organization with the given id" do
+      org = HelpListFacade.new.get_organization(1)
+
+      expect(org).to be_an(Organization)
+
+      expect(org.city).to be_a(String)
+      expect(org.city).not_to be_nil
+
+      expect(org.email).to be_a(String)
+      expect(org.email).not_to be_nil
+
+      expect(org.id).to be_a(String)
+      expect(org.id).not_to be_nil
+
+      expect(org.name).to be_a(String)
+      expect(org.name).not_to be_nil
+
+      expect(org.phone_number).to be_a(String)
+      expect(org.phone_number).not_to be_nil
+
+      expect(org.state).to be_a(String)
+      expect(org.state).not_to be_nil
+
+      expect(org.street_address).to be_a(String)
+      expect(org.street_address).not_to be_nil
+
+      expect(org.website).to be_a(String)
+      expect(org.website).not_to be_nil
+
+      expect(org.zip_code).to be_a(String)
+      expect(org.zip_code).not_to be_nil
+
+      expect(org.mission_statement).to be_a(String).or be_nil
     end
   end
 

@@ -1,7 +1,6 @@
 class HelpListService
   def connection
-		require 'pry'; binding.pry
-    if Rails.env.development? ||  Rails.env.test?
+    if Rails.env.development? ||  Rails.env.test? 
 			url = "http://localhost:5000" 
 		else
 			url = "help-list-be.herokuapp.com"

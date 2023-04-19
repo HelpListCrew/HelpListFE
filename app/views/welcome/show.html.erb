@@ -1,4 +1,4 @@
-<p class="lead">HelpList's mission is to crowdsource resources to lessen the burden for survivors, and make providing resources easy and accessible to the everyday person. </p>
+<p class="lead">HelpList's mission is to crowdsource resources to lessen the burden for survivors, and to make providing resources easy and accessible to the everyday person. </p>
 <% if !@user %>
   <%= form_with url: "/login", method: :post  do |form| %>
     <%= form.label :email, "Email:"%>
@@ -13,16 +13,14 @@
   <p>Don't have an account? <%= button_to "Register Here", register_path, class: "btn btn-secondary" %> </p>
 <% end %>
 
-<div id= "map">
-  <h3>Organizations Near Me:</h3>
-
-  <iframe
-    width="600"
-    height="450"
-    style="border:0"
-    loading="lazy"
-    allowfullscreen
-    referrerpolicy="no-referrer-when-downgrade"
-    src="https://www.google.com/maps/embed/v1/search?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&region=US&zoom=12&q=women+shelters,near+<%= @location %>">
-  </iframe>
-</div>
+  <div id= "map">
+    <h3>Organizations Near Me:</h3>
+      <iframe
+        width="600"
+        height="450"
+        style="border:0"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed/v1/search?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&region=US&zoom=12&q=women+shelters,near+<%= @location %>">
+  </div>

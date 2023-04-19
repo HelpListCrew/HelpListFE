@@ -1,0 +1,25 @@
+/* custom.css */
+
+/* Add border to body */
+body {
+  border: 20px solid #686DC3; /* Change color and thickness as desired */
+}
+
+/* Optional: Add padding to body to create some space between border and content */
+body {
+  padding: 20px; /* Change value as desired */
+}
+
+.banner {
+  background-color: #37AEDD; /* Set the background color for the banner */
+  padding: 20px; /* Set the padding around the content in the banner */
+}
+
+.title {
+  font-size: 32px; /* Set the font size for the title */
+  margin-bottom: 10px; /* Set the margin bottom to create space between title and tagline */
+}
+
+.tagline {
+  font-size: 18px; /* Set the font size for the tagline */
+}

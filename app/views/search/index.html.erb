@@ -8,7 +8,7 @@
           <p><%= image_tag item.image_url %></p>
           <p><%= item.description %></p>
           <p><%= item.brand %></p>
-          <p><%= item.price %></p>
+          <p>$<%= item.price %></p>
           <p><%= item.size %></p>
           <%= button_to "Add to Wishlist", wishlist_items_path, params: {item_id: item.id, 
 																																		 image_path: item.image_url,

@@ -66,3 +66,18 @@
   margin-bottom: 5px;
 }
 
+.rounded-image {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.rounded-image iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+

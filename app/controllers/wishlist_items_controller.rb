@@ -13,4 +13,20 @@ class WishlistItemsController < ApplicationController
 
     redirect_to dashboard_path
   end
+  def destroy
+    HelpListService.new.delete_wishlist_item(params[:id])
+    redirect_to dashboard_path
+  end
+
+	def update
+		if params[:purchased]
+			HelpListService.new.update_wishlist_item(session[:user_id], wishlist_item_params)
+			redirect_to session[:return_to]
+		end
+	end
+
+	private
+	def wishlist_item_params
+		params.permit(:id, :purchased, :received)
+	end
 end

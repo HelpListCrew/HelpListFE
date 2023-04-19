@@ -5,7 +5,7 @@ http_interactions:
     uri: http://localhost:5000/api/v1/users
     body:
       encoding: UTF-8
-      string: user%5Bemail%5D=octodog86%40gmail.com&user%5Bpassword%5D=iloveclimbing1234
+      string: user%5Bemail%5D=octodog86%40gmail.com&user%5Bpassword%5D=iloveclimbing1234&user%5Busername%5D=burger_boss
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -37,20 +37,20 @@ http_interactions:
       Vary:
       - Accept
       Etag:
-      - W/"85eb950fb17ac4a7d5c0962782c2caa8"
+      - W/"a9c4e4587d09fce14d4587a97cd570ff"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 54221cba-569c-4d36-8510-20f27413c3f1
+      - 6bb4cb5a-96b0-4278-8618-9e1071a3bd54
       X-Runtime:
-      - '0.438710'
+      - '0.442150'
       Server-Timing:
-      - sql.active_record;dur=42.75, start_processing.action_controller;dur=0.10,
-        process_action.action_controller;dur=338.83
+      - sql.active_record;dur=37.09, start_processing.action_controller;dur=0.10,
+        process_action.action_controller;dur=314.54
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"10","type":"user","attributes":{"email":"octodog86@gmail.com","user_type":"donor"}}}'
-  recorded_at: Thu, 13 Apr 2023 16:29:51 GMT
+      string: '{"data":{"id":"18","type":"user","attributes":{"email":"octodog86@gmail.com","user_type":"donor","username":"burger_boss"}}}'
+  recorded_at: Tue, 18 Apr 2023 17:12:13 GMT
 recorded_with: VCR 6.1.0

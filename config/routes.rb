@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   root "welcome#show"
-  resources :wishlist_items, only: [:index, :create]
+  resources :wishlist_items, only: [:index, :create, :update, :destroy]
   resources :organizations, only: [:index, :show]
+
+  get "/organizations/:organization_id/users/:id", to: "organizations/users#show", as: "organization_user"
 
   get "/organizations/:id/recipients", to: "organizations/recipients#index"
 
@@ -16,6 +18,8 @@ Rails.application.routes.draw do
   
   post '/login', to: "sessions#login"
   delete '/logout', to: "sessions#logout"
+
+	post '/kroger/add_to_cart'
 
 
   get "/search", controller: "search", to: "search#index"

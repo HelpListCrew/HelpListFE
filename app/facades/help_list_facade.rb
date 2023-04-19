@@ -25,7 +25,7 @@ class HelpListFacade
 	def find_or_create
 		user = @service.authenticate_user(@params)
 		if user[:errors]
-			user = @service.create_user({uid: @params[:uid], email: @params[:email], password: SecureRandom.hex(15)})
+			user = @service.create_user({uid: @params[:uid], email: @params[:email], username: @params[:username], password: SecureRandom.hex(15)})
 		end
 		User.new(user)
 	end
@@ -37,17 +37,23 @@ class HelpListFacade
 
   def find_organizations_near_me
     orgs =  @service.find_organizations(@params)
+
     orgs[:data].map do |org|
       Organization.new(org)
     end
   end
 
-  def get_wishlist_items(id)
+  def get_wishlist_items(id = @params[:id])
     wishlist_items = @service.get_wishlist_items(id)
     wishlist_items[:data].map do |item|
       HelpListItem.new(item)
     end
   end
+
+	def get_unpurchased_wishlist_items(id)
+		wishlist_items = @service.get_unpurchased_wishlist_items(id)
+		wishlist_items[:data].map { |item| HelpListItem.new(item) }
+	end
 
   def get_organization(id)
     org = @service.get_org_by_id(id)

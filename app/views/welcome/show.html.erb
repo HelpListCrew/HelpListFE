@@ -1,23 +1,28 @@
-<%= form_with url: "/login", method: :post do |form| %>
-  <%= form.label :email, "Email:"%>
-  <%= form.text_field :email %>
-  <%= form.label :password, "Password:" %>
-  <%= form.password_field :password %>
-  <%= form.submit "Login" %> 
+<h2> HelpList's mission is to crowdsource resources to lessen the burden for survivors, and make providing resources easy and accessible to the everyday person. </h2>
+<% if !@user %>
+  <%= form_with url: "/login", method: :post do |form| %>
+    <%= form.label :email, "Email:"%>
+    <%= form.text_field :email %>
+    <%= form.label :password, "Password:" %>
+    <%= form.password_field :password %>
+    <%= form.submit "Login" %> 
+  <% end %>
+
+  <%= button_to "Login with Google", "/auth/google_oauth2", method: :get, data: { turbo: false }%>
+
+  <p>Don't have an account? <%= link_to "Register Here", "/register" %> </p>
 <% end %>
 
-<%= button_to "Login with Google", "/auth/google_oauth2", method: :get, data: { turbo: false }%>
+<div id= "map">
+  <h3>Organizations Near Me:</h3>
 
-<p>Don't have an account? <%= link_to "Register Here", "/register" %> </p>
-
-<p><%= link_to  "Do you or someone you know need help?" %></p>
-
-<iframe
-  width="600"
-  height="450"
-  style="border:0"
-  loading="lazy"
-  allowfullscreen
-  referrerpolicy="no-referrer-when-downgrade"
-  src="https://www.google.com/maps/embed/v1/search?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&region=US&zoom=12&q=women+shelters,near+<%= @location %>">
-</iframe>
+  <iframe
+    width="600"
+    height="450"
+    style="border:0"
+    loading="lazy"
+    allowfullscreen
+    referrerpolicy="no-referrer-when-downgrade"
+    src="https://www.google.com/maps/embed/v1/search?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&region=US&zoom=12&q=women+shelters,near+<%= @location %>">
+  </iframe>
+</div>

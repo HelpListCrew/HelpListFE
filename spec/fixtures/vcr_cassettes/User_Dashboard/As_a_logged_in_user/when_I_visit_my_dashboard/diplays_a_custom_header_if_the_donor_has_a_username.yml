@@ -1,0 +1,107 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:5000/api/v1/login
+    body:
+      encoding: UTF-8
+      string: user%5Bemail%5D=crzy_cat_ldy33%40gmail.com&user%5Bpassword%5D=cat
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"7bf84b99a8b2e1faa5f74b5bfc7f9589"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - da264571-f036-44e0-a14e-250fa798bff8
+      X-Runtime:
+      - '0.410015'
+      Server-Timing:
+      - sql.active_record;dur=45.34, start_processing.action_controller;dur=0.14,
+        instantiation.active_record;dur=7.56, process_action.action_controller;dur=295.95
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"23","type":"user","attributes":{"email":"crzy_cat_ldy33@gmail.com","user_type":"donor","username":"pixelated_tiger"}}}'
+  recorded_at: Tue, 18 Apr 2023 19:49:22 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/users/23
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"7bf84b99a8b2e1faa5f74b5bfc7f9589"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 41f1b22b-5ca0-4adb-b167-23d75506b601
+      X-Runtime:
+      - '0.008914'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.10, sql.active_record;dur=0.84, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=2.82
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"23","type":"user","attributes":{"email":"crzy_cat_ldy33@gmail.com","user_type":"donor","username":"pixelated_tiger"}}}'
+  recorded_at: Tue, 18 Apr 2023 19:49:22 GMT
+recorded_with: VCR 6.1.0

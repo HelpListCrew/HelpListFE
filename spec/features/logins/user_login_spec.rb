@@ -27,7 +27,7 @@ describe "User Login", :vcr do
         click_button "Login"
 
         expect(current_path).to eq(dashboard_path)
-        expect(page).to have_content("Welcome back, plant_zaddy45@gmail.com!")
+        expect(page).to have_content("Donor Dashboard")
       end
     end
 

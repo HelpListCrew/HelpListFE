@@ -35,23 +35,22 @@ http_interactions:
       Vary:
       - Accept
       Etag:
-      - W/"6c7471eabccc7aaa47ff68003922e202"
+      - W/"8fe32e407a1038ee38753b70e5374b3a"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 2d5282b4-e2ba-40a9-b68d-c62bf6589e99
+      - 30b4d06a-9383-47cf-9722-a79f1b25e543
       X-Runtime:
-      - '0.010306'
+      - '0.129955'
       Server-Timing:
-      - start_processing.action_controller;dur=0.10, sql.active_record;dur=0.73, instantiation.active_record;dur=0.04,
-        process_action.action_controller;dur=1.83
+      - sql.active_record;dur=32.62, start_processing.action_controller;dur=0.36,
+        process_action.action_controller;dur=37.68
       Transfer-Encoding:
       - chunked
     body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        eyJkYXRhIjpbeyJpZCI6IjEyIiwidHlwZSI6Indpc2hsaXN0X2l0ZW0iLCJhdHRyaWJ1dGVzIjp7ImFwaV9pdGVtX2lkIjoiMDAwNDE3MTYyMzIxNSIsInB1cmNoYXNlZCI6ZmFsc2UsInJlY2VpdmVkIjpmYWxzZSwic2l6ZSI6bnVsbCwibmFtZSI6bnVsbCwicHJpY2UiOm51bGwsImltYWdlX3BhdGgiOm51bGx9fSx7ImlkIjoiMTMiLCJ0eXBlIjoid2lzaGxpc3RfaXRlbSIsImF0dHJpYnV0ZXMiOnsiYXBpX2l0ZW1faWQiOiIwMDA0MTcxNjIzMjE1IiwicHVyY2hhc2VkIjpmYWxzZSwicmVjZWl2ZWQiOmZhbHNlLCJzaXplIjpudWxsLCJuYW1lIjpudWxsLCJwcmljZSI6bnVsbCwiaW1hZ2VfcGF0aCI6bnVsbH19LHsiaWQiOiIxNCIsInR5cGUiOiJ3aXNobGlzdF9pdGVtIiwiYXR0cmlidXRlcyI6eyJhcGlfaXRlbV9pZCI6IjAwMDQxNzE2MjMyMTUiLCJwdXJjaGFzZWQiOmZhbHNlLCJyZWNlaXZlZCI6ZmFsc2UsInNpemUiOm51bGwsIm5hbWUiOiJGcmlnb8KuIENoZWVzZSBIZWFkc8KuIE9yaWdpbmFsIE1venphcmVsbGEgU3RyaW5nIENoZWVzZSIsInByaWNlIjo1Ljk5LCJpbWFnZV9wYXRoIjpudWxsfX1dfQ==
-  recorded_at: Mon, 17 Apr 2023 00:17:09 GMT
+      encoding: UTF-8
+      string: '{"data":[]}'
+  recorded_at: Tue, 18 Apr 2023 21:47:19 GMT
 - request:
     method: get
     uri: http://localhost:5000/api/v1//wishlist_items?user_id=5
@@ -87,21 +86,19 @@ http_interactions:
       Vary:
       - Accept
       Etag:
-      - W/"6c7471eabccc7aaa47ff68003922e202"
+      - W/"8fe32e407a1038ee38753b70e5374b3a"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 72a4fbc5-f1c3-41a2-96f6-e9378934ed38
+      - 7db90fd8-f622-4eff-9f53-f78295b0e826
       X-Runtime:
-      - '0.008116'
+      - '0.017403'
       Server-Timing:
-      - start_processing.action_controller;dur=0.05, sql.active_record;dur=0.62, instantiation.active_record;dur=0.04,
-        process_action.action_controller;dur=1.63
+      - start_processing.action_controller;dur=0.11, sql.active_record;dur=0.71, process_action.action_controller;dur=1.63
       Transfer-Encoding:
       - chunked
     body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        eyJkYXRhIjpbeyJpZCI6IjEyIiwidHlwZSI6Indpc2hsaXN0X2l0ZW0iLCJhdHRyaWJ1dGVzIjp7ImFwaV9pdGVtX2lkIjoiMDAwNDE3MTYyMzIxNSIsInB1cmNoYXNlZCI6ZmFsc2UsInJlY2VpdmVkIjpmYWxzZSwic2l6ZSI6bnVsbCwibmFtZSI6bnVsbCwicHJpY2UiOm51bGwsImltYWdlX3BhdGgiOm51bGx9fSx7ImlkIjoiMTMiLCJ0eXBlIjoid2lzaGxpc3RfaXRlbSIsImF0dHJpYnV0ZXMiOnsiYXBpX2l0ZW1faWQiOiIwMDA0MTcxNjIzMjE1IiwicHVyY2hhc2VkIjpmYWxzZSwicmVjZWl2ZWQiOmZhbHNlLCJzaXplIjpudWxsLCJuYW1lIjpudWxsLCJwcmljZSI6bnVsbCwiaW1hZ2VfcGF0aCI6bnVsbH19LHsiaWQiOiIxNCIsInR5cGUiOiJ3aXNobGlzdF9pdGVtIiwiYXR0cmlidXRlcyI6eyJhcGlfaXRlbV9pZCI6IjAwMDQxNzE2MjMyMTUiLCJwdXJjaGFzZWQiOmZhbHNlLCJyZWNlaXZlZCI6ZmFsc2UsInNpemUiOm51bGwsIm5hbWUiOiJGcmlnb8KuIENoZWVzZSBIZWFkc8KuIE9yaWdpbmFsIE1venphcmVsbGEgU3RyaW5nIENoZWVzZSIsInByaWNlIjo1Ljk5LCJpbWFnZV9wYXRoIjpudWxsfX1dfQ==
-  recorded_at: Mon, 17 Apr 2023 00:17:09 GMT
+      encoding: UTF-8
+      string: '{"data":[]}'
+  recorded_at: Tue, 18 Apr 2023 21:47:19 GMT
 recorded_with: VCR 6.1.0

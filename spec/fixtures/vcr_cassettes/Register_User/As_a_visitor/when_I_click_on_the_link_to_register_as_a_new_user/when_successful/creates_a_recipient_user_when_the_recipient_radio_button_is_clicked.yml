@@ -39,21 +39,22 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - f2d68206-1035-4871-b3d2-3b74a65c93b7
+      - bb85e679-59b5-430f-9142-e7adff28dc75
       X-Runtime:
-      - '0.284832'
+      - '0.532646'
       Server-Timing:
-      - start_processing.action_controller;dur=0.16, sql.active_record;dur=3.33, process_action.action_controller;dur=275.99
+      - start_processing.action_controller;dur=0.17, sql.active_record;dur=13.56,
+        process_action.action_controller;dur=523.02
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: '{"message":"your query could not be completed","errors":[{"status":"400","title":"Email
         has already been taken"}]}'
-  recorded_at: Fri, 14 Apr 2023 20:53:52 GMT
+  recorded_at: Tue, 18 Apr 2023 17:21:11 GMT
 - request:
     method: get
-    uri: http://localhost:5000/api/v1/users/3
+    uri: http://localhost:5000/api/v1/users/13
     body:
       encoding: US-ASCII
       string: ''
@@ -86,20 +87,20 @@ http_interactions:
       Vary:
       - Accept
       Etag:
-      - W/"73d949a3908a926699fec0c6d02efb6c"
+      - W/"673128ab983c841d3d320e7b7dda2b2c"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - d8d13cf2-0f1f-41c9-a15f-73f95d6844fd
+      - cf341fc3-a73d-4a28-a830-f199faf8ceae
       X-Runtime:
-      - '0.013157'
+      - '0.029896'
       Server-Timing:
-      - start_processing.action_controller;dur=0.07, sql.active_record;dur=1.88, instantiation.active_record;dur=0.09,
-        process_action.action_controller;dur=8.46
+      - start_processing.action_controller;dur=0.10, sql.active_record;dur=21.38,
+        instantiation.active_record;dur=0.12, process_action.action_controller;dur=23.41
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"3","type":"user","attributes":{"email":"spoon_fight_at_night33@gmail.com","user_type":"recipient"}}}'
-  recorded_at: Fri, 14 Apr 2023 20:53:52 GMT
+      string: '{"data":{"id":"13","type":"user","attributes":{"email":"spoon_fight_at_night33@gmail.com","user_type":"recipient","username":null}}}'
+  recorded_at: Tue, 18 Apr 2023 17:21:11 GMT
 recorded_with: VCR 6.1.0

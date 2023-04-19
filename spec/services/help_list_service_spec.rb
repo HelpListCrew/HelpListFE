@@ -214,4 +214,22 @@ RSpec.describe HelpListService do
       expect(user2[:data][:attributes][:username]).to be_a(String)
     end
   end
+
+  describe "#find_user", :vcr do
+    let(:user) { HelpListService.new.find_user(1) }
+
+    it "finds a user with a given id" do
+      expect(user).to be_a(Hash)
+      expect(user).to have_key(:data)
+      expect(user[:data]).to be_a(Hash)
+      expect(user[:data].keys).to eq([:id, :type, :attributes])
+      expect(user[:data][:id]).to be_a(String)
+      expect(user[:data][:type]).to be_a(String)
+      expect(user[:data][:attributes]).to be_a(Hash)
+      expect(user[:data][:attributes].keys).to eq([:email, :user_type, :username])
+      expect(user[:data][:attributes][:email]).to be_a(String)
+      expect(user[:data][:attributes][:user_type]).to be_a(String)
+      expect(user[:data][:attributes][:username]).to be_a(String).or be_nil
+    end
+  end
 end

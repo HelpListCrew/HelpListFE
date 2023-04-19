@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/users/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"8b1308ff33a5d5cc4d22a6fdab9efbf4"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 754821c0-4faa-4b22-9261-131480253037
+      X-Runtime:
+      - '0.116954'
+      Server-Timing:
+      - sql.active_record;dur=36.42, start_processing.action_controller;dur=0.07,
+        instantiation.active_record;dur=3.09, process_action.action_controller;dur=27.62
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"1","type":"user","attributes":{"email":"recipient@gmail.com","user_type":"recipient","username":null}}}'
+  recorded_at: Wed, 19 Apr 2023 19:54:48 GMT
+recorded_with: VCR 6.1.0

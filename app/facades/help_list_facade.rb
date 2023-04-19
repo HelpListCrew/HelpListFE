@@ -48,10 +48,22 @@ class HelpListFacade
     wishlist_items[:data].map do |item|
       HelpListItem.new(item)
     end
-  end
+  end  
 
 	def get_unpurchased_wishlist_items(id)
 		wishlist_items = @service.get_unpurchased_wishlist_items(id)
 		wishlist_items[:data].map { |item| HelpListItem.new(item) }
 	end
+
+  def get_organization(id)
+    org = @service.get_org_by_id(id)
+    Organization.new(org[:data])
+  end
+
+  def get_donated_items
+    donated_items = @service.get_donated_items(@params[:id])
+    donated_items[:data].map do |donated_item|
+      HelpListItem.new(donated_item)
+    end
+  end
 end

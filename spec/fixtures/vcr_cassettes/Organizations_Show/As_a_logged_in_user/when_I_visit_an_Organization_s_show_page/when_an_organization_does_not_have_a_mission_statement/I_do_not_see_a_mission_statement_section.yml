@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/organizations/2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"9702594f99ad643cea4f152c1e5631bb"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 5391f9ac-7cdc-4e53-a378-54084c8c6867
+      X-Runtime:
+      - '0.023185'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.30, sql.active_record;dur=1.33, instantiation.active_record;dur=0.16,
+        process_action.action_controller;dur=3.80
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"2","type":"organization","attributes":{"name":"Casper,
+        Johnson and Leuschke","street_address":"5716 Purdy Glen","city":"Andersonside","state":"IA","zip_code":"19924","email":"juan_reichel@durgan.example","phone_number":"1-990-569-1053
+        x880","website":"http://example.com/sean","mission_statement":null}}}'
+  recorded_at: Tue, 18 Apr 2023 23:14:48 GMT
+recorded_with: VCR 6.1.0

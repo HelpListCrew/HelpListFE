@@ -118,4 +118,81 @@ RSpec.describe HelpListService do
       end
     end
   end
+
+  describe "#get_org_by_id", :vcr do 
+    let(:org) { HelpListService.new.get_org_by_id(1) }
+
+    it "returns a new json object" do
+      keys = [
+              :name, 
+              :street_address, 
+              :city, 
+              :state, 
+              :zip_code, 
+              :email, 
+              :phone_number, 
+              :website,
+              :mission_statement
+            ]
+
+      expect(org).to be_a(Hash)
+      expect(org[:data]).to be_a(Hash)
+      expect(org[:data].keys).to eq([:id, :type, :attributes])
+      expect(org[:data][:id]).to be_a(String)
+      expect(org[:data][:type]).to be_a(String)
+      expect(org[:data][:attributes]).to be_a(Hash)
+      expect(org[:data][:attributes].keys).to eq(keys)
+
+      expect(org[:data][:attributes][:name]).to be_a(String)
+      expect(org[:data][:attributes][:street_address]).to be_a(String)
+      expect(org[:data][:attributes][:city]).to be_a(String)
+      expect(org[:data][:attributes][:state]).to be_a(String)
+      expect(org[:data][:attributes][:zip_code]).to be_a(String)
+      expect(org[:data][:attributes][:email]).to be_a(String)
+      expect(org[:data][:attributes][:phone_number]).to be_a(String)
+      expect(org[:data][:attributes][:website]).to be_a(String)
+      expect(org[:data][:attributes][:mission_statement]).to be_a(String).or be_nil
+    end
+  end
+
+  describe "#get_donated_wishlist_items", :vcr do 
+    let(:items) { HelpListService.new.get_donated_items(2) }
+
+    it "returns all unpurchased items for a user" do 
+      expect(items).to be_a(Hash)
+      expect(items[:data]).to be_an(Array)
+
+			items[:data].each do |item|
+        expect(item).to have_key(:id)
+        expect(item[:id]).to be_a(String)
+
+        expect(item).to have_key(:type)
+        expect(item[:type]).to be_a(String)
+
+        expect(item).to have_key(:attributes)
+        expect(item[:attributes]).to be_a(Hash)
+
+        expect(item[:attributes]).to have_key(:api_item_id)
+        expect(item[:attributes][:api_item_id]).to be_a(String)
+
+        expect(item[:attributes]).to have_key(:purchased)
+        expect(item[:attributes][:purchased]).to be(false)
+
+        expect(item[:attributes]).to have_key(:received)
+        expect(item[:attributes][:received]).to be(false)
+
+        expect(item[:attributes]).to have_key(:image_path)
+        expect(item[:attributes][:image_path]).to be_a(String)
+
+        expect(item[:attributes]).to have_key(:name)
+        expect(item[:attributes][:name]).to be_a(String)
+
+        expect(item[:attributes]).to have_key(:price)
+        expect(item[:attributes][:price]).to be_a(Float)
+
+        expect(item[:attributes]).to have_key(:size)
+        expect(item[:attributes][:size]).to be_a(String)
+      end
+    end
+  end
 end

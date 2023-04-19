@@ -4,6 +4,7 @@ describe "User Logout", :vcr do
   describe "As a logged in user" do
     describe "when I visit my dashboard" do
       it "can log out a user and redirect to the welcome page" do
+        allow_any_instance_of(HelpListFacade).to receive(:get_donated_items).and_return([])
         visit root_path
 
         fill_in :email, with: "plant_zaddy45@gmail.com"

@@ -29,13 +29,16 @@
 
 <section>
  <div class="right-section">
-  <div class= "donated-items">
+ #add CSS rule float: right
+  <div id="donated-items">
     <h2>Donated Items</h2>
-    <ul>
-      <%# <li><%= link_to "Item 1", item_path(item) %></li> 
-      <%# <li><%= link_to "Item 2", item_path(item) %></li> 
-      <%# <li><%= link_to "Item 3", item_path(item) %></li>
-    </ul>
+    <% @donated_items.each do |donated_item| %>
+      <div id="donated_item-<%= donated_item.id %>">
+        <%= image_tag donated_item.image_path %>
+        <p><%= donated_item.name %></p>
+        <p><%= donated_item.price %></p>
+      </div>
+    <% end %>
   </div>
 </section>
 

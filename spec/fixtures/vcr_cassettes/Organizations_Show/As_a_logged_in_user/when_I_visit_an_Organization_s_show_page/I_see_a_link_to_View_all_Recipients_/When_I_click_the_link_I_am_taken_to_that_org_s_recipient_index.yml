@@ -1,0 +1,113 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/organizations/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"a4d6fe98833ab9d7cc9adc314e6440e9"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 272bae7c-c39e-4a7c-a972-7f23203e4d5f
+      X-Runtime:
+      - '0.049099'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.18, sql.active_record;dur=29.12,
+        instantiation.active_record;dur=0.08, process_action.action_controller;dur=31.09
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"1","type":"organization","attributes":{"name":"Littel-Kreiger","street_address":"4404
+        Rau Manor","city":"Lake Ruebenport","state":"SC","zip_code":"31965","email":"devon.langosh@runolfsson.example","phone_number":"499-751-7995
+        x21398","website":"http://example.com/nigel_hickle","mission_statement":"To
+        empower and uplift individuals, families, and communities in need through
+        comprehensive support, compassionate care, and sustainable solutions."}}}'
+  recorded_at: Tue, 18 Apr 2023 23:14:49 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/organizations/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"a4d6fe98833ab9d7cc9adc314e6440e9"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - f604f91c-9ee6-4142-9cc4-dbb306663f7b
+      X-Runtime:
+      - '0.020192'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.20, sql.active_record;dur=1.52, instantiation.active_record;dur=0.07,
+        process_action.action_controller;dur=3.08
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"1","type":"organization","attributes":{"name":"Littel-Kreiger","street_address":"4404
+        Rau Manor","city":"Lake Ruebenport","state":"SC","zip_code":"31965","email":"devon.langosh@runolfsson.example","phone_number":"499-751-7995
+        x21398","website":"http://example.com/nigel_hickle","mission_statement":"To
+        empower and uplift individuals, families, and communities in need through
+        comprehensive support, compassionate care, and sustainable solutions."}}}'
+  recorded_at: Tue, 18 Apr 2023 23:14:49 GMT
+recorded_with: VCR 6.1.0

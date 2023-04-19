@@ -5,10 +5,9 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "welcome#show"
   resources :wishlist_items, only: [:index, :create, :update, :destroy]
-  resources :organizations, only: [:index, :show]
-
-  get "/organizations/:organization_id/users/:id", to: "organizations/users#show", as: "organization_user"
-  get "/organizations/:org_id/users", to: "organizations/users#index"
+  resources :organizations, only: [:index, :show] do
+    resources :users, only: [:index, :show], module: :organizations
+  end
 
   get "/register", controller: "users", to: "users#new"
   post "/register", to: "users#create"

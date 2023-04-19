@@ -1,7 +1,7 @@
 class HelpListService
   def connection
     # if !Rails.env.test?
-			url = "help-list-be.herokuapp.com"
+			url = "https://help-list-be.herokuapp.com/"
 		# else
 		# 	url = "http://localhost:5000" 
     # end

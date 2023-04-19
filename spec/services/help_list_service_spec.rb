@@ -28,7 +28,7 @@ RSpec.describe HelpListService do
   end
 
   describe "#find_organizations", :vcr do 
-    let(:orgs) { HelpListService.new.find_organizations(address: "80226", miles: 50) }
+    let(:orgs) { HelpListService.new.find_organizations({address: "80003", miles: 50}) }
 
     it "returns a new json object" do 
       expect(orgs).to be_a(Hash)
@@ -67,6 +67,9 @@ RSpec.describe HelpListService do
 
         expect(org[:attributes]).to have_key(:website)
         expect(org[:attributes][:website]).to be_a(String)
+
+        expect(org[:attributes]).to have_key(:mission_statement)
+        expect(org[:attributes][:mission_statement]).to be_a(String).or be_nil
       end
     end
 
@@ -152,6 +155,44 @@ RSpec.describe HelpListService do
       expect(org[:data][:attributes][:phone_number]).to be_a(String)
       expect(org[:data][:attributes][:website]).to be_a(String)
       expect(org[:data][:attributes][:mission_statement]).to be_a(String).or be_nil
+    end
+  end
+
+  describe "#create_wishlist_item", :vcr do
+    let(:item) { HelpListService.new.create_wishlist_item({api_item_id: "0001111041700", recipient_id: 1}) }
+    let(:item2) { HelpListService.new.create_wishlist_item({api_item_id: "0001111042315", recipient_id: 1, size: "10.00", name: "Fat Free Milk", price: 5.00, image_path: "www.here.now"}) }
+
+
+    it "creates a new wishlist item for an organization user" do
+      keys = [
+              :api_item_id, 
+              :purchased, 
+              :received, 
+              :size, 
+              :name, 
+              :price, 
+              :image_path 
+            ]
+
+      expect(item).to be_a(Hash)
+      expect(item[:data]).to be_a(Hash)
+      expect(item[:data].keys).to eq([:id, :type, :attributes])
+      expect(item[:data][:id]).to be_a(String)
+      expect(item[:data][:type]).to be_a(String)
+      expect(item[:data][:attributes]).to be_a(Hash)
+      expect(item[:data][:attributes].keys).to eq(keys)
+      expect(item[:data][:attributes][:api_item_id]).to be_a(String)
+      expect(item[:data][:attributes][:purchased]).to be(false)
+      expect(item[:data][:attributes][:received]).to be(false)
+      expect(item[:data][:attributes][:size]).to be(nil)
+      expect(item[:data][:attributes][:name]).to be(nil)
+      expect(item[:data][:attributes][:price]).to be(nil)
+      expect(item[:data][:attributes][:image_path]).to be(nil)
+    
+      expect(item2[:data][:attributes][:size]).to be_a(String)
+      expect(item2[:data][:attributes][:name]).to be_a(String)
+      expect(item2[:data][:attributes][:price]).to be_a(Float)
+      expect(item2[:data][:attributes][:image_path]).to be_a(String)
     end
   end
 end

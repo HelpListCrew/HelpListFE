@@ -11,7 +11,6 @@ class HelpListService
     end
 
     JSON.parse(response.body, symbolize_names: true)
-    #make test
   end
 
   def create_user(params)

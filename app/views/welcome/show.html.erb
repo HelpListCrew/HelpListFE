@@ -8,9 +8,9 @@
     <%= form.submit "Login", :class => "btn btn-primary"%> 
   <% end %><br>
 
-  <%= button_to "Login with Google", "/auth/google_oauth2", method: :get, data: { turbo: false }, :class => "btn btn-success" %>
+  <%= button_to "Login with Google", "/auth/google_oauth2", method: :get, data: { turbo: false }, :class => "btn btn-success" %><br>
 
-  <p>Don't have an account? <%= link_to "Register Here", "/register" %> </p>
+  <p>Don't have an account? <%= button_to "Register Here", "/register", class: "btn btn-secondary" %> </p>
 <% end %>
 
 <div id= "map">

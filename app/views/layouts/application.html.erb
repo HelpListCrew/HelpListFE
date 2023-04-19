@@ -14,19 +14,12 @@
   </head>
 
   <body>
+
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+
 		<% flash.each do |type, msg| %>
 			<h3><b><%= msg %></b></h3>
 		<% end %>
-    <nav>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <%# <%= button_to "Home", root_path, class: "nav-link" %> 
-      <%= button_to "Home", root_path, method: :get, class: "navbar-toggler" %>
-			<% if @user %>
-				<%= button_to "Dashboard", dashboard_path, class: "nav-link" %>
-				<%= button_to "Wishlist", wishlist_items_path, class: "nav-link" %>
-			<% end %>
-    </section>
 
     <%= render partial: 'shared/nav_bar' %>
     

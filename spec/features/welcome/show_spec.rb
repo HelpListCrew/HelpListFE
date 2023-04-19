@@ -18,7 +18,7 @@ RSpec.describe "Welcome Page" do
       end
 
       it "displays a link to register a new user" do
-        expect(page).to have_link("Register Here")
+        expect(page).to have_button("Register Here")
       end
 
       it "displays two buttons to log in" do
@@ -26,7 +26,7 @@ RSpec.describe "Welcome Page" do
         expect(page).to have_button("Login with Google")
       end
 
-      it "displays a header abouve the map of organizations" do
+      it "displays a header above the map of organizations" do
         within("#map") {
         expect(page).to have_content("Organizations Near Me:")
         expect(page).to have_css("iframe")

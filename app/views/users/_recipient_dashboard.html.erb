@@ -5,12 +5,12 @@
   <h1>Recipient Dashboard</h1>
 <% end %>
 
-<%# <div class="border"> %>
+<div class="border">
   <%= form_with url: search_path, method: :get, class: "form-inline my-2 my-lg-0" do |f| %>
     <%= f.search_field :query, class: "form-control mr-sm-2", placeholder: "Search for an item", aria_label: "Search" %><br>
     <%= f.submit "Search", class: "btn btn-success my-2 my-sm-0" %>
   <% end %>
-<%# </div> %>
+</div><br>
 
 <div id="wishlist-items">
   <h3>Wishlist Items</h3>

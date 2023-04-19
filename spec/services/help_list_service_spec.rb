@@ -274,4 +274,23 @@ RSpec.describe HelpListService do
       expect(user[:data][:attributes][:username]).to be_a(String).or be_nil
     end
   end
+
+  # describe "#get_wishlist_items", :vcr do
+  #   # let(:item1) { HelpListService.new.create_wishlist_item({api_item_id: "0001111041700", recipient_id: 1}) }
+  #   # let(:item2) { HelpListService.new.create_wishlist_item({api_item_id: "0001111042315", recipient_id: 1, size: "10.00", name: "Fat Free Milk", price: 5.00, image_path: "www.here.now"}) }
+
+  #   # let(:items) { HelpListService.new.get_wishlist_items(1) }
+  #   let(:help_list_service) { instance_double(HelpListService) }
+  #   let(:items) {[]}
+    
+
+  #   before do
+  #     allow(HelpListService).to receive(:new).and_return(help_list_service)
+  #     allow(help_list_service).to receive(:get_wishlist_items).with(1).and_return(items)
+  #   end
+
+  #   it "finds wishlist items by user id" do
+  #     require 'pry'; binding.pry
+  #   end
+  # end
 end

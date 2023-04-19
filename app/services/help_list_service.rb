@@ -32,7 +32,6 @@ class HelpListService
 	def find_user(id)
 		response = connection.get("/api/v1/users/#{id}")
 		JSON.parse(response.body, symbolize_names: true)
-    #make test
 	end
 
   def find_organizations(params)

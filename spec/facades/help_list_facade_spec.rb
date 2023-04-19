@@ -86,4 +86,21 @@ RSpec.describe HelpListFacade do
       expect(item.price).to be_a(Float)
     end
   end
+
+  describe "#get_donated_items", :vcr do
+    it "returns a list of donated items for a specific user" do
+      facade = HelpListFacade.new(id: 2)
+      items = facade.get_donated_items
+
+      item = items.first
+
+      expect(item).to be_a(HelpListItem)
+      expect(item.api_item_id).to be_a(String)
+      expect(item.image_path).to be_a(String)
+      expect(item.name).to be_a(String)
+      expect(item.id).to be_a(String)
+      expect(item.size).to be_a(String)
+      expect(item.price).to be_a(Float)
+    end
+  end
 end

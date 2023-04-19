@@ -1,6 +1,6 @@
 class HelpListService
   def connection
-		url = "http://localhost:5000" 
+		url = ENV["HELPLIST_URL"]
     Faraday.new(url: url)
   end
 

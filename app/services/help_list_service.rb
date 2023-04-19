@@ -1,9 +1,9 @@
 class HelpListService
   def connection
-    if Rails.env.development? ||  Rails.env.test? 
-			url = "http://localhost:5000" 
-		else
+    if Rails.env.production?
 			url = "help-list-be.herokuapp.com"
+		else
+			url = "http://localhost:5000" 
     end
     Faraday.new(url: url)
   end

@@ -37,7 +37,6 @@ class HelpListFacade
 
   def find_organizations_near_me
     orgs =  @service.find_organizations(@params)
-    # require 'pry'; binding.pry
     orgs[:data].map do |org|
       Organization.new(org)
     end
@@ -48,5 +47,10 @@ class HelpListFacade
     wishlist_items[:data].map do |item|
       HelpListItem.new(item)
     end
-  end  
+  end
+
+  def get_organization(id)
+    org = @service.get_org_by_id(id)
+    Organization.new(org[:data])
+  end
 end

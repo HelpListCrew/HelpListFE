@@ -7,7 +7,8 @@ class Organization
               :zip_code,
               :email,
               :phone_number,
-              :website
+              :website,
+              :mission_statement
 
   def initialize(data)
     @id = data[:id]
@@ -19,5 +20,6 @@ class Organization
     @email = data[:attributes][:email]
     @phone_number = data[:attributes][:phone_number]
     @website = data[:attributes][:website]
+    @mission_statement = data[:attributes][:mission_statement]
   end
 end

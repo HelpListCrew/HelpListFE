@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/organizations/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"56df06906349a1cb4b9070ce6b961837"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 41017ad6-dc77-40d2-ad8d-84174febb932
+      X-Runtime:
+      - '0.149988'
+      Server-Timing:
+      - sql.active_record;dur=33.51, start_processing.action_controller;dur=0.12,
+        instantiation.active_record;dur=6.54, process_action.action_controller;dur=35.23
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"1","type":"organization","attributes":{"name":"Mueller,
+        Hettinger and Feeney","street_address":"48837 Cyrus Way","city":"Pacochaburgh","state":"AR","zip_code":"17229","email":"anthony@bradtke.test","phone_number":"651-849-1283
+        x08208","website":"http://example.com/earl","mission_statement":null}}}'
+  recorded_at: Mon, 17 Apr 2023 22:28:34 GMT
+recorded_with: VCR 6.1.0

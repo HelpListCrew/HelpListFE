@@ -32,6 +32,7 @@
         </section>
       </div>
       
+      <div style="text-align: right;">
       <% flash.each do |type, msg| %>
        <% if msg != "param is missing or the value is empty: user." %> 
         <%= content_tag :div, msg, class: type%>

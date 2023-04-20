@@ -22,15 +22,13 @@
         <%= form.submit "Search" %>
       <% end %>
   </div>
-  <ul class="list-group list-group-flush">
+  <p class="list-group list-group-flush">
     <% if !@organizations.nil? %>
-      <ul>
         <% @organizations.each do |organization| %>
-            <li><%= link_to organization.name %></li>
+            <p><%= link_to organization.name %></p>
           <% end %>
-      </ul>
     <% end %>
-  </ul>
+  </p>
   <div class="card-footer text-muted">
     Click on the organization name to view their profile.
   </div>
@@ -41,7 +39,7 @@
     <h6 class="card-subtitle mb-2 text-muted">My Donated Items</h6>
     <div id= "donated-items">
     <p class="card-text">View all your donated items.</p>
-          <% @donated_items.each do |donated_item| %>
+        <% @donated_items.each do |donated_item| %>
       <div id="donated_item-<%= donated_item.id %>">
         <%= image_tag donated_item.image_path %>
         <p><%= donated_item.name %></p>

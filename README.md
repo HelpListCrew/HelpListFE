@@ -3,7 +3,7 @@
 ![DV Banner](app/assets/images/dv-banner.png)
 
 ## Mission:
-Our mission at Helplist is to harness the power of crowdsourcing to alleviate the burden for survivors as they rebuild their lives. We aim to make providing resources easy and accessible to anyone utilizing one of our partner orginazations, empowering everyday people to make a meaningful impact. 
+Our mission at Helplist is to harness the power of crowdsourcing to alleviate the burden for survivors as they rebuild their lives. We aim to make providing resources easy and accessible to anyone utilizing our partner orginazations, empowering everyday people to make a meaningful impact. 
  
 ## Table of Contents
 - [About](#about)

@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: patch
+    uri: http://localhost:5000/api/v1/wishlist_items/2?donor_id=8
+    body:
+      encoding: UTF-8
+      string: wishlist_item%5Bid%5D=2&wishlist_item%5Bpurchased%5D=true
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"aaceaffeaac4caf20db03297cf2980fa"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - effd9f6e-234a-4501-8bcb-e9a5170a94d6
+      X-Runtime:
+      - '0.249260'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.09, sql.active_record;dur=24.04,
+        instantiation.active_record;dur=2.75, process_action.action_controller;dur=70.07
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"2","type":"wishlist_item","attributes":{"api_item_id":"0001111041700","purchased":true,"received":false,"size":"11.00","name":"2%
+        Milk","price":6.0,"image_path":"www.there.later"}}}'
+  recorded_at: Wed, 19 Apr 2023 23:56:44 GMT
+recorded_with: VCR 6.1.0

@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1//wishlist_items?user_id=8
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"0780b3a5857b4d9e39e20dcef94f72a4"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 4670c7b4-6c9f-4098-86ae-bcba8ea79823
+      X-Runtime:
+      - '0.235842'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.31, sql.active_record;dur=13.05,
+        instantiation.active_record;dur=5.87, process_action.action_controller;dur=60.78
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"1","type":"wishlist_item","attributes":{"api_item_id":"0001111042315","purchased":false,"received":false,"size":"10.00","name":"Fat
+        Free Milk","price":5.0,"image_path":"www.here.now"}},{"id":"2","type":"wishlist_item","attributes":{"api_item_id":"0001111041700","purchased":false,"received":false,"size":"11.00","name":"2%
+        Milk","price":6.0,"image_path":"www.there.later"}}]}'
+  recorded_at: Wed, 19 Apr 2023 22:36:46 GMT
+recorded_with: VCR 6.1.0

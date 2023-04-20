@@ -1,0 +1,109 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:5000/api/v1/login
+    body:
+      encoding: UTF-8
+      string: user%5Bemail%5D=recipient%40gmail.com&user%5Bpassword%5D=123
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"4363a224ce13d0c1465c247d09b588e3"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b20001a4-e822-4053-8a04-dd0e06228d66
+      X-Runtime:
+      - '0.333995'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.26, sql.active_record;dur=12.67,
+        instantiation.active_record;dur=0.42, process_action.action_controller;dur=307.00
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"16","type":"user","attributes":{"email":"recipient@gmail.com","user_type":"recipient","username":null}}}'
+  recorded_at: Wed, 19 Apr 2023 19:20:38 GMT
+- request:
+    method: post
+    uri: http://localhost:5000/api/v1/login
+    body:
+      encoding: UTF-8
+      string: user%5Bemail%5D=anotherrecipient%40gmail.com&user%5Bpassword%5D=123
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"e4fbec92ac0441f8087fc0b4087bc8c7"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 8a984e88-47f8-4223-9804-abec65466c3d
+      X-Runtime:
+      - '0.286417'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.20, sql.active_record;dur=1.59, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=267.55
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"17","type":"user","attributes":{"email":"anotherrecipient@gmail.com","user_type":"recipient","username":"OceanicDreamer"}}}'
+  recorded_at: Wed, 19 Apr 2023 19:20:41 GMT
+recorded_with: VCR 6.1.0

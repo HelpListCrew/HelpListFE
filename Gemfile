@@ -67,6 +67,10 @@ group :development, :test do
   gem "launchy"
 end
 
+group :test do
+  gem "simplecov"
+end
+
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"

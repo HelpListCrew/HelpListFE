@@ -11,7 +11,6 @@ class HelpListService
     end
 
     JSON.parse(response.body, symbolize_names: true)
-    #make test
   end
 
   def create_user(params)
@@ -20,7 +19,6 @@ class HelpListService
 			con.body = { user: params.to_hash }
     end
     JSON.parse(response.body, symbolize_names: true)
-    #make test
   end
 
 	def authenticate_user(params)
@@ -29,13 +27,11 @@ class HelpListService
 			con.body = { user: params.to_hash }
     end
     JSON.parse(response.body, symbolize_names: true)
-    #make test
 	end
 
 	def find_user(id)
 		response = connection.get("/api/v1/users/#{id}")
 		JSON.parse(response.body, symbolize_names: true)
-    #make test
 	end
 
   def find_organizations(params)
@@ -53,11 +49,12 @@ class HelpListService
   end
   
 	def update_wishlist_item(user_id, params)
-		connection.patch("/api/v1/wishlist_items/#{params[:id]}") do |con|
+		response = connection.patch("/api/v1/wishlist_items/#{params[:id]}") do |con|
 			con.headers = { "CONTENT_TYPE" => "application/json" }
 			con.body = { wishlist_item: params.to_hash }
 			con.params[:donor_id] = user_id
 		end
+    JSON.parse(response.body, symbolize_names: true)
 	end
 
 	def get_unpurchased_wishlist_items(id)

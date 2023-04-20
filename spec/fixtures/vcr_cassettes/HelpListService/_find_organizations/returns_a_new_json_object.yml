@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:5000/api/v1/organizations/find_all?address=80226&miles=50
+    uri: http://localhost:5000/api/v1/organizations/find_all?address=80003&miles=50
     body:
       encoding: US-ASCII
       string: ''
@@ -35,51 +35,52 @@ http_interactions:
       Vary:
       - Accept
       Etag:
-      - W/"4627a7a2c9675914c3cceb93f7734945"
+      - W/"ae5d4142c7d07448e7b8571e2d431083"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - e3a2fa7d-cd27-41f7-8cb7-37480d59f424
+      - a0a8f32b-0b13-46b9-aaeb-2d3582521163
       X-Runtime:
-      - '1.657944'
+      - '3.707606'
       Server-Timing:
-      - sql.active_record;dur=34.02, start_processing.action_controller;dur=0.11,
-        instantiation.active_record;dur=17.35, process_action.action_controller;dur=1578.63
+      - start_processing.action_controller;dur=1.37, sql.active_record;dur=40.90,
+        instantiation.active_record;dur=27.85, process_action.action_controller;dur=3678.69
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"data":[{"id":"7","type":"organization","attributes":{"name":"Streich-McKenzie","street_address":"1101
-        W. 7th Ave.","city":"Denver","state":"CO","zip_code":"80204","email":"yvone@gottlieb.test","phone_number":"(556)
-        252-3429","website":"http://example.com/twana","mission_statement":"Aut facilis
-        consequatur. Cupiditate qui ea. Aut ut fugit."}},{"id":"5","type":"organization","attributes":{"name":"Mueller
-        and Sons","street_address":"3805 Marshall St.","city":"Wheat Ridge","state":"CO","zip_code":"80033","email":"lawanna_osinski@schiller-johnson.example","phone_number":"1-301-509-6472
-        x9236","website":"http://example.com/cordell","mission_statement":"Vel non
-        iure. Est ad et. Minima vitae temporibus."}},{"id":"9","type":"organization","attributes":{"name":"Okuneva
-        Group","street_address":"1330 Fox St.","city":"Denver","state":"CO","zip_code":"80204","email":"woodrow@schoen.example","phone_number":"1-414-744-1446
-        x6195","website":"http://example.com/jayson","mission_statement":"Ut ut omnis.
-        Consequatur rerum sequi. Nihil molestiae ex."}},{"id":"11","type":"organization","attributes":{"name":"Wisoky,
-        Ortiz and Rolfson","street_address":"2100 Stout St.","city":"Denver","state":"CO","zip_code":"80205","email":"emery@kirlin.example","phone_number":"(423)
-        341-9540 x0053","website":"http://example.com/merna","mission_statement":"Non
-        eum voluptatum. Quos voluptatibus ea. Dolorum est corrupti."}},{"id":"12","type":"organization","attributes":{"name":"Nicolas-Rippin","street_address":"2301
-        Lawrence St.","city":"Denver","state":"CO","zip_code":"80205","email":"rosaria@dickens.example","phone_number":"496.631.3804
-        x64263","website":"http://example.com/neva","mission_statement":"Et ducimus
-        at. Suscipit est deleniti. Incidunt et soluta."}},{"id":"13","type":"organization","attributes":{"name":"Dicki-Jakubowski","street_address":"2323
-        Curtis St.","city":"Denver","state":"CO","zip_code":"80205","email":"rosario.bartell@hoppe.test","phone_number":"276-460-8242","website":"http://example.com/kieth_bahringer","mission_statement":"Est
-        magnam libero. Ipsa recusandae dolorem. Beatae et consequatur."}},{"id":"8","type":"organization","attributes":{"name":"Hintz,
-        Stracke and Gibson","street_address":"1600 N. Downing St.","city":"Denver","state":"CO","zip_code":"80218","email":"kurt.harber@rowe-wilderman.test","phone_number":"1-936-151-4220
-        x966","website":"http://example.com/judson_moen","mission_statement":"Esse
-        est eos. Ea non accusantium. Labore praesentium repellat."}},{"id":"10","type":"organization","attributes":{"name":"Rolfson
-        Group","street_address":"3301 S. Grant St.","city":"Englewood","state":"CO","zip_code":"80113","email":"katelyn@schmeler-larkin.test","phone_number":"1-162-154-4550","website":"http://example.com/porter","mission_statement":"Impedit
-        repellat dolor. Atque dignissimos veniam. Possimus et at."}},{"id":"4","type":"organization","attributes":{"name":"Roberts,
-        Weissnat and Hammes","street_address":"1535 High St.","city":"Denver","state":"CO","zip_code":"80218","email":"daren@gleason-ruecker.test","phone_number":"831.470.2994
-        x350","website":"http://example.com/danial","mission_statement":"Provident
-        autem facere. Ut et labore. Nesciunt eligendi quidem."}},{"id":"3","type":"organization","attributes":{"name":"Quigley
-        LLC","street_address":"6475A Benton St.","city":"Arvada","state":"CO","zip_code":"80003","email":"miki.mann@langosh.test","phone_number":"(841)
-        956-8675 x03358","website":"http://example.com/prudence.kovacek","mission_statement":"Beatae
-        eius quas. Ducimus illum non. Sed non omnis."}},{"id":"6","type":"organization","attributes":{"name":"Brekke-Gutkowski","street_address":"3489
-        W. 72nd Ave.","city":"Westminster","state":"CO","zip_code":"80030","email":"craig.blick@connelly-kris.example","phone_number":"(634)
-        166-7253 x791","website":"http://example.com/arthur_heathcote","mission_statement":"Rem
-        et reiciendis. Quia et et. Dolor et modi."}}]}'
-  recorded_at: Wed, 19 Apr 2023 21:44:33 GMT
+      string: '{"data":[{"id":"2","type":"organization","attributes":{"name":"Herzog,
+        Hintz and Conroy","street_address":"6475A Benton St.","city":"Arvada","state":"CO","zip_code":"80003","email":"jeana@hettinger.example","phone_number":"501.283.6394
+        x305","website":"http://example.com/jacqualine_wyman","mission_statement":"Delectus
+        nihil eius. Sunt et in. Deserunt et voluptate."}},{"id":"5","type":"organization","attributes":{"name":"Lemke-West","street_address":"3489
+        W. 72nd Ave.","city":"Westminster","state":"CO","zip_code":"80030","email":"santos@hermann-kessler.test","phone_number":"163-665-3895
+        x782","website":"http://example.com/lester","mission_statement":"Et praesentium
+        officiis. Fugit esse voluptatibus. Id ea molestias."}},{"id":"4","type":"organization","attributes":{"name":"Buckridge-Jacobson","street_address":"3805
+        Marshall St.","city":"Wheat Ridge","state":"CO","zip_code":"80033","email":"cory@runolfsdottir.test","phone_number":"1-674-532-2489
+        x87506","website":"http://example.com/donnell","mission_statement":"Voluptatem
+        expedita consequatur. Ut nihil libero. Et quis quibusdam."}},{"id":"11","type":"organization","attributes":{"name":"Ziemann-Murazik","street_address":"2301
+        Lawrence St.","city":"Denver","state":"CO","zip_code":"80205","email":"jeramy_jacobi@dare.example","phone_number":"587.534.4914
+        x04266","website":"http://example.com/wenona","mission_statement":"Ipsam quo
+        ut. Quia itaque asperiores. Molestias aliquid maxime."}},{"id":"12","type":"organization","attributes":{"name":"Kshlerin,
+        Pagac and Leffler","street_address":"2323 Curtis St.","city":"Denver","state":"CO","zip_code":"80205","email":"vernetta_howell@gleichner.example","phone_number":"1-996-386-6724
+        x4798","website":"http://example.com/kraig.collier","mission_statement":"Distinctio
+        iusto corrupti. Et quis voluptas. Consequatur et consequatur."}},{"id":"10","type":"organization","attributes":{"name":"Witting
+        Inc","street_address":"2100 Stout St.","city":"Denver","state":"CO","zip_code":"80205","email":"exie_dickens@nikolaus-shields.example","phone_number":"280.839.5763
+        x385","website":"http://example.com/lucy.reynolds","mission_statement":"Libero
+        quae nihil. Cum aut ut. Atque impedit eligendi."}},{"id":"8","type":"organization","attributes":{"name":"Waters
+        Group","street_address":"1330 Fox St.","city":"Denver","state":"CO","zip_code":"80204","email":"particia.jakubowski@kreiger.example","phone_number":"410.219.3570
+        x7562","website":"http://example.com/lupita","mission_statement":"Quam earum
+        in. Rerum consequatur ea. Esse sint ut."}},{"id":"6","type":"organization","attributes":{"name":"Kemmer
+        LLC","street_address":"1101 W. 7th Ave.","city":"Denver","state":"CO","zip_code":"80204","email":"tiesha.oreilly@zboncak.example","phone_number":"(215)
+        492-7155 x4380","website":"http://example.com/wilmer_senger","mission_statement":"Deserunt
+        reiciendis aut. Cum excepturi reiciendis. Iusto ut id."}},{"id":"7","type":"organization","attributes":{"name":"Greenfelder-Dibbert","street_address":"1600
+        N. Downing St.","city":"Denver","state":"CO","zip_code":"80218","email":"abram.hamill@ratke-zboncak.test","phone_number":"482.731.4685
+        x6371","website":"http://example.com/oren","mission_statement":"Est dolores
+        voluptatem. Quis esse tenetur. Ab id nobis."}},{"id":"3","type":"organization","attributes":{"name":"Runte
+        LLC","street_address":"1535 High St.","city":"Denver","state":"CO","zip_code":"80218","email":"stanton@abshire.test","phone_number":"984-712-1747","website":"http://example.com/kimberlee","mission_statement":"Molestiae
+        eius quia. Doloribus maxime libero. Corrupti ut ut."}},{"id":"9","type":"organization","attributes":{"name":"Bogan,
+        Weber and Corkery","street_address":"3301 S. Grant St.","city":"Englewood","state":"CO","zip_code":"80113","email":"basil@gorczany.test","phone_number":"(517)
+        845-8632 x1481","website":"http://example.com/kamala_krajcik","mission_statement":"Ipsam
+        commodi similique. Velit et voluptatem. Aspernatur ad ipsam."}}]}'
+  recorded_at: Wed, 19 Apr 2023 17:42:17 GMT
 recorded_with: VCR 6.1.0

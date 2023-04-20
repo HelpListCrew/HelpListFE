@@ -2,6 +2,9 @@
 ### **Helping Humans Help Humans**
 ![DV Banner](app/assets/images/dv-banner.png)
 
+## Mission:
+Our mission at Helplist is to harness the power of crowdsourcing to alleviate the burden for survivors as they rebuild their lives. We aim to make providing resources easy and accessible to anyone utilizing one of our partner orginazations, empowering everyday people to make a meaningful impact. 
+ 
 ## Table of Contents
 - [About](#about)
 - [Built With](#built-with)
@@ -9,8 +12,6 @@
 - [Future Features](#future-features)
 - [Contributors](#contributors)
 
-## HelpList Mission:
-It is estimated that over 10 million Americans experience domestic violence annually. One of the main reasons people choose to stay in these types of situations is lack of resources. HelpList's mission is to crowdsource resources to lessen the burden for survivors, and make providing resources easy and accessible to the everyday person.
 
 ## About:
 - HelpList allows victims of domestic violence in collaboration with an organization, to create personalized wishlist's of needed items to post anonymously.

@@ -1,25 +1,44 @@
-<h1><%= @organization.name %></h1>
-
-<% unless @organization.mission_statement.nil? %>
-  <div id="mission-statement">
-    <h4>Mission Statement:</h4>
-    <p> <%= @organization.mission_statement %></p>
+<div style="text-align: center;">
+  <div class="card"> 
+    <div class="card-body" id="recipients">
+      <% if @recipients.empty? %>
+       <h4 class="card-title">We have no recipients at this time. Check again later!</h4> 
+      <% else %>
+        <h4 class="card-title">Our Recipients:</h4>
+      <%end%>
+      <h6 class="card-subtitle mb-2 text-muted">Click a link below to select a wishlist!</h6>
+      <% @recipients.each do |recipient| %>
+        <div id="recipient-<%= recipient.id %>">
+          <% if recipient.username.nil? %>
+            <h5><%= link_to "Recipient #{recipient.id}'s Wishlist", organization_user_path(@organization.id, recipient.id), :class => "card-link"%></h5>
+          <% else%>
+            <h5><%= link_to "#{recipient.username}'s Wishlist", organization_user_path(@organization.id, recipient.id), :class => "card-link"%></h5>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
+  <br>
+  <br>
+  <div class="card text-white bg-secondary mb-3" style="text-align center max-width: 20rem;">
+    <div class="card-header"><h1><%= @organization.name %></h1></div>
+      <div class="card-body">
+        <p class="card-text">
+          <p><%= @organization.street_address%></p>
+          <p><%= @organization.city%>, <%= @organization.state%> <%= @organization.zip_code%></p>
+          <p><%= @organization.phone_number%></p>
+          <p><%= @organization.email%></p>
+        </p>
+        <h5><%= @organization.website%></h5>
 
-<% if @recipients.empty? %>
-  <p>We have no recipients at this time. Check again later!<p>
-<% else %>
-  <div id="recipients">
-    <h4>Our Recipients:</h4>
-    <% @recipients.each do |recipient| %>
-      <div id="recipient-<%= recipient.id %>">
-        <% if recipient.username.nil? %>
-          <h5><%= link_to "Recipient #{recipient.id}'s Wishlist", organization_user_path(@organization.id, recipient.id) %></h5>
-        <% else%>
-          <h5><%= link_to "#{recipient.username}'s Wishlist", organization_user_path(@organization.id, recipient.id) %></h5>
+        <% unless @organization.mission_statement.nil? %>
+          <div id="mission-statement">
+            <h4>Mission Statement:</h4>
+            <p> <%= @organization.mission_statement %></p>
+          </div>
         <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
-<% end %>
+</div>
+

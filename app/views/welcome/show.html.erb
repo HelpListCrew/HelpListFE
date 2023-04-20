@@ -1,37 +1,35 @@
-<div class="card">
-<div style="text-align: center;">
-  <div class="card-body">
-    <h4 class="card-title">Register</h4>
-    <h6 class="card-subtitle mb-2 text-muted">Create Your HelpList Account</h6>
-    <p class="card-text">When creating a new account on Helplist, you have the option to register either as a recipient from one of our partner organizations or as a donor. As a recipient, you can create a wishlist of items you need, while as a donor, you can purchase wishlist items to fulfill the needs of recipients.</p>
-    <p>Don't have an account? <%= button_to "Register Here", register_path, class: "btn btn-info" %> </p>
-  </div>
-</div><br>
-
-<div class="card">
+<% if !@user %>
+  <div class="card">
   <div style="text-align: center;">
     <div class="card-body">
-      <h4 class="card-title">Login</h4>
-      <h6 class="card-subtitle mb-2 text-muted">Choose Your Login</h6>
-      <p class="card-text">Login with your Google account or an existing HelpList account with your email.</p>
+      <h4 class="card-title">Register</h4>
+      <h6 class="card-subtitle mb-2 text-muted">Create Your HelpList Account</h6>
+      <p class="card-text">When creating a new account on Helplist, you have the option to register either as a recipient from one of our partner organizations or as a donor. As a recipient, you can create a wishlist of items you need, while as a donor, you can purchase wishlist items to fulfill the needs of recipients.</p>
+      <p>Don't have an account? <%= button_to "Register Here", register_path, class: "btn btn-info" %> </p>
     </div>
-    <% if !@user %>
-      <%= form_with url: "/login", method: :post, html: { class: 'my-form-class', id: 'my-form-id' }  do |form| %>
-        <%= form.label :email, "Email:"%>
-        <%= form.text_field :email %><br>
+  </div><br>
 
-        <%= form.label :password, "Password:" %>
-        <%= form.password_field :password %><br>
+  <div class="card">
+    <div style="text-align: center;">
+      <div class="card-body">
+        <h4 class="card-title">Login</h4>
+        <h6 class="card-subtitle mb-2 text-muted">Choose Your Login</h6>
+        <p class="card-text">Login with your Google account or an existing HelpList account with your email.</p>
+      </div>
+        <%= form_with url: "/login", method: :post, html: { class: 'my-form-class', id: 'my-form-id' }  do |form| %>
+          <%= form.label :email, "Email:"%>
+          <%= form.text_field :email %><br>
 
-        <%= form.submit "Login", class: "btn btn-primary"%><br>
-      <% end %>
-    <% end %><br>
-    <% if !@user %>
+          <%= form.label :password, "Password:" %>
+          <%= form.password_field :password %><br>
+
+          <%= form.submit "Login", class: "btn btn-primary"%><br>
+        <% end %>
     <%= button_to "Login with Google", "/auth/google_oauth2", method: :get, data: { turbo: false }, :class => "btn btn-success" %><br>
-    <% end %>
     </div>
   </div>
 </div><br>
+<% end %><br>
 
 <div class="card mb-3">
   <div style="text-align: center;">

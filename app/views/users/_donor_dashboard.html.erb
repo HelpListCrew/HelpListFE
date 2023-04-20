@@ -1,13 +1,10 @@
-<section>
-  <div style="text-align: center;">
-    <% if !@user.username.nil? %>
-      <h1><%= @user.username%>'s Donor Dashboard</h1>
-    <% else %>
-      <h1>Donor Dashboard</h1>
-    <% end %>
-  </div>
-</section>
-
+<div style="text-align: center;">
+  <% if !@user.username.nil? %>
+    <h1><%= @user.username%>'s Donor Dashboard</h1>
+  <% else %>
+    <h1>Donor Dashboard</h1>
+  <% end %>
+</div>
 
 <div class="card mb-3">
   <h3 class="card-header">Organizations</h3>

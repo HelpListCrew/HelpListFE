@@ -39,6 +39,7 @@
   <div class="card-body">
     <h4 class="card-title">Donated Items</h4>
     <h6 class="card-subtitle mb-2 text-muted">My Donated Items</h6>
+    <div id= "donated-items">
     <p class="card-text">View all your donated items.</p>
           <% @donated_items.each do |donated_item| %>
       <div id="donated_item-<%= donated_item.id %>">

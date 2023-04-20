@@ -18,66 +18,7 @@
  *= require bootstrap.min
  */
 
-/* .border {
-  border: 1px solid black;
-  padding: 30px;
-} */
-/* 
-.my-form-class {
-  /* Set font size and margin for form elements */
-  /* font-size: 14px;
-  margin-bottom: 10px;
-} */ 
-
-/* .my-form-class input[type="text"],
-.my-form-class input[type="email"],
-.my-form-class input[type="password"],
-.my-form-class input[type="password_confirmation"] {
-  /* Set padding and border for text and email input fields */
-  /* padding: 5px;
-  border: 1px solid #ccc;
-} */ 
-
-/* .my-form-class button[type="submit"] {
-  /* Style the submit button */
-  /* background-color: #007bff;
-  color: #fff;
-  padding: 10px 15px;
-  border: none;
-  cursor: pointer;
-} */ 
-
- /* .my-form-class button[type="submit"]:hover { */
-  /* Add a hover effect to the submit button */ 
-  /* background-color: #0069d9;
-}  */
-
- /* .my-form-class label {
-  /* Style the label */
-  /* display: block;
-  margin-bottom: 5px;
-} */ 
-
-/* .rounded-image {
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.rounded-image iframe {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-/* Round corners of a div element */
-/* .rounded-div {
-  border-radius: 10px; /* You can adjust the value to control the degree of rounding */
-/* } */
-
-/* Round corners of an image element */
-/* .rounded-img {
-  border-radius: 50%; /* Use a value of 50% to make the image circular */
-/* }  */ 
+ 
 
 
 

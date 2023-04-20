@@ -35,9 +35,11 @@
       </section>
       </nav>
       
-  <% flash.each do |type, msg| %>
-      <% if msg != "param is missing or the value is empty: user." %>
-        <%= content_tag :div, msg, class: name %>
+  
+
+      <% flash.each do |type, msg| %>
+       <% if msg != "param is missing or the value is empty: user." %> 
+        <%= content_tag :div, msg%>
       <% end %>
     <% end %>
    

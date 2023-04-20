@@ -21,16 +21,6 @@
 
   <body>
     <%= render partial: 'shared/nav_bar' , class: "navbar" %><br>
-
-  <div style="text-align: right;">  
-        <section class="log-out">
-          <% if current_user %>
-            <p>You are currently logged in.<%= button_to "Log Out", logout_path, method: :delete, data: { "turbo-method": :delete }, :class => "btn btn-warning"%></p>
-          <% else %>
-            <p>You are currently logged out.</p>
-          <% end %>
-        </section>
-      </div>
       
       <% flash.each do |type, msg| %>
        <% if msg != "param is missing or the value is empty: user." %> 

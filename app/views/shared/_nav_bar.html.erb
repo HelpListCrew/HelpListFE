@@ -11,31 +11,13 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Organizations</a>
-        <% if @user %>
+        <% if current_user %>
         <li class="nav-item">
           <a class="nav-link" href="/dashboard">Dashboard</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/wishlist_items">Wishlist</a>
         <% end %>
-        </li>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-          <div class="dropdown-menu dropdown-menu-end">
-            <% if @user %>
-              <a class="dropdown-item" href="/dashboard">Dashboard</a>
-              <a class="dropdown-item" href="/wishlist_items">Wishlist</a>
-              <a class="dropdown-item" href="/logout">Log Out</a>
-            <% else %>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Organizations</a>
-              <a class="dropdown-item" href="/login">Log In</a>
-              <a class="dropdown-item" href="/signup">Register</a>
-            <% end %>
-          </div>
-        </li>
       </ul>
     </div>
   </div>
 </nav>
+

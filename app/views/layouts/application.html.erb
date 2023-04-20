@@ -14,32 +14,27 @@
             <%= csp_meta_tag %>
             <%= javascript_importmap_tags %>
       </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
   </head>
 
   <body>
     <%= render partial: 'shared/nav_bar' , class: "navbar" %><br>
 
   <div style="text-align: right;">  
-    <section class="log-out">
-      <% if @user %>
-        <p>You are currently logged in.<%= button_to "Log Out", logout_path, method: :delete, data: { "turbo-method": :delete }, :class => "btn btn-warning"%></p>
-      <% end %>
-    </section>
-    </nav>
-  </div>
-    <div style="text-align: right;"> 
-      <section class="log-in">
-        <% if !@user %>
-          <p>You are currently logged out.</p>
-        <% end %>
-      </section>
-      </nav>
+        <section class="log-out">
+          <% if current_user %>
+            <p>You are currently logged in.<%= button_to "Log Out", logout_path, method: :delete, data: { "turbo-method": :delete }, :class => "btn btn-warning"%></p>
+          <% else %>
+            <p>You are currently logged out.</p>
+          <% end %>
+        </section>
+      </div>
       
-  
-
       <% flash.each do |type, msg| %>
        <% if msg != "param is missing or the value is empty: user." %> 
-        <%= content_tag :div, msg%>
+        <%= content_tag :div, msg, class: type%>
       <% end %>
     <% end %>
    

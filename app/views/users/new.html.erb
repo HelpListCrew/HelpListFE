@@ -1,6 +1,6 @@
 <div style="text-align: center;">
 <h1>Register with HelpList</h1>
-  <%= form_with url: "/register", method: :post, html: { class: 'my-form-class', id: 'my-form-id' } do |form| %>
+  <%= form_with url: "/register", method: :post, class: 'my-form-class', id: 'my-form-id' do |form| %>
     <%= form.label :username, "Username(optional):" %>
     <%= form.text_field :username %><br>
 

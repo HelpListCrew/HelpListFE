@@ -5,9 +5,9 @@ class User
               :user_type
 
   def initialize(info)
-    @id = info[:data][:id]
-    @username = info[:data][:attributes][:username]
-    @email = info[:data][:attributes][:email]
-    @user_type = info[:data][:attributes][:user_type]
+    @id = info[:id]
+    @username = info[:attributes][:username]
+    @email = info[:attributes][:email]
+    @user_type = info[:attributes][:user_type]
   end
 end

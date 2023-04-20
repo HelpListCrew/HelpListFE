@@ -10,7 +10,7 @@ class HelpListFacade
     if new_user[:errors]
       return new_user[:errors]
     else
-      User.new(new_user)
+      User.new(new_user[:data])
     end
   end
 
@@ -19,7 +19,7 @@ class HelpListFacade
 		if user[:errors]
 			return user = nil
 		end
-		User.new(user)
+		User.new(user[:data])
 	end
 
 	def find_or_create
@@ -27,12 +27,12 @@ class HelpListFacade
 		if user[:errors]
 			user = @service.create_user({uid: @params[:uid], email: @params[:email], username: @params[:username], password: SecureRandom.hex(15)})
 		end
-		User.new(user)
+		User.new(user[:data])
 	end
 
 	def find_user(id)
 		user = @service.find_user(id)
-		User.new(user)
+		User.new(user[:data])
 	end
 
   def find_organizations_near_me
@@ -64,6 +64,13 @@ class HelpListFacade
     donated_items = @service.get_donated_items(@params[:id])
     donated_items[:data].map do |donated_item|
       HelpListItem.new(donated_item)
+    end
+  end
+
+  def get_org_users(org_id)
+    users = @service.get_org_users(org_id)
+    users[:data].map do |user|
+      User.new(user)
     end
   end
 end

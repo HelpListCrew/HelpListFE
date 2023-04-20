@@ -7,4 +7,19 @@
   </div>
 <% end %>
 
-<%= link_to "View all Recipients", "/organizations/#{@organization.id}/users" %>
+<% if @recipients.empty? %>
+  <p>We have no recipients at this time. Check again later!<p>
+<% else %>
+  <div id="recipients">
+    <h4>Our Recipients:</h4>
+    <% @recipients.each do |recipient| %>
+      <div id="recipient-<%= recipient.id %>">
+        <% if recipient.username.nil? %>
+          <h5><%= link_to "Recipient #{recipient.id}'s Wishlist", organization_user_path(@organization.id, recipient.id) %></h5>
+        <% else%>
+          <h5><%= link_to "#{recipient.username}'s Wishlist", organization_user_path(@organization.id, recipient.id) %></h5>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

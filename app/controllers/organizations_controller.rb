@@ -3,6 +3,7 @@ class OrganizationsController < ApplicationController
 
   def show
     @organization = HelpListFacade.new.get_organization(params[:id])
+    @recipients = HelpListFacade.new.get_org_users(params[:id])
   end
 
   private

@@ -1,6 +1,10 @@
 <section>
   <div style="text-align: center;">
+  <% if @user.username.nil? %>
+    <h1>Welcome to HelpList, <%= @user.email %>!</h1>
+  <% else %>
     <p>Welcome to HelpList, <%= @user.username %>!</p>
+  <% end %>
     <% if @user.user_type == "donor" %>
       <%= render partial: 'donor_dashboard' %>
     <% else %>

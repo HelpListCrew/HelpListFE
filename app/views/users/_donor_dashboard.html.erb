@@ -1,40 +1,47 @@
-#to identify donor dashboard for testing
-<% if !@user.username.nil? %>
-  <h1><%= @user.username%>'s Donor Dashboard</h1>
-<% else %>
-  <h1>Donor Dashboard</h1>
-<% end %>
+<div style="text-align: center;">
+  <% if !@user.username.nil? %>
+    <h1><%= @user.username%>'s Donor Dashboard</h1>
+  <% else %>
+    <h1>Donor Dashboard</h1>
+  <% end %>
+</div>
 
-<section>
-  <div class="left-section">
-  #add CSS rule float: left
-    <div class="explore-organizations">
-      <h2>Explore Organizations Near Me</h2>
-
-      <%= form_with url: dashboard_path , method: :get do |form| %>
+<div class="card mb-3">
+  <h3 class="card-header">Organizations</h3>
+  <div class="card-body">
+    <h5 class="card-title">Explore Organizations Near Me</h5>
+    <h6 class="card-subtitle text-muted">Enter your zipcode below.</h6>
+  </div>
+  <div class="card-body">
+    <p class="card-text">If you're interested in making a local donation, check out the organizations in your area.</p>
+        <%= form_with url: dashboard_path , method: :get do |form| %>
         <%= form.label :address, "Zipcode:" %> 
         <%= form.text_field :address %> 
         <%= form.label :miles, "Radius:" %> 
         <%= form.select :miles, options_for_select(1..100) %> 
         <%= form.submit "Search" %>
       <% end %>
-      <% if !@organizations.nil? %>
-        <ul>
-          <% @organizations.each do |organization| %>
-              <li><%= link_to organization.name %></li>
-            <% end %>
-        </ul>
-      <% end %>
-    </div>
   </div>
-</section>
-#need to iterate through wishlist donated items
-<section>
- <div class="right-section">
- #add CSS rule float: right
-  <div id="donated-items">
-    <h2>Donated Items</h2>
-    <% @donated_items.each do |donated_item| %>
+  <ul class="list-group list-group-flush">
+    <% if !@organizations.nil? %>
+      <ul>
+        <% @organizations.each do |organization| %>
+            <li><%= link_to organization.name %></li>
+          <% end %>
+      </ul>
+    <% end %>
+  </ul>
+  <div class="card-footer text-muted">
+    Click on the organization name to view their profile.
+  </div>
+</div>
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Donated Items</h4>
+    <h6 class="card-subtitle mb-2 text-muted">My Donated Items</h6>
+    <div id= "donated-items">
+    <p class="card-text">View all your donated items.</p>
+          <% @donated_items.each do |donated_item| %>
       <div id="donated_item-<%= donated_item.id %>">
         <%= image_tag donated_item.image_path %>
         <p><%= donated_item.name %></p>
@@ -42,7 +49,5 @@
       </div>
     <% end %>
   </div>
-</section>
+</div>
 
-
-    

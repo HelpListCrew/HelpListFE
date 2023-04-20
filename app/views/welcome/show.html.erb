@@ -1,28 +1,69 @@
-<h2> HelpList's mission is to crowdsource resources to lessen the burden for survivors, and make providing resources easy and accessible to the everyday person. </h2>
-<% if !@user %>
-  <%= form_with url: "/login", method: :post do |form| %>
-    <%= form.label :email, "Email:"%>
-    <%= form.text_field :email %>
-    <%= form.label :password, "Password:" %>
-    <%= form.password_field :password %>
-    <%= form.submit "Login" %> 
-  <% end %>
+<div class="card">
+<div style="text-align: center;">
+  <div class="card-body">
+    <h4 class="card-title">Register</h4>
+    <h6 class="card-subtitle mb-2 text-muted">Create Your HelpList Account</h6>
+    <p class="card-text">When creating a new account on Helplist, you have the option to register either as a recipient from one of our partner organizations or as a donor. As a recipient, you can create a wishlist of items you need, while as a donor, you can purchase wishlist items to fulfill the needs of recipients.</p>
+    <p>Don't have an account? <%= button_to "Register Here", register_path, class: "btn btn-info" %> </p>
+  </div>
+</div><br>
 
-  <%= button_to "Login with Google", "/auth/google_oauth2", method: :get, data: { turbo: false }%>
+<div class="card">
+  <div style="text-align: center;">
+    <div class="card-body">
+      <h4 class="card-title">Login</h4>
+      <h6 class="card-subtitle mb-2 text-muted">Choose Your Login</h6>
+      <p class="card-text">Login with your Google account or an existing HelpList account with your email.</p>
+    </div>
+    <% if !@user %>
+      <%= form_with url: "/login", method: :post, html: { class: 'my-form-class', id: 'my-form-id' }  do |form| %>
+        <%= form.label :email, "Email:"%>
+        <%= form.text_field :email %><br>
 
-  <p>Don't have an account? <%= link_to "Register Here", "/register" %> </p>
-<% end %>
+        <%= form.label :password, "Password:" %>
+        <%= form.password_field :password %><br>
 
-<div id= "map">
-  <h3>Organizations Near Me:</h3>
+        <%= form.submit "Login", class: "btn btn-primary"%><br>
+      <% end %>
+    <% end %><br>
+    <% if !@user %>
+    <%= button_to "Login with Google", "/auth/google_oauth2", method: :get, data: { turbo: false }, :class => "btn btn-success" %><br>
+    <% end %>
+    </div>
+  </div>
+</div><br>
 
-  <iframe
-    width="600"
-    height="450"
-    style="border:0"
-    loading="lazy"
-    allowfullscreen
-    referrerpolicy="no-referrer-when-downgrade"
-    src="https://www.google.com/maps/embed/v1/search?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&region=US&zoom=12&q=women+shelters,near+<%= @location %>">
-  </iframe>
+<div class="card mb-3">
+  <div style="text-align: center;">
+  <h3 class="card-header">What we do...</h3>
+  <div class="card-body">
+    <h5 class="card-title">HelpList's Mission</h5>
+    <h6 class="card-subtitle text-muted">Helping Humans Help Humans</h6>
+  </div>
+  <img style="height: 200px; width: 100%; display: block;" src="https://github.com/HelpListCrew/HelpListFE/raw/main/app/assets/images/dv-banner.png" alt="Card image">
+  <div class="card-body">
+    <p class="card-text">Our mission at Helplist is to harness the power of crowdsourcing to alleviate the burden for survivors as they rebuild their lives. We aim to make providing resources easy and accessible to anyone utilizing one of our partner organization, empowering everyday people to make a meaningful impact.</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Find an organization near you.</li>
+    <li class="list-group-item">View a survivor's wishlist.</li>
+    <li class="list-group-item">Purchase one item or all the items on a wishlist.</li>
+  </ul><br>
+  
+  <div class="card-body">
+    <div id= "map">
+    <h3>Organizations Near Me:</h3>
+      <iframe
+        width="600"
+        height="450"
+        style="border:0"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed/v1/search?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&region=US&zoom=12&q=women+shelters,near+<%= @location %>">
+      </iframe>
+  </div>
 </div>
+
+
+

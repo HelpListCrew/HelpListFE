@@ -1,26 +1,29 @@
-#to identify recipient dashboard for testing
+<div style="text-align: center;">
 <% if !@user.username.nil? %>
   <h1><%= @user.username %>'s Recipient Dashboard</h1>
 <% else %>
   <h1>Recipient Dashboard</h1>
 <% end %>
+</div>
 
-<%= form_with url: search_path, method: :get, class: "form-inline my-2 my-lg-0" do |f| %>
-  <%= f.search_field :query, class: "form-control mr-sm-2", placeholder: "Search for an item", aria_label: "Search" %>
-  <%= f.submit "Search", class: "btn btn-outline-success my-2 my-sm-0" %>
-<% end %>
+
+<div class="border">
+  <%= form_with url: search_path, method: :get, class: "form-inline my-2 my-lg-0" do |f| %>
+    <%= f.search_field :query, class: "form-control mr-sm-2", placeholder: "Search for an item", aria_label: "Search" %><br>
+    <%= f.submit "Search", class: "btn btn-success my-2 my-sm-0" %>
+  <% end %>
+</div><br>
+
 
 <div id="wishlist-items">
   <h3>Wishlist Items</h3>
-  <ul>
-    <% @wishlist_items.each do |item| %>
-      <li>
-        <p><%= item.name %></p><br>
-        <%= image_tag item.image_path %><br>
-        <%= button_to "Delete", wishlist_item_path(item.id), method: :delete %>
-      </li>
-    <% end %>
-  </ul>
+  <div class="list-group"><br>
+      <% @wishlist_items.each do |item| %>
+          <p><%= item.name %></p><br>
+          <p><%= image_tag item.image_path %></p>
+          <p><%= button_to "Delete", wishlist_item_path(item.id), method: :delete, class: "btn btn-danger" %></p>
+      <% end %>
+  </div>
 </div>
 
 

@@ -4,9 +4,17 @@ class KrogerFacade
   end
 
   def find_items
-    items = kroger_service.get_products(@params[:query])
-    items[:data].map do |data|
-      Item.new(data)
+    # items = kroger_service.get_products(@params[:query])
+    # items[:data].map do |data|
+    #   Item.new(data)
+    # end
+    unless @params[:query].blank? 
+      items = kroger_service.get_products(@params[:query])
+      items[:data].map do |data|
+        Item.new(data)
+      end
+    else
+      return []
     end
   end
 

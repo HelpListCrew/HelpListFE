@@ -55,7 +55,7 @@ describe "Donor Dashboard", :vcr do
 
         within("#donated-items") {
           expect(page).to have_css("img", count: 4)
-          expect(page).to have_css("p", count: 8)
+          expect(page).to have_css("p", count: 9)
         }
       end
     end

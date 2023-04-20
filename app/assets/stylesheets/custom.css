@@ -1,0 +1,40 @@
+/* custom.css */
+
+/* Add border to body
+.body {
+  border: 20px solid #686DC3; /* Change color and thickness as desired
+  border-radius: 10px; /* Add rounded corners to the border */
+/* } */  
+
+/* Optional: Add padding to body to create some space between border and content */
+/* body {
+  padding: 20px; /* Change value as desired */
+
+.banner {
+  background-color: #37AEDD; /* Set the background color for the banner */
+  padding: 20px; /* Set the padding around the content in the banner */
+  border-radius: 10px;
+}
+
+.title {
+  font-size: 32px; /* Set the font size for the title */
+  margin-bottom: 10px; /* Set the margin bottom to create space between title and tagline */
+}
+
+.tagline {
+  font-size: 18px; /* Set the font size for the tagline */
+}
+
+ /* Round corners of the navbar */
+ .navbar {
+  border-radius: 10px; /* You can adjust the value to control the degree of rounding */
+}
+
+.background {
+  background-color: #37AEDD; /* Set the background color for the page */
+  padding: 20px; /* Set the padding around the content in the page */
+  border-radius: 10px;
+  /* width: 100%;
+  height: 100%; */
+}
+

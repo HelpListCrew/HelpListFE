@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/organizations/find_all?action=show&address=80226&commit=Search&controller=users&miles=50
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"7528d41361be6f6edfdfcabb27f1630a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e25558a7-d979-4fd6-b14b-4151b0626549
+      X-Runtime:
+      - '0.450999'
+      Server-Timing:
+      - sql.active_record;dur=44.30, start_processing.action_controller;dur=0.09,
+        instantiation.active_record;dur=20.36, process_action.action_controller;dur=363.48
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"6","type":"organization","attributes":{"name":"Schmitt-Walter","street_address":"1101
+        W. 7th Ave.","city":"Denver","state":"CO","zip_code":"80204","email":"thora_haley@heathcote.example","phone_number":"1-424-348-1950","website":"http://example.com/christoper"}},{"id":"4","type":"organization","attributes":{"name":"Robel,
+        Reilly and Baumbach","street_address":"3805 Marshall St.","city":"Wheat Ridge","state":"CO","zip_code":"80033","email":"rodrigo_little@crist-little.test","phone_number":"(577)
+        562-3665 x67467","website":"http://example.com/tillie"}},{"id":"8","type":"organization","attributes":{"name":"Boyle
+        Group","street_address":"1330 Fox St.","city":"Denver","state":"CO","zip_code":"80204","email":"isaiah.ryan@hahn.example","phone_number":"1-894-248-8575","website":"http://example.com/jan.jenkins"}},{"id":"10","type":"organization","attributes":{"name":"Hansen
+        Group","street_address":"2100 Stout St.","city":"Denver","state":"CO","zip_code":"80205","email":"della.rodriguez@turner-wiegand.test","phone_number":"(491)
+        042-0893 x95942","website":"http://example.com/elliott"}},{"id":"11","type":"organization","attributes":{"name":"Brekke-Will","street_address":"2301
+        Lawrence St.","city":"Denver","state":"CO","zip_code":"80205","email":"jayna@jacobson.test","phone_number":"1-738-361-2045
+        x595","website":"http://example.com/francisca_thiel"}},{"id":"12","type":"organization","attributes":{"name":"Kertzmann
+        Inc","street_address":"2323 Curtis St.","city":"Denver","state":"CO","zip_code":"80205","email":"blake@strosin-mosciski.example","phone_number":"1-135-871-3974
+        x508","website":"http://example.com/ileana"}},{"id":"7","type":"organization","attributes":{"name":"Parisian-Stiedemann","street_address":"1600
+        N. Downing St.","city":"Denver","state":"CO","zip_code":"80218","email":"noelle_marks@lynch.test","phone_number":"695.731.6342
+        x8497","website":"http://example.com/reba.carter"}},{"id":"9","type":"organization","attributes":{"name":"Kris-Rau","street_address":"3301
+        S. Grant St.","city":"Englewood","state":"CO","zip_code":"80113","email":"mckinley_stroman@abbott.example","phone_number":"484-635-5919
+        x49452","website":"http://example.com/shawnna"}},{"id":"3","type":"organization","attributes":{"name":"Boehm
+        Group","street_address":"1535 High St.","city":"Denver","state":"CO","zip_code":"80218","email":"phil@koepp-greenfelder.test","phone_number":"(499)
+        691-4318 x1694","website":"http://example.com/will.kihn"}},{"id":"2","type":"organization","attributes":{"name":"Ratke
+        LLC","street_address":"6475A Benton St.","city":"Arvada","state":"CO","zip_code":"80003","email":"merlyn.murazik@jast.example","phone_number":"786-176-3341","website":"http://example.com/hosea"}},{"id":"5","type":"organization","attributes":{"name":"Kovacek-Turcotte","street_address":"3489
+        W. 72nd Ave.","city":"Westminster","state":"CO","zip_code":"80030","email":"cassandra@erdman.example","phone_number":"1-478-476-1102","website":"http://example.com/eusebio"}}]}'
+  recorded_at: Mon, 17 Apr 2023 01:44:50 GMT
+recorded_with: VCR 6.1.0

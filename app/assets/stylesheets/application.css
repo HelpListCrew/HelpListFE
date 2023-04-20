@@ -14,50 +14,77 @@
  *= require_self
  */
 
+/*
+ *= require bootstrap.min
+ */
 
-/* .btn-primary {
-  --bs-btn-font-weight: 600;
-  --bs-btn-color: var(--bd-purple-bg);
-  --bs-btn-bg: var(--bd-violet-bg);
-  --bs-btn-border-color: var(--bd-violet-bg);
-  --bs-btn-hover-color: var(--bd-violet-bg);
-  --bs-btn-hover-bg: #{shade-color($bd-violet, 10%)};
-  --bs-btn-hover-border-color: #{shade-color($bd-violet, 10%)};
-  --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-  --bs-btn-active-color: var(--bs-btn-hover-color);
-  --bs-btn-active-bg: #{shade-color($bd-violet, 20%)};
-  --bs-btn-active-border-color: #{shade-color($bd-violet, 20%)};
-} */
-
-.text-primary {
-  color: #660f9b;
+.border {
+  border: 1px solid black;
+  padding: 30px;
 }
-.btn-primary {
-  background: #660f9b;
-  border-color: #660f9b;
+
+.my-form-class {
+  /* Set font size and margin for form elements */
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.my-form-class input[type="text"],
+.my-form-class input[type="email"],
+.my-form-class input[type="password"],
+.my-form-class input[type="password_confirmation"] {
+  /* Set padding and border for text and email input fields */
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+/* .my-form-class button[type="submit"] {
+  /* Style the submit button */
+  /* background-color: #007bff;
   color: #fff;
-}
-.btn-primary:hover {
-  background-color: #b27cd4;
-  border-color: #b27cd4;
-  transition: 0.6s;
-}
-.btn-outline-primary:hover {
-  background-color: #b27cd4;
-  border-color: #b27cd4;
-  transition: 0.6s;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+} */ 
+
+ /* .my-form-class button[type="submit"]:hover { */
+  /* Add a hover effect to the submit button */ */
+  /* background-color: #0069d9;
+}  */
+
+ .my-form-class label {
+  /* Style the label */
+  display: block;
+  margin-bottom: 5px;
 }
 
-.btn-outline-primary {
-  color: #660f9b;
-  border-color: #660f9b;
+.rounded-image {
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-/* .link-underline-primary {
-  color: #660f9b;
-  text-decoration: underline;
-} */
-
-.bg-primary {
-  background-color: #ccb5da !important;
+.rounded-image iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
+
+/* Round corners of a div element */
+.rounded-div {
+  border-radius: 10px; /* You can adjust the value to control the degree of rounding */
+}
+
+/* Round corners of an image element */
+.rounded-img {
+  border-radius: 50%; /* Use a value of 50% to make the image circular */
+}
+
+/* float: left;
+
+float: right; */
+
+
+
+
+
+

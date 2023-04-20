@@ -17,8 +17,8 @@ http_interactions:
       - Ruby
   response:
     status:
-      code: 200
-      message: OK
+      code: 401
+      message: Unauthorized
     headers:
       X-Frame-Options:
       - SAMEORIGIN
@@ -36,22 +36,20 @@ http_interactions:
       - application/json; charset=utf-8
       Vary:
       - Accept
-      Etag:
-      - W/"b0028d20e620dd24648510f1de8f7385"
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - no-cache
       X-Request-Id:
-      - e83132c1-de89-499f-acfb-0bddc0f04c79
+      - 491a550b-d559-4183-bc2c-099a36aa564e
       X-Runtime:
-      - '0.304617'
+      - '0.291455'
       Server-Timing:
-      - start_processing.action_controller;dur=0.10, sql.active_record;dur=0.68, instantiation.active_record;dur=0.04,
-        process_action.action_controller;dur=300.30
+      - start_processing.action_controller;dur=0.05, sql.active_record;dur=0.64, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=284.94
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"message":"your query could not be completed","errors":{"status":404,"title":"Not
-        authenticated"}}'
-  recorded_at: Thu, 13 Apr 2023 20:57:28 GMT
+      string: '{"message":"your query could not be completed","errors":[{"status":401,"title":"Invalid
+        credentials"}]}'
+  recorded_at: Mon, 17 Apr 2023 00:01:32 GMT
 recorded_with: VCR 6.1.0

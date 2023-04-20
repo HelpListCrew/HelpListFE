@@ -18,12 +18,21 @@ class SessionsController < ApplicationController
   end  
 
 	def omniauth
-		user = HelpListFacade.new({	
-																uid: request.env['omniauth.auth'][:uid], 
-																email: request.env['omniauth.auth'][:info][:email]
-															}).find_or_create
-		session[:user_id] = user.id
-		redirect_to dashboard_path
+		if params[:provider] == "google_oauth2"
+			user = HelpListFacade.new({	
+																	uid: request.env['omniauth.auth'][:uid], 
+																	email: request.env['omniauth.auth'][:info][:email]
+																}).find_or_create
+			session[:user_id] = user.id
+
+			redirect_to dashboard_path
+		elsif params[:provider] = "kroger"
+			session[:user_token] = 
+			Rails.cache.fetch(:user_token, expires_in: 5.seconds) do
+				KrogerService.new.user_token(params[:code])
+			end
+      redirect_to session[:return_to]
+		end
 	end
 
 	private

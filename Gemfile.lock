@@ -92,6 +92,7 @@ GEM
     crack (0.4.5)
       rexml
     crass (1.0.6)
+    daemons (1.4.1)
     date (3.3.3)
     debug (1.7.2)
       irb (>= 1.5.0)
@@ -107,6 +108,8 @@ GEM
     ffi (1.15.5)
     figaro (1.2.0)
       thor (>= 0.14.0, < 2)
+    geocoder (1.8.1)
+    geokit (1.14.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
     hashdiff (1.0.1)
@@ -125,6 +128,9 @@ GEM
     jwt (2.7.0)
     launchy (2.5.2)
       addressable (~> 2.8)
+    listen (3.8.0)
+      rb-fsevent (~> 0.10, >= 0.10.3)
+      rb-inotify (~> 0.9, >= 0.9.10)
     loofah (2.20.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -149,7 +155,12 @@ GEM
       timeout
     net-smtp (0.3.3)
       net-protocol
+    ngrok (1.6.1)
+      daemons
+      listen
     nio4r (2.5.9)
+    nokogiri (1.14.3-arm64-darwin)
+      racc (~> 1.4)
     nokogiri (1.14.3-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.14.3-x86_64-linux)
@@ -220,11 +231,11 @@ GEM
     rb-fsevent (0.11.2)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    regexp_parser (2.7.0)
+    regexp_parser (2.8.0)
     reline (0.3.3)
       io-console (~> 0.5)
     rexml (3.2.5)
-    rspec-core (3.12.1)
+    rspec-core (3.12.2)
       rspec-support (~> 3.12.0)
     rspec-expectations (3.12.2)
       diff-lcs (>= 1.2.0, < 2.0)
@@ -294,6 +305,7 @@ GEM
     zeitwerk (2.6.7)
 
 PLATFORMS
+  arm64-darwin-22
   x86_64-darwin-22
   x86_64-linux
 
@@ -304,9 +316,12 @@ DEPENDENCIES
   debug
   faraday
   figaro
+  geocoder (~> 1.8)
+  geokit (~> 1.14)
   importmap-rails
   jbuilder
   launchy
+  ngrok (~> 1.6)
   omniauth
   omniauth-google-oauth2
   omniauth-rails_csrf_protection (~> 1.0.0)

@@ -4,21 +4,24 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   root "welcome#show"
+  resources :wishlist_items, only: [:index, :create, :update, :destroy]
+  resources :organizations, only: [:index, :show]
+
+  get "/organizations/:organization_id/users/:id", to: "organizations/users#show", as: "organization_user"
+  get "/organizations/:org_id/users", to: "organizations/users#index"
 
   get "/register", controller: "users", to: "users#new"
-  get "/register", controller: "users", to: "users#create"
+  post "/register", to: "users#create"
+ 
   get "/dashboard", controller: "users", to: "users#show"
-  get "/wishlist", controller: "users", to: "users#wishlist"
-  # resources :users, only: [:new, :create, :show] do
-  #   resources :wishlists, only: [:new, :create, :show, :edit, :update]
-  # end
-
+  
   post '/login', to: "sessions#login"
   delete '/logout', to: "sessions#logout"
 
-	get "/auth/:provider/callback", to: "sessions#omniauth"
+	post '/kroger/add_to_cart'
 
-  get "/register", to: "users#new"
-  post "/register", to: "users#create"
-  get "/dashboard", to: "users#show"
+
+  get "/search", controller: "search", to: "search#index"
+  
+	get "/auth/:provider/callback", to: "sessions#omniauth"
 end

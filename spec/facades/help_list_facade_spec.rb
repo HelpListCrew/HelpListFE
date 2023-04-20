@@ -103,4 +103,20 @@ RSpec.describe HelpListFacade do
       expect(item.price).to be_a(Float)
     end
   end
+
+  describe "#get_org_users", :vcr do
+    it "returns all users for a specific organization" do
+      facade = HelpListFacade.new(1)
+      users = facade.get_org_users(1)
+      user = users.first
+      user2 = users.last
+
+      expect(user).to be_a(User)
+      expect(user.id).to be_a(String)
+      expect(user.username).to be(nil)
+      expect(user2.username).to be_a(String)
+      expect(user.email).to be_a(String)
+      expect(user.user_type).to be_a(String)
+    end
+  end
 end

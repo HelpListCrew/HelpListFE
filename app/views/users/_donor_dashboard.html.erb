@@ -25,7 +25,7 @@
   <p class="list-group list-group-flush">
     <% if !@organizations.nil? %>
         <% @organizations.each do |organization| %>
-            <p><%= link_to organization.name %></p>
+            <li><%= link_to organization.name, organization_path(organization.id), method: :get %></li>
           <% end %>
     <% end %>
   </p>

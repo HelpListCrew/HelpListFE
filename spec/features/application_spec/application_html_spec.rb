@@ -18,6 +18,7 @@ describe "application.html.erb" do
 		visit root_path
 
 		expect(page).to_not have_link "Dashboard"
+    expect(page).to have_link "Home"
 
 		user = User.new({:id=>"5", :type=>"user", :attributes=>{:email=>"octodog86@gmail.com", :user_type=>"donor"}})
 
@@ -25,5 +26,6 @@ describe "application.html.erb" do
 		visit root_path
 
 		expect(page).to have_link("Dashboard")
+		expect(page).to have_link("Home")
 	end
 end

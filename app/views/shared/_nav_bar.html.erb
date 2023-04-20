@@ -1,7 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">HelpList</a>
+    <% if current_user%>
+      <%= button_to "Log Out", logout_path, method: :delete, data: { "turbo-method": :delete }, :class => "btn btn-warning"%>
+    <%end%>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarColor01">
@@ -9,12 +12,10 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
-        <%# <li class="nav-item">
-          <a class="nav-link" href="/organizations">Organizations</a> %>
         <% if current_user %>
-        <li class="nav-item">
-          <a class="nav-link" href="/dashboard">Dashboard</a>
-        </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/dashboard">Dashboard</a>
+          </li>
         <% end %>
       </ul>
     </div>

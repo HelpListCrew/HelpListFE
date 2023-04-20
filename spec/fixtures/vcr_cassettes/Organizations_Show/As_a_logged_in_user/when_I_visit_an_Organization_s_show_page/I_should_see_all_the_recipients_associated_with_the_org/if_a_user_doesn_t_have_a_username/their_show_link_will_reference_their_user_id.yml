@@ -39,12 +39,12 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 9c2a2842-4807-4ef8-a185-261b5e6bbd54
+      - 70fccf20-cd25-4db1-abe9-f095100a4a54
       X-Runtime:
-      - '0.184988'
+      - '0.028351'
       Server-Timing:
-      - start_processing.action_controller;dur=0.35, sql.active_record;dur=32.18,
-        instantiation.active_record;dur=0.25, process_action.action_controller;dur=71.39
+      - start_processing.action_controller;dur=0.17, sql.active_record;dur=2.65, instantiation.active_record;dur=0.39,
+        process_action.action_controller;dur=9.53
       Transfer-Encoding:
       - chunked
     body:
@@ -53,7 +53,7 @@ http_interactions:
         Monahan and Herzog","street_address":"7989 Mariel Plaza","city":"Lake Sonia","state":"NH","zip_code":"31988","email":"floretta.nader@baumbach-hegmann.example","phone_number":"584.938.9753","website":"http://example.com/aline.bergnaum","mission_statement":"To
         empower and uplift individuals, families, and communities in need through
         comprehensive support, compassionate care, and sustainable solutions."}}}'
-  recorded_at: Thu, 20 Apr 2023 17:33:12 GMT
+  recorded_at: Thu, 20 Apr 2023 18:03:16 GMT
 - request:
     method: get
     uri: http://localhost:5000/api/v1/organizations/1/users
@@ -93,16 +93,66 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - dd7a992c-4043-4e9c-b953-39c81578ad2b
+      - c9765542-5386-4631-9916-0d0c9d589e46
       X-Runtime:
-      - '0.075404'
+      - '0.018779'
       Server-Timing:
-      - start_processing.action_controller;dur=0.07, sql.active_record;dur=13.29,
-        instantiation.active_record;dur=0.10, process_action.action_controller;dur=67.23
+      - start_processing.action_controller;dur=0.10, sql.active_record;dur=2.45, instantiation.active_record;dur=0.12,
+        process_action.action_controller;dur=7.13
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: '{"data":[{"id":"1","type":"user","attributes":{"email":"recipient@gmail.com","user_type":"recipient","username":null}},{"id":"2","type":"user","attributes":{"email":"anotherrecipient@gmail.com","user_type":"recipient","username":"OceanicDreamer"}},{"id":"3","type":"user","attributes":{"email":"athirdrecipient@gmail.com","user_type":"recipient","username":"Stargazer321"}}]}'
-  recorded_at: Thu, 20 Apr 2023 17:33:12 GMT
+  recorded_at: Thu, 20 Apr 2023 18:03:16 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/wishlist_items?modifier=unpurchased&user_id=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"8fe32e407a1038ee38753b70e5374b3a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 79deb060-2782-4770-b5a5-175af79a5079
+      X-Runtime:
+      - '0.020660'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.12, sql.active_record;dur=1.54, process_action.action_controller;dur=4.30
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":[]}'
+  recorded_at: Thu, 20 Apr 2023 18:03:16 GMT
 recorded_with: VCR 6.1.0

@@ -20,7 +20,7 @@ describe "application.html.erb" do
 		expect(page).to_not have_link "Dashboard"
     expect(page).to have_link "Organizations"
 
-		user = User.new({:data=>{:id=>"5", :type=>"user", :attributes=>{:email=>"octodog86@gmail.com", :user_type=>"donor"}}})
+		user = User.new({:id=>"5", :type=>"user", :attributes=>{:email=>"octodog86@gmail.com", :user_type=>"donor"}})
 
 		allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 		visit root_path

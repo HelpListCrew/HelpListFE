@@ -337,4 +337,22 @@ RSpec.describe HelpListService do
       expect(wisheditem[:data][:attributes][:image_path]).to be_a(String)
     end
   end
+
+  describe "#get_org_users", :vcr do
+    let(:orguser) {HelpListService.new.get_org_users(1)}
+
+    it "gets all users for an organization with the org id" do
+      expect(orguser).to be_a(Hash)
+      expect(orguser[:data]).to be_an(Array)
+      expect(orguser[:data].count).to eq(3)
+      expect(orguser[:data][0].keys).to eq([:id, :type, :attributes])
+      expect(orguser[:data][0][:id]).to be_a(String)
+      expect(orguser[:data][0][:type]).to be_a(String)
+      expect(orguser[:data][0][:attributes].keys).to eq([:email, :user_type, :username])
+      expect(orguser[:data][0][:attributes][:email]).to be_a(String)
+      expect(orguser[:data][0][:attributes][:user_type]).to be_a(String)
+      expect(orguser[:data][0][:attributes][:username]).to be(nil)
+      expect(orguser[:data][1][:attributes][:username]).to be_a(String)
+    end
+  end
 end

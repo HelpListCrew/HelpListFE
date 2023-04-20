@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root "welcome#show"
   resources :wishlist_items, only: [:index, :create, :update, :destroy]
   resources :organizations, only: [:index, :show] do
-    resources :users, only: [:index, :show], module: :organizations
+    resources :users, only: [:show], module: :organizations
   end
 
   get "/register", controller: "users", to: "users#new"

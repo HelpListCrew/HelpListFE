@@ -82,4 +82,9 @@ class HelpListService
 
     JSON.parse(response.body, symbolize_names: true)
   end
+
+  def get_org_users(org_id)
+    response = connection.get("/api/v1/organizations/#{org_id}/users")
+    JSON.parse(response.body, symbolize_names: true)
+  end
 end

@@ -4,7 +4,7 @@ describe "Donor Dashboard", :vcr do
   describe "As a logged in donor user" do
     describe "when I visit my dashboard" do
 
-      let(:user) {User.new({:data=>{:id=>"5", :type=>"user", :attributes=>{:email=>"octodog86@gmail.com", :user_type=>"donor"}}})}
+      let(:user) {User.new({:id=>"5", :type=>"user", :attributes=>{:email=>"octodog86@gmail.com", :user_type=>"donor"}})}
       before :each do 
         allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
         allow_any_instance_of(HelpListFacade).to receive(:get_donated_items).and_return([])
@@ -47,7 +47,7 @@ describe "Donor Dashboard", :vcr do
 
     describe "when I visit my dashboard with donated items" do
       it "shows a section the donor's donated items" do
-        donor = User.new({:data=>{:id=>"2", :type=>"user", :attributes=>{:email=>"donor@gmail.com", :user_type=>"donor"}}})
+        donor = User.new({:id=>"2", :type=>"user", :attributes=>{:email=>"donor@gmail.com", :user_type=>"donor"}})
         allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(donor)
         visit dashboard_path
 

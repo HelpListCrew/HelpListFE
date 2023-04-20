@@ -9,7 +9,7 @@ RSpec.describe "Organizations Show" do
         it "I see that organization's mission statement", :vcr do
           visit organization_path(1)
 
-          expect(page).to have_content("Littel-Kreiger")
+          expect(page).to have_content("Mitchell, Monahan and Herzog")
 
           within "#mission-statement" do
             expect(page).to have_content("Mission Statement")
@@ -26,36 +26,43 @@ RSpec.describe "Organizations Show" do
         end
       end
 
-      describe "I should see all the recipients associated with the org", :vcr do
-
+      describe "I should see all the recipients associated with the org" do
         context "if a user doesn't have a username" do
-          it "their show link will reference their user id" do
+          it "their show link will reference their user id", :vcr do
             visit organization_path(1)
 
             within "#recipients" do
               expect(page).to have_content("Our Recipients")
               
-              within "##{1}" do
+              within "#recipient-#{1}" do
                 expect(page).to have_link("Recipient 1's Wishlist")
+                click_link("Recipient 1's Wishlist")
+                expect(current_path).to eq(organization_user_path(1, 1))
               end
             end
           end
         end
 
         context "if a user has a username" do 
-          it "their show link will reference their username" do
+          it "their show link will reference their username", :vcr do
             visit organization_path(1)
 
             within "#recipients" do
-              within "##{2}" do
+              within "#recipient-#{2}" do
                 expect(page).to have_link("OceanicDreamer's Wishlist")
-              end
-
-              within "##{3}" do
-                expect(page).to have_link("Stargazer321's Wishlist")
+                click_link("OceanicDreamer's Wishlist")
+                expect(current_path).to eq(organization_user_path(1, 2))
               end
             end
           end
+        end
+      end
+
+      context "if an organization has no recipients" do
+        it "I should see a message to check again later, and should not see users listed", :vcr do
+          visit organization_path(3)
+          
+          expect(page).to have_content("We have no recipients at this time. Check again later!")
         end
       end
     end

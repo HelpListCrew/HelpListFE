@@ -36,7 +36,7 @@ RSpec.describe "Welcome Page" do
   end
 
   describe "As a User" do
-    let(:user) {User.new({:data=>{:id=>"5", :type=>"user", :attributes=>{:email=>"octodog86@gmail.com", :user_type=>"donor"}}})}
+    let(:user) {User.new({:id=>"5", :type=>"user", :attributes=>{:email=>"octodog86@gmail.com", :user_type=>"donor"}})}
 
       before :each do 
         allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)

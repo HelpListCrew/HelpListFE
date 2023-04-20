@@ -35,24 +35,74 @@ http_interactions:
       Vary:
       - Accept
       Etag:
-      - W/"a4d6fe98833ab9d7cc9adc314e6440e9"
+      - W/"18927f0f2fdee94e9fd1cde02c21b8d8"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - cfcecd3b-2c43-420c-a318-524da6f75c45
+      - 9c2a2842-4807-4ef8-a185-261b5e6bbd54
       X-Runtime:
-      - '0.037939'
+      - '0.184988'
       Server-Timing:
-      - start_processing.action_controller;dur=0.14, sql.active_record;dur=2.51, instantiation.active_record;dur=0.60,
-        process_action.action_controller;dur=19.01
+      - start_processing.action_controller;dur=0.35, sql.active_record;dur=32.18,
+        instantiation.active_record;dur=0.25, process_action.action_controller;dur=71.39
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"1","type":"organization","attributes":{"name":"Littel-Kreiger","street_address":"4404
-        Rau Manor","city":"Lake Ruebenport","state":"SC","zip_code":"31965","email":"devon.langosh@runolfsson.example","phone_number":"499-751-7995
-        x21398","website":"http://example.com/nigel_hickle","mission_statement":"To
+      string: '{"data":{"id":"1","type":"organization","attributes":{"name":"Mitchell,
+        Monahan and Herzog","street_address":"7989 Mariel Plaza","city":"Lake Sonia","state":"NH","zip_code":"31988","email":"floretta.nader@baumbach-hegmann.example","phone_number":"584.938.9753","website":"http://example.com/aline.bergnaum","mission_statement":"To
         empower and uplift individuals, families, and communities in need through
         comprehensive support, compassionate care, and sustainable solutions."}}}'
-  recorded_at: Tue, 18 Apr 2023 23:14:48 GMT
+  recorded_at: Thu, 20 Apr 2023 17:33:12 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/organizations/1/users
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"66f569b17c9483677f98bcbccee4a14f"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - dd7a992c-4043-4e9c-b953-39c81578ad2b
+      X-Runtime:
+      - '0.075404'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.07, sql.active_record;dur=13.29,
+        instantiation.active_record;dur=0.10, process_action.action_controller;dur=67.23
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"1","type":"user","attributes":{"email":"recipient@gmail.com","user_type":"recipient","username":null}},{"id":"2","type":"user","attributes":{"email":"anotherrecipient@gmail.com","user_type":"recipient","username":"OceanicDreamer"}},{"id":"3","type":"user","attributes":{"email":"athirdrecipient@gmail.com","user_type":"recipient","username":"Stargazer321"}}]}'
+  recorded_at: Thu, 20 Apr 2023 17:33:12 GMT
 recorded_with: VCR 6.1.0

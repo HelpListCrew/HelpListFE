@@ -15,77 +15,144 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 404
-      message: Not Found
+      code: 200
+      message: OK
     headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
       Content-Type:
-      - application/json; charset=UTF-8
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"18927f0f2fdee94e9fd1cde02c21b8d8"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 6caacd0a-9890-4dc6-906d-d7da5446befa
+      - 70fccf20-cd25-4db1-abe9-f095100a4a54
       X-Runtime:
-      - '0.020290'
+      - '0.028351'
       Server-Timing:
-      - ''
-      Content-Length:
-      - '6417'
+      - start_processing.action_controller;dur=0.17, sql.active_record;dur=2.65, instantiation.active_record;dur=0.39,
+        process_action.action_controller;dur=9.53
+      Transfer-Encoding:
+      - chunked
     body:
       encoding: UTF-8
-      string: '{"status":404,"error":"Not Found","exception":"#\u003cActionController::RoutingError:
-        No route matches [GET] \"/api/v1/organizations/1\"\u003e","traces":{"Application
-        Trace":[],"Framework Trace":[{"exception_object_id":64560,"id":0,"trace":"actionpack
-        (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call''"},{"exception_object_id":64560,"id":1,"trace":"actionpack
-        (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call''"},{"exception_object_id":64560,"id":2,"trace":"railties
-        (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app''"},{"exception_object_id":64560,"id":3,"trace":"railties
-        (7.0.4.3) lib/rails/rack/logger.rb:25:in `block in call''"},{"exception_object_id":64560,"id":4,"trace":"activesupport
-        (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `block in tagged''"},{"exception_object_id":64560,"id":5,"trace":"activesupport
-        (7.0.4.3) lib/active_support/tagged_logging.rb:37:in `tagged''"},{"exception_object_id":64560,"id":6,"trace":"activesupport
-        (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `tagged''"},{"exception_object_id":64560,"id":7,"trace":"railties
-        (7.0.4.3) lib/rails/rack/logger.rb:25:in `call''"},{"exception_object_id":64560,"id":8,"trace":"actionpack
-        (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call''"},{"exception_object_id":64560,"id":9,"trace":"actionpack
-        (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call''"},{"exception_object_id":64560,"id":10,"trace":"rack
-        (2.2.6.4) lib/rack/runtime.rb:22:in `call''"},{"exception_object_id":64560,"id":11,"trace":"activesupport
-        (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in
-        `call''"},{"exception_object_id":64560,"id":12,"trace":"actionpack (7.0.4.3)
-        lib/action_dispatch/middleware/server_timing.rb:61:in `block in call''"},{"exception_object_id":64560,"id":13,"trace":"actionpack
-        (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events''"},{"exception_object_id":64560,"id":14,"trace":"actionpack
-        (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call''"},{"exception_object_id":64560,"id":15,"trace":"actionpack
-        (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call''"},{"exception_object_id":64560,"id":16,"trace":"actionpack
-        (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call''"},{"exception_object_id":64560,"id":17,"trace":"rack
-        (2.2.6.4) lib/rack/sendfile.rb:110:in `call''"},{"exception_object_id":64560,"id":18,"trace":"actionpack
-        (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call''"},{"exception_object_id":64560,"id":19,"trace":"railties
-        (7.0.4.3) lib/rails/engine.rb:530:in `call''"},{"exception_object_id":64560,"id":20,"trace":"puma
-        (5.6.5) lib/puma/configuration.rb:252:in `call''"},{"exception_object_id":64560,"id":21,"trace":"puma
-        (5.6.5) lib/puma/request.rb:77:in `block in handle_request''"},{"exception_object_id":64560,"id":22,"trace":"puma
-        (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown''"},{"exception_object_id":64560,"id":23,"trace":"puma
-        (5.6.5) lib/puma/request.rb:76:in `handle_request''"},{"exception_object_id":64560,"id":24,"trace":"puma
-        (5.6.5) lib/puma/server.rb:443:in `process_client''"},{"exception_object_id":64560,"id":25,"trace":"puma
-        (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread''"}],"Full Trace":[{"exception_object_id":64560,"id":0,"trace":"actionpack
-        (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call''"},{"exception_object_id":64560,"id":1,"trace":"actionpack
-        (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call''"},{"exception_object_id":64560,"id":2,"trace":"railties
-        (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app''"},{"exception_object_id":64560,"id":3,"trace":"railties
-        (7.0.4.3) lib/rails/rack/logger.rb:25:in `block in call''"},{"exception_object_id":64560,"id":4,"trace":"activesupport
-        (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `block in tagged''"},{"exception_object_id":64560,"id":5,"trace":"activesupport
-        (7.0.4.3) lib/active_support/tagged_logging.rb:37:in `tagged''"},{"exception_object_id":64560,"id":6,"trace":"activesupport
-        (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `tagged''"},{"exception_object_id":64560,"id":7,"trace":"railties
-        (7.0.4.3) lib/rails/rack/logger.rb:25:in `call''"},{"exception_object_id":64560,"id":8,"trace":"actionpack
-        (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call''"},{"exception_object_id":64560,"id":9,"trace":"actionpack
-        (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call''"},{"exception_object_id":64560,"id":10,"trace":"rack
-        (2.2.6.4) lib/rack/runtime.rb:22:in `call''"},{"exception_object_id":64560,"id":11,"trace":"activesupport
-        (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in
-        `call''"},{"exception_object_id":64560,"id":12,"trace":"actionpack (7.0.4.3)
-        lib/action_dispatch/middleware/server_timing.rb:61:in `block in call''"},{"exception_object_id":64560,"id":13,"trace":"actionpack
-        (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events''"},{"exception_object_id":64560,"id":14,"trace":"actionpack
-        (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call''"},{"exception_object_id":64560,"id":15,"trace":"actionpack
-        (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call''"},{"exception_object_id":64560,"id":16,"trace":"actionpack
-        (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call''"},{"exception_object_id":64560,"id":17,"trace":"rack
-        (2.2.6.4) lib/rack/sendfile.rb:110:in `call''"},{"exception_object_id":64560,"id":18,"trace":"actionpack
-        (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call''"},{"exception_object_id":64560,"id":19,"trace":"railties
-        (7.0.4.3) lib/rails/engine.rb:530:in `call''"},{"exception_object_id":64560,"id":20,"trace":"puma
-        (5.6.5) lib/puma/configuration.rb:252:in `call''"},{"exception_object_id":64560,"id":21,"trace":"puma
-        (5.6.5) lib/puma/request.rb:77:in `block in handle_request''"},{"exception_object_id":64560,"id":22,"trace":"puma
-        (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown''"},{"exception_object_id":64560,"id":23,"trace":"puma
-        (5.6.5) lib/puma/request.rb:76:in `handle_request''"},{"exception_object_id":64560,"id":24,"trace":"puma
-        (5.6.5) lib/puma/server.rb:443:in `process_client''"},{"exception_object_id":64560,"id":25,"trace":"puma
-        (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread''"}]}}'
-  recorded_at: Thu, 20 Apr 2023 01:44:44 GMT
+      string: '{"data":{"id":"1","type":"organization","attributes":{"name":"Mitchell,
+        Monahan and Herzog","street_address":"7989 Mariel Plaza","city":"Lake Sonia","state":"NH","zip_code":"31988","email":"floretta.nader@baumbach-hegmann.example","phone_number":"584.938.9753","website":"http://example.com/aline.bergnaum","mission_statement":"To
+        empower and uplift individuals, families, and communities in need through
+        comprehensive support, compassionate care, and sustainable solutions."}}}'
+  recorded_at: Thu, 20 Apr 2023 18:03:16 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/organizations/1/users
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"66f569b17c9483677f98bcbccee4a14f"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - c9765542-5386-4631-9916-0d0c9d589e46
+      X-Runtime:
+      - '0.018779'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.10, sql.active_record;dur=2.45, instantiation.active_record;dur=0.12,
+        process_action.action_controller;dur=7.13
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"1","type":"user","attributes":{"email":"recipient@gmail.com","user_type":"recipient","username":null}},{"id":"2","type":"user","attributes":{"email":"anotherrecipient@gmail.com","user_type":"recipient","username":"OceanicDreamer"}},{"id":"3","type":"user","attributes":{"email":"athirdrecipient@gmail.com","user_type":"recipient","username":"Stargazer321"}}]}'
+  recorded_at: Thu, 20 Apr 2023 18:03:16 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/wishlist_items?modifier=unpurchased&user_id=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"8fe32e407a1038ee38753b70e5374b3a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 79deb060-2782-4770-b5a5-175af79a5079
+      X-Runtime:
+      - '0.020660'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.12, sql.active_record;dur=1.54, process_action.action_controller;dur=4.30
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":[]}'
+  recorded_at: Thu, 20 Apr 2023 18:03:16 GMT
 recorded_with: VCR 6.1.0

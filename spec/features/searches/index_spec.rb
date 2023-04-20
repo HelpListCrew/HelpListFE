@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe "Searches Index" do
   describe "As a recipient" do
     describe "When I make a search and arrive at search_path ", :vcr do
-      let(:user) {User.new({:data=>{:id=>"1", :type=>"user", :attributes=>{:email=>"octodog86@gmail.com", :user_type=>"recipient"}}})}
+      let(:user) {User.new({:id=>"1", :type=>"user", :attributes=>{:email=>"octodog86@gmail.com", :user_type=>"recipient"}})}
 
       before(:each) do 
         allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)

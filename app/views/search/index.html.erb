@@ -1,28 +1,36 @@
 <div style="text-align: center;">
 <h1> Search Items </h1>
-<div class="list-group"><br>
-  <% unless @kroger_facade.find_items.all? { |item| item.price == "Unavailable" } %>
-    <div id="items">
-      <% @kroger_facade.find_items.each do |item| %>
-        <% unless item.price == "Unavailable" %>
-          <div id="item-<%= item.id %>">
-            <p><%= image_tag item.image_url %></p>
-            <p><%= item.description %></p>
-            <p><%= item.brand %></p>
-            <p>$<%= item.price %></p>
-            <p><%= item.size %></p>
-            <%= button_to "Add to Wishlist", wishlist_items_path, params: {item_id: item.id, 
-                                                                      image_path: item.image_url,
-                                                                      price: item.price,
-                                                                      size: item.size,
-                                                                      name: item.description }, class: "btn btn-primary my-2 my-sm-0"  %><br>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  <% else %>
-    <p>No Items Available</p>
+<div class="border">
+  <%= form_with url: search_path, method: :get, class: "form-inline my-2 my-lg-0" do |f| %>
+    <%= f.search_field :query, class: "form-control mr-sm-2", placeholder: "Search for an item", aria_label: "Search" %><br>
+    <%= f.submit "Search", class: "btn btn-success my-2 my-sm-0" %>
   <% end %>
+</div><br>
+  <div class="list-group"><br>
+    <% unless @kroger_facade.find_items.all? { |item| item.price == "Unavailable" } %>
+      <div id="items">
+        <% @kroger_facade.find_items.each do |item| %>
+          <% unless item.price == "Unavailable" %>
+            <div id="item-<%= item.id %>">
+              <p><%= image_tag item.image_url %></p>
+              <p><%= item.description %></p>
+              <p><%= item.brand %></p>
+              <p>$<%= item.price %></p>
+              <p><%= item.size %></p>
+              <%= button_to "Add to Wishlist", wishlist_items_path, params: {item_id: item.id, 
+                                                                        image_path: item.image_url,
+                                                                        price: item.price,
+                                                                        size: item.size,
+                                                                        name: item.description }, class: "btn btn-primary my-2 my-sm-0"  %><br>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    <% else %>
+      <p>No Items Available</p>
+    <% end %>
+  </div>
 </div>
+
 
 

@@ -1,14 +1,15 @@
 /* custom.css */
 
 /* Add border to body */
-body {
+/* body {
   border: 20px solid #686DC3; /* Change color and thickness as desired */
-}
+  /* padding: 20px; */
+/* } */ 
 
 /* Optional: Add padding to body to create some space between border and content */
-body {
+/* body {
   padding: 20px; /* Change value as desired */
-}
+
 
 .banner {
   background-color: #37AEDD; /* Set the background color for the banner */

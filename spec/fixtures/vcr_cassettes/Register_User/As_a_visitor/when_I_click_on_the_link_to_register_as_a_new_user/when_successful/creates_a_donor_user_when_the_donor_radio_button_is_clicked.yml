@@ -1,11 +1,53 @@
 ---
 http_interactions:
 - request:
+    method: get
+    uri: https://api.namefake.com/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 21 Apr 2023 14:52:49 GMT
+      Server:
+      - Apache
+      X-Powered-By:
+      - PHP/7.2.34
+      Upgrade:
+      - h2,h2c
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - text/html; charset=UTF-8
+    body:
+      encoding: ASCII-8BIT
+      string: '{"name":"Mr. Wiley McLaughlin","address":"2145 Orland Tunnel\nSchuppeborough,
+        MD 42888-9289","latitude":-49.736203,"longitude":-96.708401,"maiden_name":"Cronin","birth_data":"1966-06-03","phone_h":"843-961-8064x3535","phone_w":"(106)986-9305x1590","email_u":"monserrate33","email_d":"vkbags.in","username":"waelchiserenity","password":"[)`L:%hExFayCSp7\\L","domain":"cormier.com","useragent":"Opera\/8.68
+        (X11; Linux x86_64; en-US) Presto\/2.10.191 Version\/10.00","ipv4":"18.93.220.58","macaddress":"EC:A8:48:78:EA:8D","plasticcard":"4556800393917","cardexpir":"02\/24","bonus":19,"company":"Lesch-Walter","color":"silver","uuid":"df45e15b-41b4-3f90-99bb-34fe71e3ba51","height":153,"weight":86.3,"blood":"A\u2212","eye":"Amber","hair":"Straight,
+        Blond","pict":"7male","url":"https:\/\/api.namefake.com\/english-united-states\/male\/b946b864a2871f87a70746ebada52697","sport":"Short
+        Track Speed Skating","ipv4_url":"\/\/myip-address.com\/ip-lookup\/18.93.220.58","email_url":"\/\/emailfake.com\/vkbags.in\/monserrate33","domain_url":"\/\/myip-address.com\/ip-lookup\/cormier.com"}'
+  recorded_at: Fri, 21 Apr 2023 14:52:49 GMT
+- request:
     method: post
     uri: http://localhost:5000/api/v1/users
     body:
       encoding: UTF-8
-      string: user%5Bemail%5D=snickerz_lover85%40gmail.com&user%5Bpassword%5D=caramelizyumz&user%5Buser_type%5D=donor
+      string: user%5Bemail%5D=snickerz_lover86%40gmail.com&user%5Bpassword%5D=caramelizyumz&user%5Buser_type%5D=donor&user%5Busername%5D=waelchiserenity
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -17,8 +59,8 @@ http_interactions:
       - Ruby
   response:
     status:
-      code: 404
-      message: Not Found
+      code: 201
+      message: Created
     headers:
       X-Frame-Options:
       - SAMEORIGIN
@@ -36,22 +78,124 @@ http_interactions:
       - application/json; charset=utf-8
       Vary:
       - Accept
+      Etag:
+      - W/"776de88904d305f546fda5699cfafb60"
       Cache-Control:
-      - no-cache
+      - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 91d5366d-6fa4-4fe1-a88e-b7e00f2d3e75
+      - 34f64461-5722-4133-ba43-2df6f92d6f13
       X-Runtime:
-      - '0.609333'
+      - '0.252864'
       Server-Timing:
-      - sql.active_record;dur=36.23, start_processing.action_controller;dur=0.12,
-        process_action.action_controller;dur=503.00
+      - start_processing.action_controller;dur=0.07, sql.active_record;dur=3.97, process_action.action_controller;dur=247.23
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"message":"your query could not be completed","errors":[{"status":"400","title":"Email
-        has already been taken"}]}'
-  recorded_at: Tue, 18 Apr 2023 17:25:09 GMT
+      string: '{"data":{"id":"58","type":"user","attributes":{"email":"snickerz_lover86@gmail.com","user_type":"donor","username":"waelchiserenity"}}}'
+  recorded_at: Fri, 21 Apr 2023 14:52:49 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/users/58
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"776de88904d305f546fda5699cfafb60"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 61bc8323-09b3-49a3-bd8d-acdd47845911
+      X-Runtime:
+      - '0.005526'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.09, sql.active_record;dur=0.72, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=1.25
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"58","type":"user","attributes":{"email":"snickerz_lover86@gmail.com","user_type":"donor","username":"waelchiserenity"}}}'
+  recorded_at: Fri, 21 Apr 2023 14:52:49 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/wishlist_items?modifier=donated&user_id=58
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"8fe32e407a1038ee38753b70e5374b3a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 483bd662-0793-4ebe-a71c-bba4e782af6d
+      X-Runtime:
+      - '0.032436'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.06, sql.active_record;dur=19.60,
+        process_action.action_controller;dur=28.36
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":[]}'
+  recorded_at: Fri, 21 Apr 2023 14:52:49 GMT
 - request:
     method: get
     uri: http://localhost:5000/api/v1/users/14
@@ -91,16 +235,16 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - ef83833b-f30c-4905-a099-d84cba18876f
+      - 7e0b694c-18d5-4650-a0f2-35113b14ef11
       X-Runtime:
-      - '0.011207'
+      - '0.006447'
       Server-Timing:
-      - start_processing.action_controller;dur=0.08, sql.active_record;dur=1.42, instantiation.active_record;dur=0.08,
-        process_action.action_controller;dur=5.64
+      - start_processing.action_controller;dur=0.05, sql.active_record;dur=1.57, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=2.24
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: '{"data":{"id":"14","type":"user","attributes":{"email":"snickerz_lover85@gmail.com","user_type":"donor","username":null}}}'
-  recorded_at: Tue, 18 Apr 2023 17:25:09 GMT
+  recorded_at: Fri, 21 Apr 2023 14:52:49 GMT
 recorded_with: VCR 6.1.0

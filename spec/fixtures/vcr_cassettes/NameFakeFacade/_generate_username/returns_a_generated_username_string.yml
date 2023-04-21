@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.namefake.com/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 21 Apr 2023 14:25:39 GMT
+      Server:
+      - Apache
+      X-Powered-By:
+      - PHP/7.2.34
+      Upgrade:
+      - h2,h2c
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - text/html; charset=UTF-8
+    body:
+      encoding: ASCII-8BIT
+      string: '{"name":"Gavin Bartoletti","address":"251 Lindgren Trail Suite 298\nNorth
+        Camrenfurt, AL 00376","latitude":-33.951241,"longitude":-111.263238,"maiden_name":"Shanahan","birth_data":"1968-06-22","phone_h":"04921072775","phone_w":"1-926-891-7290","email_u":"pascale.bergnau","email_d":"redaksikabar.com","username":"jprice","password":"l0.j\/ot9XU4k:U''r2","domain":"purdy.org","useragent":"Mozilla\/5.0
+        (Windows NT 5.01; sl-SI; rv:1.9.0.20) Gecko\/20160807 Firefox\/37.0","ipv4":"244.214.113.89","macaddress":"EB:C0:4A:75:F5:41","plasticcard":"4556332283476171","cardexpir":"10\/23","bonus":28,"company":"Champlin-Lockman","color":"teal","uuid":"45168fb6-ce3a-3a81-98a1-7b4162820e50","height":160,"weight":55.5,"blood":"A\u2212","eye":"Brown","hair":"Curly,
+        Brown","pict":"3male","url":"https:\/\/api.namefake.com\/english-united-states\/male\/74217f86295661c6947ce73e406ff196","sport":"Canoe
+        Sprint","ipv4_url":"\/\/myip-address.com\/ip-lookup\/244.214.113.89","email_url":"\/\/emailfake.com\/redaksikabar.com\/pascale.bergnau","domain_url":"\/\/myip-address.com\/ip-lookup\/purdy.org"}'
+  recorded_at: Fri, 21 Apr 2023 14:25:39 GMT
+recorded_with: VCR 6.1.0

@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.namefake.com/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 21 Apr 2023 14:12:29 GMT
+      Server:
+      - Apache
+      X-Powered-By:
+      - PHP/7.2.34
+      Upgrade:
+      - h2,h2c
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - text/html; charset=UTF-8
+    body:
+      encoding: ASCII-8BIT
+      string: '{"name":"Sallie Jacobi","address":"8530 Ruth Lock Apt. 362\nNorth Bud,
+        CO 13487","latitude":-72.98359500000001,"longitude":136.05901999999998,"maiden_name":"Fay","birth_data":"2003-12-12","phone_h":"(152)761-7197x3879","phone_w":"(395)647-4076","email_u":"modesto53","email_d":"zurosbanda.com","username":"cschoen","password":"ZyE_MvK+o\"","domain":"stroman.com","useragent":"Mozilla\/5.0
+        (X11; Linux i686) AppleWebKit\/5332 (KHTML, like Gecko) Chrome\/38.0.811.0
+        Mobile Safari\/5332","ipv4":"209.69.102.14","macaddress":"0A:EA:1D:8C:97:46","plasticcard":"5411811175149147","cardexpir":"11\/24","bonus":34,"company":"Turcotte,
+        Dibbert and O''Keefe","color":"green","uuid":"3d118e31-e2ac-386c-ac3b-855e75b9bc95","height":195,"weight":106,"blood":"O\u2212","eye":"Gray","hair":"Very
+        curly, Black","pict":"5female","url":"https:\/\/api.namefake.com\/english-united-states\/female\/a8e9b5c864184bd5493963f562f49597","sport":"Cycling
+        BMX","ipv4_url":"\/\/myip-address.com\/ip-lookup\/209.69.102.14","email_url":"\/\/emailfake.com\/zurosbanda.com\/modesto53","domain_url":"\/\/myip-address.com\/ip-lookup\/stroman.com"}'
+  recorded_at: Fri, 21 Apr 2023 14:12:29 GMT
+recorded_with: VCR 6.1.0

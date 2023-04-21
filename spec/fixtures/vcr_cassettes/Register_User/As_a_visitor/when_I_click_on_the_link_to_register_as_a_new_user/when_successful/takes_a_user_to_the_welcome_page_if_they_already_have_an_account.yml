@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.namefake.com/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 21 Apr 2023 14:52:44 GMT
+      Server:
+      - Apache
+      X-Powered-By:
+      - PHP/7.2.34
+      Upgrade:
+      - h2,h2c
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - text/html; charset=UTF-8
+    body:
+      encoding: ASCII-8BIT
+      string: '{"name":"Ima Rodriguez II","address":"8215 Gabriella Mill\nPort Forestside,
+        IN 34485","latitude":9.192614000000006,"longitude":-176.415947,"maiden_name":"Dicki","birth_data":"1994-05-30","phone_h":"549.644.1225","phone_w":"(124)151-4026x954","email_u":"price.raegan","email_d":"eduheros.com","username":"nheidenreich","password":"S1:#=;c\"zy","domain":"block.com","useragent":"Mozilla\/5.0
+        (Macintosh; Intel Mac OS X 10_6_3 rv:3.0; en-US) AppleWebKit\/532.32.2 (KHTML,
+        like Gecko) Version\/4.0.3 Safari\/532.32.2","ipv4":"227.76.50.32","macaddress":"1F:7D:B6:18:D8:BB","plasticcard":"5459147624704437","cardexpir":"06\/25","bonus":16,"company":"Reynolds-Kreiger","color":"silver","uuid":"72c5be22-286a-3273-9240-55eeca3a931c","height":163,"weight":89.5,"blood":"O+","eye":"Amber","hair":"Straight,
+        Brown","pict":"7female","url":"https:\/\/api.namefake.com\/english-united-states\/female\/26c1d35f16025866cb3e3a0e0c76b77d","sport":"Canoe
+        Sprint","ipv4_url":"\/\/myip-address.com\/ip-lookup\/227.76.50.32","email_url":"\/\/emailfake.com\/eduheros.com\/price.raegan","domain_url":"\/\/myip-address.com\/ip-lookup\/block.com"}'
+  recorded_at: Fri, 21 Apr 2023 14:52:44 GMT
+recorded_with: VCR 6.1.0

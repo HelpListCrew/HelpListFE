@@ -8,6 +8,7 @@ Our mission at Helplist is to harness the power of crowdsourcing to alleviate th
 ## Table of Contents
 - [About](#about)
 - [Deployment](#deployment)
+- [Backend Repository](#backend-respository)
 - [Built With](#built-with)
 - [Running the Test Suit](#running-the-test-suit)
 - [Future Features](#future-features)
@@ -17,6 +18,9 @@ Our mission at Helplist is to harness the power of crowdsourcing to alleviate th
 ## About:
 - HelpList allows victims of domestic violence in collaboration with an organization, to create personalized wishlist's of needed items to post anonymously.
 - Users can select a facility, select a wishlist, and purchase items from wishlists to be sent directly to the organization and survivors.
+
+## Backend Repository
+[GitHub](https://github.com/HelpListCrew/HelpListBE)
 
 ## Deployment:
 [HelpList](https://helplist.herokuapp.com/)
@@ -32,8 +36,8 @@ Our mission at Helplist is to harness the power of crowdsourcing to alleviate th
 
 
 ### Running the Test Suit
- - In a new terminal window navigate to the HelpListBE repository and run the <p><code>rails s</code></p> command
- - Navigate to the HelpListFE terminal window, ensure you are in the root directory and run the command <p><code>bundle exec rspec</code></p>
+ - In a new terminal window navigate to the HelpListBE repository and run the and <p><code>rails s</code></p> command.
+ - Navigate to the HelpListFE terminal window, ensure you are in the root directory and run the command <p><code>rails db:create</code></p>, then <p><code>bundle exec rspec</code></p>
 
 ### Future Features
 
@@ -49,7 +53,7 @@ Our mission at Helplist is to harness the power of crowdsourcing to alleviate th
     - Display next to a purchased item on the donor dashboard when an item they have donated as been recieved by an Organization.
 
  ## Contributors
-| **Adam Baily** [Github](https://github.com/aj-bailey) | **Andra Helton** [GitHub](https://github.com/ALHelton)| **Axel De La Guardia** [GitHub](https://github.com/axeldelaguardia) | **Elle Majors** [GitHub](https://github.com/Elle-M) | **Jade Stewart** [GitHub](https://github.com/jadekstewart3) |
+| **Adam Baily** [Github](https://github.com/aj-bailey) - [LinkedIn]( https://www.linkedin.com/in/brewerdeveloper/) | **Andra Helton** [GitHub](https://github.com/ALHelton) - [LinkedIn](https://www.linkedin.com/in/andrahelton/) | **Axel De La Guardia** [GitHub](https://github.com/axeldelaguardia) - [LinkeIn](linkedin.com/in/axeldelaguardia) | **Elle Majors** [GitHub](https://github.com/Elle-M)- [LinkedIn](https://www.linkedin.com/in/ellemajors/) | **Jade Stewart** [GitHub](https://github.com/jadekstewart3) - [LinkedIn](https://www.linkedin.com/in/jadestewart-software-engineer/) |
 
 
 

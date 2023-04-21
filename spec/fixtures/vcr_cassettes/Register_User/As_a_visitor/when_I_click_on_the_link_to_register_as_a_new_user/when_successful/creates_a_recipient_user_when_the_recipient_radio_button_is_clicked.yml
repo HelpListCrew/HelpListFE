@@ -1,11 +1,53 @@
 ---
 http_interactions:
 - request:
+    method: get
+    uri: https://api.namefake.com/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 21 Apr 2023 14:52:47 GMT
+      Server:
+      - Apache
+      X-Powered-By:
+      - PHP/7.2.34
+      Upgrade:
+      - h2,h2c
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - text/html; charset=UTF-8
+    body:
+      encoding: ASCII-8BIT
+      string: '{"name":"Crystel Rath","address":"699 Keven Islands Apt. 158\nVeldafort,
+        ME 57219-5752","latitude":47.617874,"longitude":74.51902999999999,"maiden_name":"Mertz","birth_data":"1964-07-26","phone_h":"(895)685-2670x317","phone_w":"(729)792-5208x543","email_u":"qrodriguez","email_d":"quebecstart.com","username":"lempimarks","password":"%}f).,_bJ5E&v%F5","domain":"morissette.com","useragent":"Opera\/9.81
+        (X11; Linux x86_64; en-US) Presto\/2.11.323 Version\/10.00","ipv4":"172.20.89.101","macaddress":"F3:13:72:A1:B6:61","plasticcard":"6011988855285540","cardexpir":"09\/25","bonus":35,"company":"McClure-Daugherty","color":"gray","uuid":"b4e60362-b2e3-387e-8089-5b3fdfad5720","height":176,"weight":93.4,"blood":"O+","eye":"Blue","hair":"Wavy,
+        Black","pict":"8female","url":"https:\/\/api.namefake.com\/english-united-states\/female\/6b93519d662f62f3af3e391342cfdaa0","sport":"Equestrian
+        \/ Dressage","ipv4_url":"\/\/myip-address.com\/ip-lookup\/172.20.89.101","email_url":"\/\/emailfake.com\/quebecstart.com\/qrodriguez","domain_url":"\/\/myip-address.com\/ip-lookup\/morissette.com"}'
+  recorded_at: Fri, 21 Apr 2023 14:52:47 GMT
+- request:
     method: post
     uri: http://localhost:5000/api/v1/users
     body:
       encoding: UTF-8
-      string: user%5Bemail%5D=spoon_fight_at_night33%40gmail.com&user%5Bpassword%5D=nightfight&user%5Buser_type%5D=recipient
+      string: user%5Bemail%5D=spoon_fight_at_night43%40gmail.com&user%5Bpassword%5D=nightfight&user%5Buser_type%5D=recipient&user%5Busername%5D=lempimarks
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -17,8 +59,8 @@ http_interactions:
       - Ruby
   response:
     status:
-      code: 404
-      message: Not Found
+      code: 201
+      message: Created
     headers:
       X-Frame-Options:
       - SAMEORIGIN
@@ -36,22 +78,124 @@ http_interactions:
       - application/json; charset=utf-8
       Vary:
       - Accept
+      Etag:
+      - W/"f22e2b6dab29bacd4e65ed1350e9ff08"
       Cache-Control:
-      - no-cache
+      - max-age=0, private, must-revalidate
       X-Request-Id:
-      - bb85e679-59b5-430f-9142-e7adff28dc75
+      - 4a687a12-bb94-4ad9-a225-b2cc36894a9e
       X-Runtime:
-      - '0.532646'
+      - '0.252333'
       Server-Timing:
-      - start_processing.action_controller;dur=0.17, sql.active_record;dur=13.56,
-        process_action.action_controller;dur=523.02
+      - start_processing.action_controller;dur=0.07, sql.active_record;dur=3.93, process_action.action_controller;dur=246.75
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"message":"your query could not be completed","errors":[{"status":"400","title":"Email
-        has already been taken"}]}'
-  recorded_at: Tue, 18 Apr 2023 17:21:11 GMT
+      string: '{"data":{"id":"57","type":"user","attributes":{"email":"spoon_fight_at_night43@gmail.com","user_type":"recipient","username":"lempimarks"}}}'
+  recorded_at: Fri, 21 Apr 2023 14:52:48 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/users/57
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"f22e2b6dab29bacd4e65ed1350e9ff08"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 19782783-3d87-4cdd-9eda-0d5541beef84
+      X-Runtime:
+      - '0.006260'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.07, sql.active_record;dur=0.56, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=1.15
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"57","type":"user","attributes":{"email":"spoon_fight_at_night43@gmail.com","user_type":"recipient","username":"lempimarks"}}}'
+  recorded_at: Fri, 21 Apr 2023 14:52:48 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1//wishlist_items?user_id=57
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"8fe32e407a1038ee38753b70e5374b3a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b859c98f-ef73-49ed-9e20-7313197f5038
+      X-Runtime:
+      - '0.045471'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.09, sql.active_record;dur=23.59,
+        process_action.action_controller;dur=31.28
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":[]}'
+  recorded_at: Fri, 21 Apr 2023 14:52:48 GMT
 - request:
     method: get
     uri: http://localhost:5000/api/v1/users/13
@@ -91,16 +235,16 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - cf341fc3-a73d-4a28-a830-f199faf8ceae
+      - 6d51eb2f-474f-43b5-be16-2137ccf4b79b
       X-Runtime:
-      - '0.029896'
+      - '0.006023'
       Server-Timing:
-      - start_processing.action_controller;dur=0.10, sql.active_record;dur=21.38,
-        instantiation.active_record;dur=0.12, process_action.action_controller;dur=23.41
+      - start_processing.action_controller;dur=0.07, sql.active_record;dur=0.66, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=1.37
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: '{"data":{"id":"13","type":"user","attributes":{"email":"spoon_fight_at_night33@gmail.com","user_type":"recipient","username":null}}}'
-  recorded_at: Tue, 18 Apr 2023 17:21:11 GMT
+  recorded_at: Fri, 21 Apr 2023 14:52:48 GMT
 recorded_with: VCR 6.1.0

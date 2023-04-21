@@ -17,6 +17,7 @@ RSpec.describe "Register User" do
           expect(page).to have_button("Register")
           expect(page).to have_content("I am registering as a Donor!")
           expect(page).to have_content("I am registering as a Recipient!")
+          expect(page).to have_field(:username, with: "hmcdermott")
           page.has_checked_field?("donor")
         end
         
@@ -31,7 +32,7 @@ RSpec.describe "Register User" do
         it "creates a new user when valid credentials are provided" do
           allow_any_instance_of(HelpListFacade).to receive(:get_donated_items).and_return([])
           fill_in :username, with: "bloomin_babe"
-          fill_in :email, with: "plant_zaddy45@gmail.com"
+          fill_in :email, with: "plant_zaddy47@gmail.com"
           fill_in :password, with: "leafy_greens34"
           fill_in :password_confirmation, with: "leafy_greens34"
 
@@ -43,7 +44,7 @@ RSpec.describe "Register User" do
 
         it "creates a new user when no username is provided" do
           allow_any_instance_of(HelpListFacade).to receive(:get_donated_items).and_return([])
-          fill_in :email, with: "plant_mami45@gmail.com"
+          fill_in :email, with: "plant_mami46@gmail.com"
           fill_in :password, with: "leafy_greens34"
           fill_in :password_confirmation, with: "leafy_greens34"
 

@@ -1,11 +1,55 @@
 ---
 http_interactions:
 - request:
+    method: get
+    uri: https://api.namefake.com/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 21 Apr 2023 14:52:46 GMT
+      Server:
+      - Apache
+      X-Powered-By:
+      - PHP/7.2.34
+      Upgrade:
+      - h2,h2c
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - text/html; charset=UTF-8
+    body:
+      encoding: ASCII-8BIT
+      string: '{"name":"Constantin Walker MD","address":"52244 Ondricka Circles Apt.
+        129\nNew Cassandraport, KS 56088-0075","latitude":54.43390600000001,"longitude":39.40560199999999,"maiden_name":"Franecki","birth_data":"1999-08-13","phone_h":"(128)836-1792x10229","phone_w":"784.876.8850","email_u":"mosinski","email_d":"btcmod.com","username":"hegmannjeramie","password":".Pr.Cv3-9pCS4ja+_BVc","domain":"littel.net","useragent":"Mozilla\/5.0
+        (X11; Linux x86_64) AppleWebKit\/5321 (KHTML, like Gecko) Chrome\/40.0.843.0
+        Mobile Safari\/5321","ipv4":"148.30.248.50","macaddress":"CE:95:B7:CE:56:BA","plasticcard":"5148061722903949","cardexpir":"01\/25","bonus":20,"company":"Ondricka
+        and Sons","color":"yellow","uuid":"ee0546ad-3918-3023-aef7-27f932e57e74","height":204,"weight":80.7,"blood":"AB\u2212","eye":"Blue","hair":"Wavy,
+        Brown","pict":"3male","url":"https:\/\/api.namefake.com\/english-united-states\/male\/5a156ca1a43daf600574b5e729830511","sport":"Canoe
+        Slalom","ipv4_url":"\/\/myip-address.com\/ip-lookup\/148.30.248.50","email_url":"\/\/emailfake.com\/btcmod.com\/mosinski","domain_url":"\/\/myip-address.com\/ip-lookup\/littel.net"}'
+  recorded_at: Fri, 21 Apr 2023 14:52:46 GMT
+- request:
     method: post
     uri: http://localhost:5000/api/v1/users
     body:
       encoding: UTF-8
-      string: user%5Bemail%5D=plant_mami45%40gmail.com&user%5Bpassword%5D=leafy_greens34&user%5Buser_type%5D=donor
+      string: user%5Bemail%5D=plant_mami46%40gmail.com&user%5Bpassword%5D=leafy_greens34&user%5Buser_type%5D=donor&user%5Busername%5D=hegmannjeramie
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -37,24 +81,24 @@ http_interactions:
       Vary:
       - Accept
       Etag:
-      - W/"3ff62ace478ed671d4ea7a2f8df98c60"
+      - W/"3889da875f220ad01613c82cfcaa436c"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - ba283864-4327-440c-9b2b-dcf24bdd3caa
+      - b02e00b0-205e-4c93-a3a0-00317f9bc39c
       X-Runtime:
-      - '0.269226'
+      - '0.254960'
       Server-Timing:
-      - start_processing.action_controller;dur=0.07, sql.active_record;dur=3.38, process_action.action_controller;dur=264.79
+      - start_processing.action_controller;dur=0.11, sql.active_record;dur=5.14, process_action.action_controller;dur=249.24
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"12","type":"user","attributes":{"email":"plant_mami45@gmail.com","user_type":"donor","username":null}}}'
-  recorded_at: Tue, 18 Apr 2023 02:18:01 GMT
+      string: '{"data":{"id":"56","type":"user","attributes":{"email":"plant_mami46@gmail.com","user_type":"donor","username":"hegmannjeramie"}}}'
+  recorded_at: Fri, 21 Apr 2023 14:52:47 GMT
 - request:
     method: get
-    uri: http://localhost:5000/api/v1/users/12
+    uri: http://localhost:5000/api/v1/users/56
     body:
       encoding: US-ASCII
       string: ''
@@ -87,20 +131,20 @@ http_interactions:
       Vary:
       - Accept
       Etag:
-      - W/"3ff62ace478ed671d4ea7a2f8df98c60"
+      - W/"3889da875f220ad01613c82cfcaa436c"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - cac257e4-dbcb-4c48-a8d7-6181186c4cdb
+      - bd853032-ecbb-40c6-a8a0-26c69a3b0c8a
       X-Runtime:
-      - '0.006207'
+      - '0.006019'
       Server-Timing:
-      - start_processing.action_controller;dur=0.07, sql.active_record;dur=0.77, instantiation.active_record;dur=0.03,
-        process_action.action_controller;dur=1.62
+      - start_processing.action_controller;dur=0.06, sql.active_record;dur=0.77, instantiation.active_record;dur=0.07,
+        process_action.action_controller;dur=1.49
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"12","type":"user","attributes":{"email":"plant_mami45@gmail.com","user_type":"donor","username":null}}}'
-  recorded_at: Tue, 18 Apr 2023 02:18:01 GMT
+      string: '{"data":{"id":"56","type":"user","attributes":{"email":"plant_mami46@gmail.com","user_type":"donor","username":"hegmannjeramie"}}}'
+  recorded_at: Fri, 21 Apr 2023 14:52:47 GMT
 recorded_with: VCR 6.1.0

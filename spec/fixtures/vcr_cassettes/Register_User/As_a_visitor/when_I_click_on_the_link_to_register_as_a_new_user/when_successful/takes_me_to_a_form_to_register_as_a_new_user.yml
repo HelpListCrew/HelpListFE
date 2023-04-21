@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.namefake.com/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 21 Apr 2023 14:52:43 GMT
+      Server:
+      - Apache
+      X-Powered-By:
+      - PHP/7.2.34
+      Upgrade:
+      - h2,h2c
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - text/html; charset=UTF-8
+    body:
+      encoding: ASCII-8BIT
+      string: '{"name":"Natalia Durgan","address":"41063 Ozella Port Suite 175\nLake
+        Jena, OK 03599","latitude":12.659205,"longitude":-19.971293000000003,"maiden_name":"Wintheiser","birth_data":"1991-03-08","phone_h":"966-735-5106x115","phone_w":"1-412-887-7310","email_u":"erika.watsica","email_d":"1ac.xyz","username":"hmcdermott","password":"BGC9XS^,uk","domain":"bogan.com","useragent":"Mozilla\/5.0
+        (Windows NT 5.0; en-US; rv:1.9.0.20) Gecko\/20180813 Firefox\/36.0","ipv4":"156.84.105.11","macaddress":"04:D3:F0:C7:7C:3B","plasticcard":"5564013733969018","cardexpir":"07\/25","bonus":3,"company":"Yost
+        LLC","color":"aqua","uuid":"fb3373c7-fcfb-379e-a259-5a8b2bf6f141","height":200,"weight":100,"blood":"A+","eye":"Brown","hair":"Curly,
+        Brown","pict":"8female","url":"https:\/\/api.namefake.com\/english-united-states\/female\/d16df7a96fbc711bd4b628704d260abd","sport":"Hockey","ipv4_url":"\/\/myip-address.com\/ip-lookup\/156.84.105.11","email_url":"\/\/emailfake.com\/1ac.xyz\/erika.watsica","domain_url":"\/\/myip-address.com\/ip-lookup\/bogan.com"}'
+  recorded_at: Fri, 21 Apr 2023 14:52:43 GMT
+recorded_with: VCR 6.1.0

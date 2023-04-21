@@ -19,13 +19,13 @@
         <%= form.text_field :address %> 
         <%= form.label :miles, "Radius:" %> 
         <%= form.select :miles, options_for_select(1..100) %> 
-        <%= form.submit "Search" %>
+        <%= form.submit "Search", class: "btn btn-primary" %>
       <% end %>
   </div>
   <p class="list-group list-group-flush">
     <% if !@organizations.nil? %>
         <% @organizations.each do |organization| %>
-            <li><%= link_to organization.name, organization_path(organization.id), method: :get %></li>
+            <%= link_to organization.name, organization_path(organization.id), method: :get %>
           <% end %>
     <% end %>
   </p>

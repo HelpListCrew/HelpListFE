@@ -13,7 +13,7 @@
 					<p><%= wishlist_item.name %></p>
 					<p>$<%= wishlist_item.price %></p>
 					<% if session_access_token %>
-						<%= button_to "Add to Kroger Cart", kroger_add_to_cart_path, params: { api_item_id: wishlist_item.api_item_id }, :class => "btn btn-warning" %>
+						<%= button_to "Add to Kroger Cart", kroger_add_to_cart_path, params: { api_item_id: wishlist_item.api_item_id }, :class => "btn btn-warning" %><br>
 						<%= button_to "I Purchased This Item", wishlist_item_path(wishlist_item.id), params: { purchased: true }, method: :patch, :class => "btn btn-warning" %>
 					<% else %>
 						<p>Login to Kroger Cart Above</p>

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def new
-    
+    @generated_username = NameFakeFacade.new.generate_username
   end
 
   def show

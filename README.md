@@ -7,6 +7,7 @@ Our mission at Helplist is to harness the power of crowdsourcing to alleviate th
  
 ## Table of Contents
 - [About](#about)
+- [Deployment](#deployment)
 - [Built With](#built-with)
 - [Running the Test Suit](#running-the-test-suit)
 - [Future Features](#future-features)
@@ -16,6 +17,9 @@ Our mission at Helplist is to harness the power of crowdsourcing to alleviate th
 ## About:
 - HelpList allows victims of domestic violence in collaboration with an organization, to create personalized wishlist's of needed items to post anonymously.
 - Users can select a facility, select a wishlist, and purchase items from wishlists to be sent directly to the organization and survivors.
+
+## Deployment:
+[HelpList](https://helplist.herokuapp.com/)
 
 ### Built With:
 ![Ruby 3.1.1](https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white)

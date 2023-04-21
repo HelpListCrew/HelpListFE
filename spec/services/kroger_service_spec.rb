@@ -22,5 +22,15 @@ RSpec.describe "Kroger Service" do
         end
       end
     end
+
+		describe "user_token" do
+			it "returns an access token after logging in with omniauth" do
+				code = "9VZqqaEkx1GS7YCaet4001XRxguDbsd0mcUNO8s5"
+
+				access_token = kroger_service.user_token(code)
+
+				expect(access_token).to be_a String
+			end
+		end
 	end
 end

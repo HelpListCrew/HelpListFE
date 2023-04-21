@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>HelpListFE</title>
+		<%= favicon_link_tag asset_path('dv_favicon.png') %>
       <div style="text-align: center;">
         <div class="banner">
         <h1 class="title">HelpList</h1>
@@ -22,7 +23,7 @@
   <body>
     <%= render partial: 'shared/nav_bar' , class: "navbar" %><br>
       
-      <div style="text-align: right;">
+      
       <% flash.each do |type, msg| %>
        <% if msg != "param is missing or the value is empty: user." %> 
         <%= content_tag :div, msg, class: type%>

@@ -65,6 +65,7 @@ group :development, :test do
   # gem "faker"
   gem "shoulda-matchers"
   gem "launchy"
+  gem "rubocop-rails", require: false
 end
 
 group :test do
